@@ -1,0 +1,37 @@
+{
+    "name": "UltraDate",
+    "version": "1.0.0",
+    "description": "UltraDate.js: Replace a Javascript Date object",
+    "homepage": "http://hrdaya.github.io/UltraDate.js/",
+    "main": [
+        "dist/js/UltraDate.js",
+        "dist/js/UltraDate.min.js",
+        "dist/js/UltraDate.ja.js",
+        "dist/js/UltraDate.ja.min.js"
+    ],
+    "keywords": [
+        "javascript",
+        "js",
+        "date",
+        "format"
+    ],
+    "authors": [
+        "yu-ki higa <https://github.com/hrdaya>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "demo",
+        "src",
+        "Gruntfile.js",
+        "package.json",
+        "index.html"
+    ],
+    "dependencies": {
+        "jquery.ex-code-prettify": "cyokodog/jquery.ex-code-prettify#gh-pages"
+    }
+}

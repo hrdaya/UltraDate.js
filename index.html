@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UltraDate.js</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- jQuery、Bootstrapの読み込み -->
+        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <!-- UltraDateの読み込み -->
+        <script src="dist/UltraDate.min.js"></script>
+        <script src="dist/UltraDate.ja.min.js"></script>
+
+        <!-- google-code-prettify、 jquery.ex-code-prettifyの読み込み-->
+        <script src="demo/js/google-code-prettify/prettify.js"></script>
+        <script src="demo/js/jquery.ex-code-prettify.js"></script>
+        <link rel="stylesheet" href="demo/css/jquery.ex-code-prettify.css">
+
+        <!-- デモ用Javascript、cssの読み込み -->
+        <script src="demo/js/demo.js"></script>
+        <link rel="stylesheet" href="demo/css/demo.css">
+    </head>
+    <body>
+        <header class="navbar navbar-fixed-top navbar-blue">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#top" class="navbar-brand">UltraDate.js</a>
+                </div>
+                <nav id="menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#type-utility" class="dropdown-toggle" data-toggle="dropdown">ユーティリティ <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#copy">copy()</a></li>
+                                <li><a href="#getDefaultFormat">getDefaultFormat</a></li>
+                                <li><a href="#setFormatOption">setFormatOption</a></li>
+                                <li><a href="#setHolidayOption">setHolidayOption</a></li>
+                                <li><a href="#setDefaultLocale">setDefaultLocale</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#type-format">フォーマット</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#type-add" class="dropdown-toggle" data-toggle="dropdown">Add系 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#addYear">addYear</a></li>
+                                <li><a href="#addMonth">addMonth</a></li>
+                                <li><a href="#addDate">addDate</a></li>
+                                <li><a href="#addHours">addHours</a></li>
+                                <li><a href="#addMinutes">addMinutes</a></li>
+                                <li><a href="#addSeconds">addSeconds</a></li>
+                                <li><a href="#addMilliseconds">addMilliseconds</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#type-set" class="dropdown-toggle" data-toggle="dropdown">Set系 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#setRealMonth">setRealMonth</a></li>
+                                <li><a href="#setDayCountsInMonth">setDayCountsInMonth</a></li>
+                                <li><a href="#setFirstDate">setFirstDate</a></li>
+                                <li><a href="#setEndDate">setEndDate</a></li>
+                                <li><a href="#setBeforeWeekday">setBeforeWeekday</a></li>
+                                <li><a href="#setAfterWeekday">setAfterWeekday</a></li>
+                                <li><a href="#clearTime">clearTime</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#type-get" class="dropdown-toggle" data-toggle="dropdown">Get系 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#getRealMonth">getRealMonth</a></li>
+                                <li><a href="#getDayCountsInMonth">getDayCountsInMonth</a></li>
+                                <li><a href="#getISOWeek">getISOWeek</a></li>
+                                <li><a href="#getUSWeek">getUSWeek</a></li>
+                                <li><a href="#getEndDate">getEndDate</a></li>
+                                <li><a href="#getHolidays">getHolidays</a></li>
+                                <li><a href="#getHoliday">getHoliday</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#type-diff" class="dropdown-toggle" data-toggle="dropdown">Diff系 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#diff">diff()</a></li>
+                                <li><a href="#diffMonth">diffMonth</a></li>
+                                <li><a href="#diffDate">diffDate</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#type-is" class="dropdown-toggle" data-toggle="dropdown">Is系 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#isLeapYear">isLeapYear</a></li>
+                                <li><a href="#isDayCountsInMonth">isDayCountsInMonth</a></li>
+                                <li><a href="#isISOWeekDay">isISOWeekDay</a></li>
+                                <li><a href="#isUSWeekDay">isUSWeekDay</a></li>
+                                <li><a href="#isISOWeek">isISOWeek</a></li>
+                                <li><a href="#isUSWeek">isUSWeek</a></li>
+                                <li><a href="#isSameDate">isSameDate</a></li>
+                                <li><a href="#isBeforeDate">isBeforeDate</a></li>
+                                <li><a href="#isAfterDate">isAfterDate</a></li>
+                                <li><a href="#isBetween">isBetween</a></li>
+                                <li><a href="#isToday">isToday</a></li>
+                                <li><a href="#isTomorrow">isTomorrow</a></li>
+                                <li><a href="#isYesterday">isYesterday</a></li>
+                                <li><a href="#isNDate">isNDate</a></li>
+                                <li><a href="#isHoliday">isHoliday</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="top" class="docs-header text-center">
+            <div class="container">
+                <h1>UltraDate.js</h1>
+                <p>
+                    UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジェクトです。
+                    <br>
+                    「Date.prototype」をマージしているので「Date」としているところを「UltraDate」と置き換えるだけ！
+                </p>
+                <div id="github-link" class="">
+                    <a class="btn btn-lg btn-info-flat" href="https://github.com/hrdaya/UltraDate.js">View the GitHub project</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="wrapper" class="container">
+            <article>
+                <header>
+                    <h1>概要</h1>
+                </header>
+                <section>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1>UltraDate.jsについて</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h2>特徴</h2>
+                            <ul>
+                                <li>「UltraDate.js」ファイル読み込み時に「Date.prototype」をマージするので「Date.prototype」を拡張する他のライブラリのメソッドも利用可能</li>
+                                <li>「Date」を「UltraDate」に書き換えるだけで現在のプロジェクトにすぐ適用できます</li>
+                                <li>「UltraDate.ja.js」を一緒に読み込むことで和暦でのフォーマットや日本の祝祭日を利用できます</li>
+                                <li>独自の休み一覧等が追加可能です</li>
+                                <li>独自のフォーマットを追加できるので、独自フォーマットを作成すれば「皇紀」とかも設定できます</li>
+                            </ul>
+                            <div class="alert alert-danger">
+                                (Object.prototype.toString.call(オブジェクト) === "[object Date]")等で
+                                Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
+                                <ul>
+                                    <li>
+                                        「<strong>UltraDate.js</strong>」を使用の場合：(オブジェクト.instanceName === "UltraDate")
+                                        もしくは(オブジェクト instanceof UltraDate)
+                                    </li>
+                                    <li>
+                                        「<strong>UltraDate.min.js</strong>」を使用の場合：(オブジェクト.instanceName === "UltraDate")
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="alert alert-danger margin-bottom-none">
+                                「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は
+                                「Date.prototype」のものが使用されますのでご注意ください
+                                <br>
+                                ※「UltraDate.prototype.constructor」「UltraDate.prototype.instanceName」は上書きされません
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <article>
+                <header>
+                    <h1>はじめ方</h1>
+                </header>
+                <section>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1>ライブラリの読み込み</h1>
+                        </div>
+                        <div class="panel-body">
+                            <h2>基本のライブラリの読み込み</h2>
+                            <pre>&lt;script src=&quot;js/UltraDate.js&quot;&gt;&lt;/script&gt;</pre>
+                            <h2>日本用のライブラリの読み込み</h2>
+                            <pre>&lt;script src=&quot;js/UltraDate.ja.js&quot;&gt;&lt;/script&gt;</pre>
+                            <div class="alert alert-warning margin-top-xl">
+                                基本のライブラリではフォーマットに使用する変換項目は英語用のものしか含まれていません。
+                                <br>
+                                また、祝祭日のデータも含まれていません。
+                                <br><br>
+                                和暦や日本の祝祭日を使用するには「<strong>UltraDate.ja.js</strong>」も一緒に読み込んでください。
+                            </div>
+                            <div class="alert alert-info margin-bottom-none">
+                                「<strong>UltraDate.ja.js</strong>」では下記の項目を実行しています。
+                                <br>
+                                <ol class="margin-top-lg">
+                                    <li>和暦に対応したフォーマット用データの読み込み</li>
+                                    <li>日本の祝祭日のデータの自動生成</li>
+                                    <li>デフォルトのロケールを「ja」に変更</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <article id="type-utility">
+                <header>
+                    <h1>ユーティリティ</h1>
+                </header>
+                <div id="docs-utility">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-format">
+                <header>
+                    <h1>フォーマット</h1>
+                </header>
+                <div id="docs-format">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-add">
+                <header>
+                    <h1>Add系</h1>
+                </header>
+                <div id="docs-add">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-set">
+                <header>
+                    <h1>Set系</h1>
+                </header>
+                <div id="docs-set">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-get">
+                <header>
+                    <h1>Get系</h1>
+                </header>
+                <div id="docs-get">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-diff">
+                <header>
+                    <h1>Diff系</h1>
+                </header>
+                <div id="docs-diff">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+            <article id="type-is">
+                <header>
+                    <h1>Is系</h1>
+                </header>
+                <div id="docs-is">
+                    <div class="loading">
+                        <img src="demo/img/loading.gif" alt="読み込み中">
+                    </div>
+                </div>
+            </article>
+        </div>
+    </body>
+</html>

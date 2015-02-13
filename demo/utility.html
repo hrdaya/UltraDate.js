@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UltraDate.js</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/jquery.ex-code-prettify.css">
+        <link rel="stylesheet" href="css/demo.css">
+    </head>
+    <body>
+        <div id="content">
+            <section id="copy">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>copy()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.copy()
+                        </p>
+                        <ul>
+                            <li>UltraDateオブジェクトのコピーを返します</li>
+                        </ul>
+                        <ul>
+                            <li>引数：なし</li>
+                            <li>戻り値：UltraDate</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>UltraDate</td>
+                                <td>現在のDateオブジェクトを元に新規に作成したUltraDateオブジェクトを返します。</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="getDefaultFormat">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getDefaultFormat()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.getDefaultFormat()
+                        </p>
+                        <ul>
+                            <li>祝祭日一覧のキーで使用する日付フォーマットを返します</li>
+                            <li>
+                                祝祭日一覧のキーについては「<a href="#setHolidayOption">setHolidayOption()</a>」
+                                を参照してください
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：なし</li>
+                            <li>戻り値：String</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>String</td>
+                                <td>「yyyy/MM/dd」を返します</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="setFormatOption">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setFormatOption()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.setFormatOption(locale, options)
+                        </p>
+                        <ul>
+                            <li>「<a href="#format">format()</a>」で使用する元号や月名、曜日名等をセットします</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>String</em>&nbsp;locale,&nbsp;<em>Object</em>&nbsp;options)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>ロケールを指定します</li>
+                                        <li>「def」と空文字は使用できません</li>
+                                        <li>
+                                            「<a href="#format">format()</a>」の第3引数で
+                                            この引数にセットした値を指定すると引数「options」の値を
+                                            参照します
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>options</td>
+                                <td>Object</td>
+                                <td>
+                                    <p>
+                                        下記はデフォルトのObjectです。
+                                        <br>
+                                        オリジナルのフォーマットを作成する場合は「UltraDate.ja.js」等も
+                                        参考にしてください。
+                                    </p>
+                                    <div class="ex-code-prettify">
+                                        <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+{
+    longDay: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    shortDay: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    longMonth: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    shortMonth: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    smallNoon: ["am", "pm"],
+    largeNoon: ["AM", "PM"],
+    era: function (date) {
+        return {
+            longName: "A.D.",
+            shortName: "AD",
+            alphaNamet: "A",
+            year: date.getFullYear()
+        };
+    },
+    eraStrict: function (date) {
+        return this.era(date);
+    }
+}
+                                        </textarea>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            2行目の「longDay」は長い曜日名の配列です。
+                                            「<a href="#format">format()</a>」の「[DD]」で使用されます。
+                                        </li>
+                                        <li>
+                                            3行目の「shortDay」は短い曜日名の配列です。
+                                            「<a href="#format">format()</a>」の「[D]」で使用されます。
+                                        </li>
+                                        <li>
+                                            4行目の「longMonth」は長い月名の配列です。
+                                            「<a href="#format">format()</a>」の「[MMMM]」で使用されます。
+                                        </li>
+                                        <li>
+                                            5行目の「shortMonth」は短い月名の配列です。
+                                            「<a href="#format">format()</a>」の「[MMM]」で使用されます。
+                                        </li>
+                                        <li>
+                                            6行目の「smallNoon」は小文字午前・午後の配列です。
+                                            「<a href="#format">format()</a>」の「[tt]」で使用されます。
+                                        </li>
+                                        <li>
+                                            7行目の「largeNoon」は大文字午前・午後の配列です。
+                                            「<a href="#format">format()</a>」の「[TT]」で使用されます。
+                                        </li>
+                                        <li>
+                                            8行目の「era」は元号で使用されるオブジェクトです。
+                                            <ul>
+                                                <li>
+                                                    10行目の「longName」は長い形式の元号です。
+                                                    「<a href="#format">format()</a>」の「[ggg]」で使用されます。
+                                                </li>
+                                                <li>
+                                                    11行目の「shortName」は短い形式の元号です。
+                                                    「<a href="#format">format()</a>」の「[gg]」で使用されます。
+                                                </li>
+                                                <li>
+                                                    12行目の「alphaName」は英字表記の元号です。
+                                                    「<a href="#format">format()</a>」の「[g]」で使用されます。
+                                                </li>
+                                                <li>
+                                                    13行目の「year」は元号で使用する年です。
+                                                    「<a href="#format">format()</a>」の「[eeee]、[eee]、[ee]、[e]」で使用されます。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            16行目の「eraStrict」は元号で使用されるオブジェクトです。
+                                            <ul>
+                                                <li>
+                                                    「UltraDate.ja.js」では「era」での元号計算は年で判定していますが、
+                                                    その場合「1989年1月1日」は「平成1年1月1日」となります。
+                                                    「昭和64年1月1日」と正確に表現したい時の為に「eraStrict」では
+                                                    「1989年1月7日」までは「昭和」、
+                                                    「1989年1月8日」以降は「平成」と計算します。
+                                                </li>
+                                                <li>
+                                                    オブジェクトの内容は「era」と同じです。
+                                                </li>
+                                                <li>
+                                                    「<a href="#format">format()</a>」の第2引数の「eraStrict」を「true」とすると
+                                                    「eraStrict」のオブジェクトが使用されます。
+                                                </li>
+                                                <li>
+                                                    「eraStrict」が無い場合は「era」のオブジェクトが使用されます。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="setHolidayOption">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setHolidayOption()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.setHolidayOption(locale, options)
+                        </p>
+                        <ul>
+                            <li>
+                                「<a href="#getHolidays">getHolidays()</a>」
+                                「<a href="#getHoliday">getHoliday()</a>」
+                                「<a href="#isHoliday">isHoliday()</a>」
+                                で使用する祝祭日一覧を取得する関数をセットします
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>String</em>&nbsp;locale,&nbsp;<em>Object</em>&nbsp;options)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>ロケールを指定します</li>
+                                        <li>「def」と空文字は使用できません</li>
+                                        <li>
+                                            「<a href="#getHolidays">getHolidays()</a>」
+                                            「<a href="#getHoliday">getHoliday()</a>」
+                                            「<a href="#isHoliday">isHoliday()</a>」の引数「locale」で
+                                            この引数にセットした値を指定すると引数「options」の値を
+                                            参照します
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>options</td>
+                                <td>Object</td>
+                                <td>
+                                    <ul>
+                                        <li>祝祭日一覧のオブジェクトを返す「get()」関数が必須です</li>
+                                    </ul>
+                                    <p>
+                                        下記はデフォルトのObjectです。
+                                        <br>
+                                        オリジナルのフォーマットを作成する場合は「UltraDate.ja.js」等も
+                                        参考にしてください。
+                                    </p>
+                                    <div class="ex-code-prettify">
+                                        <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+{
+    get: function (year) {
+        return {};
+    }
+}
+                                        </textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>
+                            年ごとに固定の祝祭日一覧をセットするサンプルです
+                        </h3>
+                        <ul>
+                            <li>ロケール名は「shopHoliday」</li>
+                            <li>毎年「1月1日」「1月2日」「1月3日」を休みとする</li>
+                        </ul>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+UltraDate.setHolidayOption("shopHoliday",
+    {
+        get: function (year) {
+            return this.holidays[year];
+        },
+        holidays: {
+            2015 : {
+                "2015/01/01": "休み",
+                "2015/01/02": "休み",
+                "2015/01/03": "休み"
+            },
+            2016 : {
+                "2016/01/01": "休み",
+                "2016/01/02": "休み",
+                "2016/01/03": "休み"
+            },
+            2017 : {
+                "2017/01/01": "休み",
+                "2017/01/02": "休み",
+                "2017/01/03": "休み"
+            },
+            2018 : {
+                "2018/01/01": "休み",
+                "2018/01/02": "休み",
+                "2018/01/03": "休み"
+            }
+        }
+    }
+);
+
+// 今年のロケール「shopHoliday」を取得する
+var holidaysThisYear = new UltraDate().getHolidays(undefined, "shopHoliday");
+console.log(holidaysThisYear);
+
+// 2016年のロケール「shopHoliday」を取得する
+var holidays2016 = new UltraDate().getHolidays(2016, "shopHoliday");
+console.log(holidays2016);
+                            </textarea>
+                        </div>
+                        <h3>
+                            土日祝祭日を休業日とするサンプルです
+                        </h3>
+                        <ul>
+                            <li>ロケール名は「shopHoliday」</li>
+                            <li>「UltraDate.ja.js」を読み込んでいるものとする</li>
+                            <li>土日祝祭日の休み名を「休業日」とする</li>
+                        </ul>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+UltraDate.setHolidayOption("shopHoliday",
+    {
+        get: function (year) {
+            var holidayName = "休業日";
+            var format = UltraDate.getDefaultFormat();
+            var date = new UltraDate(year, 0, 1);
+
+            // 日本の祝祭日を取得
+            var holidays = date.getHolidays(undefined, "ja");
+
+            // 祝祭日名を「休業日」に変更
+            for (var key in holidays) {
+                holidays[key] = holidayName;
+            }
+
+            // 第1土曜日にセット
+            date.setDayCountsInMonth(1, 6);
+
+            // 土曜日を祝祭日一覧にセット
+            while (year === date.getFullYear()) {
+                holidays[date.format(format)] = holidayName;
+                date.addDate(7);
+            }
+
+            // Dateオブジェクトを該当年の1月1日にセット
+            date.setFullYear(year, 0, 1);
+
+            // 第1日曜日にセット
+            date.setDayCountsInMonth(1, 0);
+
+            // 日曜日を祝祭日一覧にセット
+            while (year === date.getFullYear()) {
+                holidays[date.format(format)] = holidayName;
+                date.addDate(7);
+            }
+
+            return holidays;
+        }
+    }
+);
+
+// 今年のロケール「shopHoliday」を取得する
+var holidaysThisYear = new UltraDate().getHolidays(false, "shopHoliday");
+console.log(holidaysThisYear);
+// 2016年のロケール「shopHoliday」を取得する
+var holidays2016 = new UltraDate().getHolidays(2016, "shopHoliday");
+console.log(holidays2016);
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setDefaultLocale">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setDefaultLocale()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.setDefaultLocale(locale)
+                        </p>
+                        <ul>
+                            <li>
+                                「<a href="#format">format()</a>」「<a href="#getHolidays">getHolidays()</a>」
+                                「<a href="#getHoliday">getHoliday()</a>」「<a href="#isHoliday">isHoliday()</a>」
+                                で引数「locale」を省略した場合にデフォルトで使用されるロケールをセットします
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>String</em>&nbsp;locale)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>デフォルトで使用するロケールの文字列</li>
+                                        <li>空文字は使用できません</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

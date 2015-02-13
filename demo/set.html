@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UltraDate.js</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/jquery.ex-code-prettify.css">
+        <link rel="stylesheet" href="css/demo.css">
+    </head>
+    <body>
+        <div id="content">
+            <section id="setRealMonth">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setRealMonth()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setRealMonth(num)
+                        </p>
+                        <ul>
+                            <li>Dateオブジェクトでは月の設定は実際の月から1を引いた値をセットしますが、この関数では実際の月でセットできます</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>セットしたい実際の月の数字を指定します</li>
+                                        <li>正数の時はミリ秒を増やす</li>
+                                        <li>負数の時はミリ秒を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>実際の月で月をセット</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 1月
+date.setRealMonth(1);
+
+// 1月にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 12月
+date.setRealMonth(12);
+
+// 12月にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// マイナスの数字を設定してみる
+date.setRealMonth(-2);
+
+// マイナスの数字を設定した後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setDayCountsInMonth">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setDayCountsInMonth()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setDayCountsInMonth(count, day)
+                        </p>
+                        <ul>
+                            <li>第3土曜日みたいに第[count][day]曜日に日付をセットします</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;count,&nbsp;<em>Number</em>&nbsp;day)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>count</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>何回目かを指定します</li>
+                                        <li>必須項目です</li>
+                                        <li>数字にパースできない場合はErrorをスローします</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>day</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>曜日を表す 0 (日曜日) ～ 6 (土曜日) の整数を指定します</li>
+                                        <li>必須項目です</li>
+                                        <li>0～6以外の時や数字にパースできない場合はErrorをスローします</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>第[count][day]曜日をセット</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 第3土曜日
+date.setDayCountsInMonth(3, 6);
+
+// 第3土曜日に設定後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 第7土曜日にセットしてみる（そんなのありませんが...）
+date.setDayCountsInMonth(7, 6);
+
+// 第7土曜日に設定後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 回数にマイナスの数字を設定してみる
+date.setDayCountsInMonth(-2, 6);
+
+// マイナスの数字を設定した後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setFirstDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setFirstDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setFirstDate(num)
+                        </p>
+                        <ul>
+                            <li>引数「num」の値分の月をオフセットした月の1日に日付をセットします</li>
+                            <li>時間はクリアされます</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>オフセットしたい月数の数字を指定します</li>
+                                        <li>正数の時は月を増やす</li>
+                                        <li>負数の時は月を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>オフセットした月の1日を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 翌月1日
+date.setFirstDate(1);
+
+// 翌月1日にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 前々月の1日
+date.setFirstDate(-2);
+
+// 前々月の1日にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setEndDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setEndDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setEndDate(num)
+                        </p>
+                        <ul>
+                            <li>引数「num」の値分の月をオフセットした月の末日に日付をセットします</li>
+                            <li>時間はクリアされます</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>オフセットしたい月数の数字を指定します</li>
+                                        <li>正数の時は月を増やす</li>
+                                        <li>負数の時は月を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>オフセットした月の末日を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 翌月末日
+date.setEndDate(1);
+
+// 翌月末日にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 前々月の末日
+date.setEndDate(-2);
+
+// 前々月の末日にした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setBeforeWeekday">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setBeforeWeekday()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setBeforeWeekday(option, locale)
+                        </p>
+                        <ul>
+                            <li>日付を引数「option」でしたものの前の平日に変更</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;option,&nbsp;<em>String</em>&nbsp;locale)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>option</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧</li>
+                                        <li>1：土曜日、日曜日のみ</li>
+                                        <li>2：日曜日、引数「locale」で取得される祝祭日一覧のみ</li>
+                                        <li>3：日曜日のみ</li>
+                                        <li>4：引数「locale」で取得される祝祭日一覧のみ</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>取得するロケールの文字列を指定します</li>
+                                        <li>指定の無い場合はデフォルトのロケールが使用されます</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>平日を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate("2015/05/04");
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setBeforeWeekday(0).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setBeforeWeekday(1).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setBeforeWeekday(2).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setBeforeWeekday(3).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setBeforeWeekday(4).format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="setAfterWeekday">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setAfterWeekday()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setAfterWeekday(option, locale)
+                        </p>
+                        <ul>
+                            <li>日付を引数「option」でしたものの後の平日に変更</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;option,&nbsp;<em>String</em>&nbsp;locale)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>option</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧</li>
+                                        <li>1：土曜日、日曜日のみ</li>
+                                        <li>2：日曜日、引数「locale」で取得される祝祭日一覧のみ</li>
+                                        <li>3：日曜日のみ</li>
+                                        <li>4：引数「locale」で取得される祝祭日一覧のみ</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>取得するロケールの文字列を指定します</li>
+                                        <li>指定の無い場合はデフォルトのロケールが使用されます</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>平日を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate("2015/05/03");
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setAfterWeekday(0).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setAfterWeekday(1).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setAfterWeekday(2).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setAfterWeekday(3).format("yyyy年MM月dd日"));
+date.setDate(4);
+console.log(date.setAfterWeekday(4).format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="clearTime">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>clearTime()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.clearTime()
+                        </p>
+                        <ul>
+                            <li>現在のUltraDateオブジェクトの時間を「00:00:00.000」にします</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：なし</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>時間をクリアした日付を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 時間のクリア
+date.clearTime();
+
+// クリアした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

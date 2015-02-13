@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jsExDate（Dateオブジェクトの拡張）</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/jquery.ex-code-prettify.css">
+        <link rel="stylesheet" href="css/demo.css">
+    </head>
+    <body>
+        <div id="content">
+            <section id="addYear">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addYear()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addYear(num)
+                        </p>
+                        <ul>
+                            <li>年の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は年を増やす</li>
+                                        <li>負数の時は年を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>年の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の年
+console.log(date.format("yyyy年MM月dd日"));
+
+// 増やす
+date.addYear(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日"));
+
+// 減らす
+date.addYear(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addMonth">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addMonth()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addMonth(num)
+                        </p>
+                        <ul>
+                            <li>月の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は月を増やす</li>
+                                        <li>負数の時は月を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>月の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の月
+console.log(date.format("yyyy年MM月dd日"));
+
+// 増やす
+date.addMonth(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日"));
+
+// 減らす
+date.addMonth(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addDate(num)
+                        </p>
+                        <ul>
+                            <li>日の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は日を増やす</li>
+                                        <li>負数の時は日を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>日の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の日
+console.log(date.format("yyyy年MM月dd日"));
+
+// 増やす
+date.addDate(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日"));
+
+// 減らす
+date.addDate(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addHours">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addHours()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addHours(num)
+                        </p>
+                        <ul>
+                            <li>時の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は時を増やす</li>
+                                        <li>負数の時は時を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>時の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 増やす
+date.addHours(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 減らす
+date.addHours(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addMinutes">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addMinutes()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addMinutes(num)
+                        </p>
+                        <ul>
+                            <li>分の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は分を増やす</li>
+                                        <li>負数の時は分を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>分の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 増やす
+date.addMinutes(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 減らす
+date.addMinutes(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addSeconds">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addSeconds()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addSeconds(num)
+                        </p>
+                        <ul>
+                            <li>秒の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時は秒を増やす</li>
+                                        <li>負数の時は秒を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>秒の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 増やす
+date.addSeconds(1);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 減らす
+date.addSeconds(-2);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="addMilliseconds">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>addMilliseconds()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.addMilliseconds(num)
+                        </p>
+                        <ul>
+                            <li>ミリ秒の増減を行います</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>増減したい数字を指定します</li>
+                                        <li>正数の時はミリ秒を増やす</li>
+                                        <li>負数の時はミリ秒を減らす</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>ミリ秒の増減</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 増やす
+date.addMilliseconds(111);
+
+// 増やした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 減らす
+date.addMilliseconds(-222);
+
+// 減らした後
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jsExDate（Dateオブジェクトの拡張）</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/jquery.ex-code-prettify.css">
+        <link rel="stylesheet" href="css/demo.css">
+    </head>
+    <body>
+        <div id="content">
+            <section id="diff">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>diff()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.diff(date)
+                        </p>
+                        <ul>
+                            <li>現在のDateオブジェクトの日付から引数「date」までの差分を日、時、分、秒、ミリ秒に変換して返す</li>
+                            <li>例：△△まで残り○○日○○時間○○分○○秒○○○の「○○」の部分をそれぞれ取得します</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date)</li>
+                            <li>戻り値：Object</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>UltraDate<br>Date<br>String<br>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>Dateオブジェクトを指定します</li>
+                                        <li>Stringの場合Dateオブジェクトを作成できる文字列</li>
+                                        <li>Numberの場合Dateオブジェクトを作成できる数字</li>
+                                        <li>undefinedの場合は現在の日付</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Object</td>
+                                <td>
+                                    下記の内容のオブジェクトが返されます
+                                    <ul>
+                                        <li>after：{Boolean}現在の日付より後かどうか</li>
+                                        <li>day：{Number}日の差分</li>
+                                        <li>hour：{Number}時の差分</li>
+                                        <li>minute：{Number}分の差分</li>
+                                        <li>second：{Number}秒の差分</li>
+                                        <li>ms：{Number}ミリ秒の差分</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>2020年東京オリンピックまでの差分</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+var str = "2020年東京オリンピック開会式";
+
+// 差分を取得
+var diff = date.diff("2020/07/24 20:00:00");
+if (diff["after"]) {
+    str += "まで後" + diff["day"] + "日" + diff["hour"] + "時間" + diff["minute"] + "分" + diff["second"] + "秒" + diff["ms"];
+} else {
+    str += "からの経過" + diff["day"] + "日" + diff["hour"] + "時間" + diff["minute"] + "分" + diff["second"] + "秒" + diff["ms"];
+}
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+console.log(str);
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="diffMonth">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>diffMonth()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.diffMonth(date)
+                        </p>
+                        <ul>
+                            <li>現在のUltraDateオブジェクトの日付から引数「date」までの差分を月単位で取得</li>
+                            <li>今月の場合は「0」、翌月の場合は「1」、前月の場合は「-1」</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date)</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>UltraDate<br>Date<br>String<br>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>Dateオブジェクトを指定します</li>
+                                        <li>Stringの場合Dateオブジェクトを作成できる文字列</li>
+                                        <li>Numberの場合Dateオブジェクトを作成できる数字</li>
+                                        <li>undefinedの場合は現在の日付</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>今月の場合は「0」、翌月の場合は「1」、前月の場合は「-1」といった形式の数字を返す</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>2020年東京オリンピックまでの差分</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+var str = "2020年東京オリンピック開会式は";
+
+// 差分を取得
+var diff = date.diffMonth("2020/07/24 20:00:00");
+ if (diff === 0) {
+    str += "今月です";
+} else if (diff === 1) {
+    str += "来月です";
+} else if (diff > 1) {
+    str +=  diff + "ヵ月後です";
+} else if (diff === -1) {
+    str += "先月です";
+} else if (diff < -1) {
+    str +=  (diff * -1) + "ヵ月前です";
+}
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+console.log(str);
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="diffDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>diffDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.diffDate(date)
+                        </p>
+                        <ul>
+                            <li>現在のUltraDateオブジェクトの日付から引数「date」までの差分を日単位で取得</li>
+                            <li>今日の場合は「0」、明日の場合は「1」、昨日の場合は「-1」</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date)</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>UltraDate<br>Date<br>String<br>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>Dateオブジェクトを指定します</li>
+                                        <li>Stringの場合Dateオブジェクトを作成できる文字列</li>
+                                        <li>Numberの場合Dateオブジェクトを作成できる数字</li>
+                                        <li>undefinedの場合は現在の日付</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>今日の場合は「0」、明日の場合は「1」、昨日の場合は「-1」といった形式の数字を返す</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>2020年東京オリンピックまでの差分</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+var str = "2020年東京オリンピック開会式は";
+
+// 差分を取得
+var diff = date.diffDate("2020/07/24 20:00:00");
+ if (diff === 0) {
+    str += "今日です";
+} else if (diff === 1) {
+    str += "明日です";
+} else if (diff > 1) {
+    str +=  diff + "日後です";
+} else if (diff === -1) {
+    str += "昨日です";
+} else if (diff < -1) {
+    str +=  (diff * -1) + "日前です";
+}
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+console.log(str);
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
