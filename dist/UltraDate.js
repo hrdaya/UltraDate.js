@@ -1,4 +1,10 @@
-var UltraDateBanner;
+/*!
+ * UltraDate.js v1.0.0 (http://hrdaya.github.io/UltraDate.js/)
+ *
+ * Copyright 2015 yu-ki higa <https://github.com/hrdaya>
+ * Licensed under MIT (https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
+ */
+
 UltraDate = (function () {
     "use strict";
 
