@@ -9,6 +9,7 @@ module.exports = function (grunt) {
             dist: "dist",
             txt: "txt",
             demo: "demo",
+            test: "test",
             banner: grunt.file.read('txt/banner.txt'),
             bannerJa: grunt.file.read('txt/bannerJa.txt')
         },
@@ -69,9 +70,13 @@ module.exports = function (grunt) {
                 'bower.json',
                 '.jshint*',
                 '<%= meta.src %>/*.js',
+                '<%= meta.test %>/*.js',
                 '<%= meta.dist %>/<%= pkg.name %>.js',
                 '<%= meta.dist %>/<%= pkg.name %>.ja.js'
-            ]
+            ],
+            options: {
+                loopfunc: true
+            }
         },
         copy: {
             js: {
@@ -94,11 +99,16 @@ module.exports = function (grunt) {
             js: {
                 spawn: false,
                 files: [
-                    '<%= meta.src %>/*.js'
+                    'Gruntfile.js',
+                    'package.json',
+                    'bower.json',
+                    '<%= meta.src %>/*.js',
+                    '<%= meta.txt %>/*'
                 ],
                 tasks: [
                     'clean',
                     'replace',
+                    'uglify',
                     'jshint'
                 ]
             }
