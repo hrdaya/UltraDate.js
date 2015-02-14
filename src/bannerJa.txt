@@ -1,7 +1,0 @@
-/*!
- * <%= pkg.name %>.jsの日本用設定 (<%= pkg.homepage %>)
- *
- * Copyright 2015 <%= pkg.author %>
- * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)
- */
-

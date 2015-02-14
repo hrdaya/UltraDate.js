@@ -1,7 +1,7 @@
 /*!
  * UltraDate.jsの日本用設定 (http://hrdaya.github.io/UltraDate.js/)
  *
- * Copyright 2015 yu-ki higa <https://github.com/hrdaya>
+ * Copyright 2015 yu-ki higa (https://github.com/hrdaya)
  * Licensed under MIT (https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
  */
 

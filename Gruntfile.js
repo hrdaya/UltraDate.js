@@ -5,20 +5,24 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            banner: grunt.file.read('src/banner.txt'),
-            bannerJa: grunt.file.read('src/bannerJa.txt')
+            src: "src",
+            dist: "dist",
+            txt: "txt",
+            demo: "demo",
+            banner: grunt.file.read('txt/banner.txt'),
+            bannerJa: grunt.file.read('txt/bannerJa.txt')
         },
         clean: {
             dist: {
                 files: [{
                         dot: true,
-                        src: ['dist/*.js']
+                        src: ['<%= meta.dist %>/*.js']
                     }]
             }
         },
         replace: {
             readme: {
-                src: 'src/read.txt',
+                src: '<%= meta.txt %>/read.txt',
                 dest: 'README.md',
                 replacements: [{
                         from: /<version>/g,
@@ -26,16 +30,16 @@ module.exports = function (grunt) {
                     }]
             },
             main: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'dist/<%= pkg.name %>.js',
+                src: '<%= meta.src %>/<%= pkg.name %>.js',
+                dest: '<%= meta.dist %>/<%= pkg.name %>.js',
                 replacements: [{
                         from: /^var\sUltraDateBanner;\n/,
                         to: '<%= meta.banner %>'
                     }]
             },
             ja: {
-                src: 'src/<%= pkg.name %>.ja.js',
-                dest: 'dist/<%= pkg.name %>.ja.js',
+                src: '<%= meta.src %>/<%= pkg.name %>.ja.js',
+                dest: '<%= meta.dist %>/<%= pkg.name %>.ja.js',
                 replacements: [{
                         from: /^var\sUltraDateBanner;\n/,
                         to: '<%= meta.bannerJa %>'
@@ -48,14 +52,14 @@ module.exports = function (grunt) {
                     preserveComments: 'some'
                 },
                 src: '<%= replace.main.dest %>',
-                dest: 'dist/<%= pkg.name %>.min.js'
+                dest: '<%= meta.dist %>/<%= pkg.name %>.min.js'
             },
             ja: {
                 options: {
                     preserveComments: 'some'
                 },
                 src: '<%= replace.ja.dest %>',
-                dest: 'dist/<%= pkg.name %>.ja.min.js'
+                dest: '<%= meta.dist %>/<%= pkg.name %>.ja.min.js'
             }
         },
         jshint: {
@@ -63,8 +67,10 @@ module.exports = function (grunt) {
                 'Gruntfile.js',
                 'package.json',
                 'bower.json',
-                'src/*.js',
-                'dist/*.js'
+                '.jshint*',
+                '<%= meta.src %>/*.js',
+                '<%= meta.dist %>/<%= pkg.name %>.js',
+                '<%= meta.dist %>/<%= pkg.name %>.ja.js'
             ]
         },
         copy: {
@@ -75,13 +81,26 @@ module.exports = function (grunt) {
                     'jquery.ex-code-prettify.js',
                     'google-code-prettify/*'
                 ],
-                dest: 'demo/js/'
+                dest: '<%= meta.demo %>/js/'
             },
             css: {
                 expand: true,
                 cwd: 'bower_components/jquery.ex-code-prettify/',
                 src: ['jquery.ex-code-prettify.css'],
-                dest: 'demo/css/'
+                dest: '<%= meta.demo %>/css/'
+            }
+        },
+        watch: {
+            js: {
+                spawn: false,
+                files: [
+                    '<%= meta.src %>/*.js'
+                ],
+                tasks: [
+                    'clean',
+                    'replace',
+                    'jshint'
+                ]
             }
         }
     });
@@ -90,6 +109,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('default', ['clean', 'replace', 'uglify']);
-    grunt.registerTask('build', ['copy', 'replace', 'jshint']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['clean', 'copy', 'replace', 'uglify']);
 };
