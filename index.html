@@ -12,8 +12,8 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
         <!-- UltraDateの読み込み -->
-        <script src="dist/UltraDate.min.js"></script>
-        <script src="dist/UltraDate.ja.min.js"></script>
+        <script src="dist/UltraDate.js"></script>
+        <script src="dist/UltraDate.ja.js"></script>
 
         <!-- google-code-prettify、 jquery.ex-code-prettifyの読み込み-->
         <script src="demo/js/google-code-prettify/prettify.js"></script>
@@ -147,12 +147,43 @@
                         <div class="panel-body">
                             <h2>特徴</h2>
                             <ul>
-                                <li>「UltraDate.js」ファイル読み込み時に「Date.prototype」をマージするので「Date.prototype」を拡張する他のライブラリのメソッドも利用可能</li>
-                                <li>「Date」を「UltraDate」に書き換えるだけで現在のプロジェクトにすぐ適用できます</li>
-                                <li>「UltraDate.ja.js」を一緒に読み込むことで和暦でのフォーマットや日本の祝祭日を利用できます</li>
-                                <li>独自の休み一覧等が追加可能です</li>
-                                <li>独自のフォーマットを追加できるので、独自フォーマットを作成すれば「皇紀」とかも設定できます</li>
+                                <li>
+                                    「UltraDate.js」ファイル読み込み時に「Date.prototype」をマージするので
+                                    「Date.prototype」を拡張する他のライブラリのメソッドも利用可能です
+                                </li>
+                                <li>
+                                    「Date」を「UltraDate」に書き換えるだけで現在のプロジェクトにすぐ適用できます
+                                    （下記注意事項もご参照ください）
+                                </li>
+                                <li>
+                                    format関数で日付のフォーマットを行うことができます
+                                </li>
+                                <li>
+                                    add○○関数で増減したい日数や、○○時間後等を設定することができます
+                                </li>
+                                <li>
+                                    set○○関数で翌月末や第3月曜日といったこれまで計算してセットしていた日付を簡単に設定できます
+                                </li>
+                                <li>
+                                    get○○関数で翌月末や第3月曜日といったこれまで計算してセットしていた日付を簡単に取得できます
+                                </li>
+                                <li>
+                                    diff○○関数引数に指定した日付まで後○○日といった日付の差分を取得することができます
+                                </li>
+                                <li>
+                                    is○○関数引数に指定した日付より後かどうかやオブジェクトが祝日かどうか等を判定できます
+                                </li>
+                                <li>
+                                    「UltraDate.ja.js」を一緒に読み込むことで和暦でのフォーマットや日本の祝祭日を利用できます
+                                </li>
+                                <li>
+                                    独自の休み一覧等を複数追加でき、引数のロケール変えることで種類ごとに切り替えて使用できます
+                                </li>
+                                <li>
+                                    独自の日付フォーマットを複数追加でき、引数のロケールを変えることで種類ごとに切り替えて使用できます
+                                </li>
                             </ul>
+                            <h2>注意事項</h2>
                             <div class="alert alert-danger">
                                 (Object.prototype.toString.call(オブジェクト) === "[object Date]")等で
                                 Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
@@ -166,11 +197,14 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="alert alert-danger margin-bottom-none">
+                            <div class="alert alert-danger">
                                 「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は
                                 「Date.prototype」のものが使用されますのでご注意ください
                                 <br>
                                 ※「UltraDate.prototype.constructor」「UltraDate.prototype.instanceName」は上書きされません
+                            </div>
+                            <div class="alert alert-danger margin-bottom-none">
+                                「UltraDate()」といったnewを付けない実行はできません。必ずnewでインスタンスを作成してください。
                             </div>
                         </div>
                     </div>
