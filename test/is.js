@@ -289,7 +289,6 @@ describe("isYesterday:", function () {
         expect(yesterday.isYesterday()).toBe(true);
     });
 });
-// isAfterNDate()と同じ
 describe("isNDate:", function () {
     var today = new UltraDate();
     var tomorrow = new UltraDate().addDate(1);
