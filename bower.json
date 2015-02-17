@@ -16,6 +16,7 @@
         "demo",
         "src",
         "Gruntfile.js",
+        "karma.config.js",
         "package.json",
         "index.html"
     ],

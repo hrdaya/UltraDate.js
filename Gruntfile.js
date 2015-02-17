@@ -1,6 +1,5 @@
 module.exports = function (grunt) {
     'use strict';
-    // Force use of Unix newlines
     grunt.util.linefeed = '\n';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -70,7 +69,6 @@ module.exports = function (grunt) {
                 'bower.json',
                 '.jshint*',
                 '<%= meta.src %>/*.js',
-                '<%= meta.test %>/*.js',
                 '<%= meta.dist %>/<%= pkg.name %>.js',
                 '<%= meta.dist %>/<%= pkg.name %>.ja.js'
             ],
@@ -95,6 +93,11 @@ module.exports = function (grunt) {
                 dest: '<%= meta.demo %>/css/'
             }
         },
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js'
+            }
+        },
         watch: {
             js: {
                 spawn: false,
@@ -103,6 +106,7 @@ module.exports = function (grunt) {
                     'package.json',
                     'bower.json',
                     '<%= meta.src %>/*.js',
+                    '<%= meta.test %>/*.js',
                     '<%= meta.txt %>/*'
                 ],
                 tasks: [
@@ -120,6 +124,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('test', ['karma']);
     grunt.registerTask('build', ['clean', 'copy', 'replace', 'uglify']);
 };
