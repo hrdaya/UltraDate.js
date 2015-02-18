@@ -82,6 +82,7 @@
                                 <li><a href="#getDayCountsInMonth">getDayCountsInMonth</a></li>
                                 <li><a href="#getISOWeek">getISOWeek</a></li>
                                 <li><a href="#getUSWeek">getUSWeek</a></li>
+                                <li><a href="#getISODay">getISODay</a></li>
                                 <li><a href="#getEndDate">getEndDate</a></li>
                                 <li><a href="#getHolidays">getHolidays</a></li>
                                 <li><a href="#getHoliday">getHoliday</a></li>
@@ -104,6 +105,7 @@
                                 <li><a href="#isUSWeekDay">isUSWeekDay</a></li>
                                 <li><a href="#isISOWeek">isISOWeek</a></li>
                                 <li><a href="#isUSWeek">isUSWeek</a></li>
+                                <li><a href="#isWeekday">isWeekday</a></li>
                                 <li><a href="#isSameDate">isSameDate</a></li>
                                 <li><a href="#isBeforeDate">isBeforeDate</a></li>
                                 <li><a href="#isAfterDate">isAfterDate</a></li>
@@ -191,17 +193,13 @@
                                     <li>
                                         (オブジェクト instanceof UltraDate)
                                     </li>
-                                    <li>
-                                        (オブジェクト.instanceName === "UltraDate")
-                                        もしくは
-                                    </li>
                                 </ul>
                             </div>
                             <div class="alert alert-danger">
                                 「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は
                                 「Date.prototype」のものが使用されますのでご注意ください
                                 <br>
-                                ※「UltraDate.prototype.constructor」「UltraDate.prototype.instanceName」は上書きされません
+                                ※「UltraDate.prototype.constructor」は上書きされません
                             </div>
                         </div>
                     </div>

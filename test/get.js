@@ -82,6 +82,16 @@ describe("getUSWeek:", function () {
         expect(date20281231.getUSWeek()).toEqual(54);
     });
 });
+describe("getISODay:", function () {
+    var date1 = new UltraDate("2015/01/04");
+    it("2015年1月4日（日曜日）のISO曜日番号の戻り値は「7」", function () {
+        expect(date1.getISODay()).toEqual(7);
+    });
+    var date2 = new UltraDate("2015/01/05");
+    it("2015年1月5日（月曜日）のISO曜日番号の戻り値は「1」", function () {
+        expect(date2.getISODay()).toEqual(1);
+    });
+});
 describe("getEndDate:", function () {
     var date2015 = new UltraDate("2015/01/01");
     it("2015年1月末日の戻り値は「31」", function () {
