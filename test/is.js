@@ -25,9 +25,8 @@ describe("isDayCountsInMonth:", function () {
     });
 });
 describe("isISOWeekDay:", function () {
-    // @mytodo 週番号が前年か今年か来年かの検証が必要
     var date20150101 = new UltraDate("2015/01/01");
-    it("2015年1月1日は1週目の木曜日なので「true」", function () {
+    it("2015年1月1日は0週目の木曜日なので「true」", function () {
         expect(date20150101.isISOWeekDay(1, 4)).toBe(true);
     });
     it("2015年1月1日は1週目の日曜日ではないので「false」", function () {
@@ -37,13 +36,9 @@ describe("isISOWeekDay:", function () {
     it("2016年1月1日は1週目の金曜日ではないので「false」", function () {
         expect(date20160101.isISOWeekDay(1, 5)).toBe(false);
     });
-    // 2015年の53週目（2016年だと0週目としたいところ）
-    it("2016年1月1日は53週目の金曜日なので「true」", function () {
-        expect(date20160101.isISOWeekDay(53, 5)).toBe(true);
+    it("2016年1月1日は0週目の金曜日なので「true」", function () {
+        expect(date20160101.isISOWeekDay(0, 5)).toBe(true);
     });
-//        it("2016年1月1日は0週目の金曜日なので「true」", function () {
-//            expect(date20160101.isISOWeek(0, 5)).toBe(true);
-//        });
     var date20160103 = new UltraDate("2016/01/03");
     it("2016年1月3日は1週目の月曜日ではないので「false」", function () {
         expect(date20160103.isISOWeekDay(1, 1)).toBe(false);
@@ -61,10 +56,6 @@ describe("isISOWeekDay:", function () {
         expect(date20161231.isISOWeekDay(53, 6)).toBe(false);
     });
     var date20181231 = new UltraDate("2018/12/31");
-//        it("2018年12月31日は1週目の月曜日なので「true」", function () {
-//            expect(date20181231.isISOWeekDay(1, 1)).toBe(true);
-//        });
-    // 2018年の53週目だが本当は2019年の1週目
     it("2018年12月31日は53週目の月曜日なので「true」", function () {
         expect(date20181231.isISOWeekDay(53, 1)).toBe(true);
     });
@@ -95,7 +86,6 @@ describe("isUSWeekDay:", function () {
     });
 });
 describe("isISOWeek:", function () {
-    // @mytodo 週番号が前年か今年か来年かの検証が必要
     var date20150101 = new UltraDate("2015/01/01");
     it("2015年1月1日は1週目なので「true」", function () {
         expect(date20150101.isISOWeek(1)).toBe(true);
@@ -104,13 +94,9 @@ describe("isISOWeek:", function () {
     it("2016年1月1日は1週目ではないので「false」", function () {
         expect(date20160101.isISOWeek(1)).toBe(false);
     });
-    // 2015年の53週目（2016年だと0週目としたいところ）
-    it("2016年1月1日は53週目なので「true」", function () {
-        expect(date20160101.isISOWeek(53)).toBe(true);
+    it("2016年1月1日は0週目なので「true」", function () {
+        expect(date20160101.isISOWeek(0)).toBe(true);
     });
-//        it("2016年1月1日は0週目なので「true」", function () {
-//            expect(date20160101.isISOWeek(0)).toBe(true);
-//        });
     var date20160103 = new UltraDate("2016/01/03");
     it("2016年1月3日は1週目ではないので「false」", function () {
         expect(date20160103.isISOWeek(1)).toBe(false);
@@ -128,10 +114,6 @@ describe("isISOWeek:", function () {
         expect(date20161231.isISOWeek(53)).toBe(false);
     });
     var date20181231 = new UltraDate("2018/12/31");
-//        it("2018年12月31日は1週目なので「true」", function () {
-//            expect(date20181231.isISOWeek(1)).toBe(true);
-//        });
-    // 2018年の53週目だが本当は2019年の1週目
     it("2018年12月31日は53週目なので「true」", function () {
         expect(date20181231.isISOWeek(53)).toBe(true);
     });

@@ -29,24 +29,22 @@ describe("getDayCountsInMonth:", function () {
     });
 });
 describe("getISOWeek:", function () {
-    // @mytodo 2016/1/1から2016/1/3は前年の週番号なので0としたいところ
     var date20160101 = new UltraDate("2016/01/01");
-    it("2016年1月1日のISO週番号の戻り値は「53」", function () {
-        expect(date20160101.getISOWeek()).toEqual(53);
+    it("2016年1月1日のISO週番号の戻り値は「0」", function () {
+        expect(date20160101.getISOWeek()).toEqual(0);
     });
     var date20160102 = new UltraDate("2016/01/02");
-    it("2016年1月2日のISO週番号の戻り値は「53」", function () {
-        expect(date20160102.getISOWeek()).toEqual(53);
+    it("2016年1月2日のISO週番号の戻り値は「0」", function () {
+        expect(date20160102.getISOWeek()).toEqual(0);
     });
     var date20160103 = new UltraDate("2016/01/03");
-    it("2016年1月3日のISO週番号の戻り値は「53」", function () {
-        expect(date20160103.getISOWeek()).toEqual(53);
+    it("2016年1月3日のISO週番号の戻り値は「0」", function () {
+        expect(date20160103.getISOWeek()).toEqual(0);
     });
     var date20160104 = new UltraDate("2016/01/04");
     it("2016年1月4日のISO週番号の戻り値は「1」", function () {
         expect(date20160104.getISOWeek()).toEqual(1);
     });
-    // @mytodo 2014/12/31の本当の週番号は2015年の1週目
     var date20141231 = new UltraDate("2014/12/31");
     it("2014年12月31日のISO週番号の戻り値は「53」", function () {
         expect(date20141231.getISOWeek()).toEqual(53);
