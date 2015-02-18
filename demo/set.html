@@ -465,6 +465,64 @@ console.log(date.setAfterWeekday(4).format("yyyy年MM月dd日"));
                     </div>
                 </div>
             </section>
+            <section id="setOrdinalDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setOrdinalDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setOrdinalDate(num)
+                        </p>
+                        <ul>
+                            <li>年間通算日で日付をセット</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>option</td>
+                                <td>Number</td>
+                                <td>年間の通算日を指定</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>年間の通算日で日付をセット</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate("2015/03/01");
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日"));
+
+// 2015年の通算1日目
+console.log(date.setOrdinalDate(1).format("yyyy年MM月dd日"));
+
+// 2015年の通算365日目
+console.log(date.setOrdinalDate(365).format("yyyy年MM月dd日"));
+
+// 2016年の通算365日目（うるう年なので12月30日）
+console.log(date.addYear(1).setOrdinalDate(365).format("yyyy年MM月dd日"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="clearTime">
                 <div class="panel panel-default">
                     <div class="panel-heading">
