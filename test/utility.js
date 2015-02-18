@@ -23,7 +23,7 @@ describe("test of utility groupe:", function () {
             try {
                 UltraDate.setDefaultLocale();
             } catch (e) {
-                expect(e.message).toMatch("引数のデータ型がおかしいです");
+                expect(e.message).toMatch("Data type of the argument is incorrect");
             }
         });
         it("デフォルトロケールの引数に「def」を設定したときに" +
