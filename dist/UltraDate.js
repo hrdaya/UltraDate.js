@@ -1044,15 +1044,15 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return this.isSameDate(new UltraDate().addDate(-1));
         },
         /**
-         * 現在の日付が指定日の何日前、何日後であるかどうかの判定
+         * 現在の日付が指定日の日付までN日かを判定
          *
+         * @param {Number} num N日
          * @param {Date|String|Number} date 比較する日付
          *                                   undefinedの場合は今日
-         * @param {Number} num N日
          *
          * @return {Boolean}
          */
-        isNDate: function (date, num) {
+        isNDateToThat: function (num, date) {
             date = _getDate(date);
             return this.isSameDate(date.addDate(_getInt(num) * -1));
         },
