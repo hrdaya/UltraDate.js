@@ -1,16 +1,20 @@
 var UltraDateBanner;
-UltraDate = (function () {
+function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     "use strict";
+    var _getInt = function (num) {
+        num = parseInt(num, 10);
+        return isNaN(num) ? 0 : num;
+    };
 
-    function UltraDate(year, month, day, hours, minutes, seconds, ms) {
+    if (this instanceof UltraDate) {
         this.date = {
             _value: undefined,
             get value() {
                 return this._value;
             },
             set value(val) {
-                if (_notDate(val)) {
-                    throw new Error("内部DateオブジェクトにDateオブジェクト以外は設定できません");
+                if (isNaN(val.getTime())) {
+                    throw new Error("not Date Object");
                 } else {
                     this._value = val;
                 }
@@ -36,7 +40,152 @@ UltraDate = (function () {
                         );
                 break;
         }
+    } else {
+        switch (arguments.length) {
+            case 0:
+                return new UltraDate();
+            case 1:
+                return new UltraDate(year);
+            default:
+                return new UltraDate(year, month, day, hours, minutes, seconds, ms);
+        }
     }
+}
+
+(function () {
+    "use strict";
+    /**-------------------------------------------------------------------------
+     * クロージャ
+     *------------------------------------------------------------------------*/
+
+    /**
+     * 整数変換（文字列で指定してきた時等の対策）
+     *
+     * @param {Number} num 変換する数字
+     *
+     * @return {Number} 数字に変換した値
+     *                   変換できなかったときは「0」
+     */
+    var _getInt = function (num) {
+        num = parseInt(num, 10);
+        return isNaN(num) ? 0 : num;
+    };
+
+    /**
+     * 左側0埋め
+     *
+     * @param {Number} val ０埋めする値
+     * @param {Number} num 桁数
+     *
+     * @return {String} 左側を０埋めした文字列
+     */
+    var _padZero = function (val, num) {
+        num = parseInt(num, 10);
+        if (isNaN(num)) {
+            num = 2;
+        }
+        // 桁数が1以下の場合は何もしない
+        if (num < 2) {
+            return val;
+        }
+        return (new Array(num).join("0") + val).slice(num * -1);
+    };
+
+    /**
+     * Dateオブジェクトの取得
+     *
+     * @param {UltraDate|Date|String|Number} date {Date} 何もしないでそのまま返す
+     *                                   {String} 引数を元にDateオブジェクトの作成
+     *                                   {Number} 引数を元にDateオブジェクトの作成
+     *                                   undefinedの時は今日のDateオブジェクトの作成
+     *
+     * @return {UltraDate} 日付オブジェクト
+     */
+    var _getDate = function (date) {
+        if (date === undefined) {
+            date = new UltraDate();
+        } else {
+            date = new UltraDate(date);
+        }
+        if (isNaN(date.getTime())) {
+            throw new Error("not UltraDate Object");
+        }
+        return date;
+    };
+
+    /**
+     * 週番号を取得
+     *
+     * @param {Number} days 起点となる曜日番号
+     * 0〜6までの数字で曜日の日〜土を指定する
+     * 引数が0の時は曜日番号に1を足す
+     * 引数が1～6の場合は(曜日番号 - (引数 - 1))を適用して0以下になったものに7を足す
+     *
+     * @param {Number} offset 第1週の計算方法（第1週必要日数）
+     * 引数が0の時は1月1日のある週を第1週として割り算は切り上げ
+     * 引数が1～6の場合はオフセット初期値に(7 - 引数)を適用して割り算は切り捨て
+     *
+     * 日付の差分は1月1日から該当日を引くことになるが、そうすると年初めからの日数
+     * とはならない為、引いた値を日数に変換後1を足す（Dateオブジェクトはミリ秒）
+     *
+     * 週の起点の曜日を1として1～7の曜日番号を使用する
+     * 日曜起点ならJavaScriptの曜日番号と同じ並びなので1を足すのみ
+     * そうでない場合は起点曜日が1になるように引き算を行い、0以下に7を足す
+     *
+     * 該当日の週が7で割り切れるように7から週番号を引いた値で満たす
+     *
+     * 1月1日のある週を第1週とする場合は先頭の週に1日でも存在すれば第1週となる為、
+     * 7で割った値を切り上げた値が週番号となる
+     *
+     * 1月1日のある週がn日以上必要な場合は7からn日を引いた値を先頭週の日数に足す。
+     * 足した週が7より小さい場合は要件を満たしていない（日数 < n）という事になるので、
+     * 切り捨てた値が週番号となる。
+     * 週番号が0となった場合（日数 < n）は前年の最終週の週番号が週番号となる
+     *
+     * http://en.wikipedia.org/wiki/ISO_week_date
+     *
+     * @param {UltraDate} that UltraDateオブジェクト
+     *
+     * @return {Number} 週番号
+     */
+    var _getWeek = function (days, offset, that) {
+        days = parseInt(days, 10);
+        offset = parseInt(offset, 10);
+        if (isNaN(days) || (days < 0 && 6 < days)) {
+            days = 1;
+        }
+        if (isNaN(offset) || (offset < 0 && 6 < offset)) {
+            offset = 4;
+        }
+        var FirstDate = new UltraDate(that.getFullYear(), 0, 1).clearTime();
+        var nowDate = new UltraDate(that).clearTime();
+        var weekNumber = 0;
+        var weekDay = nowDate.getDay();
+        if (days === 0) {
+            weekDay++;
+        } else if (0 < days && days < 7) {
+            weekDay = weekDay - (days - 1);
+            if (weekDay < 1) {
+                weekDay += 7;
+            }
+        }
+        weekDay = 7 - weekDay;
+        offset = 7 - offset;
+        var getLapsedDays = function (nowDate, FirstDate, weekDay, offset) {
+            return ((nowDate - FirstDate) / (24 * 60 * 60 * 1000)) + 1 + weekDay + offset;
+        };
+        var lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
+        if (lapsedDays < 7 && offset !== 0) {
+            FirstDate.addYear(-1);
+            lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
+        }
+        if (offset === 0) {
+            weekNumber = Math.ceil(lapsedDays / 7);
+        } else if (0 < offset && offset <= 7) {
+            weekNumber = Math.floor(lapsedDays / 7);
+        }
+        return weekNumber;
+    };
 
     /**-------------------------------------------------------------------------
      *
@@ -84,7 +233,7 @@ UltraDate = (function () {
      * @return {String} デフォルトのフォーマット日付
      */
     UltraDate.getDefaultFormat = function () {
-        return _defaultFormat;
+        return this.prototype.defaultFormat.value;
     };
 
     /**
@@ -102,19 +251,19 @@ UltraDate = (function () {
                 locale === "def" ||
                 locale === "" ||
                 Object.prototype.toString.call(options) !== "[object Object]") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else {
-            if (!(locale in _formats)) {
-                _formats[locale] = {};
+            if (!(locale in this.prototype._formats)) {
+                this.prototype._formats[locale] = {};
             }
             if ("era" in options && !("eraStrict" in options)) {
                 options.eraStrict = options.era;
             }
-            for (var key in _formats.def) {
+            for (var key in this.prototype._formats.def) {
                 if (key in options) {
-                    _formats[locale][key] = options[key];
+                    this.prototype._formats[locale][key] = options[key];
                 } else {
-                    _formats[locale][key] = _formats.def[key];
+                    this.prototype._formats[locale][key] = this.prototype._formats.def[key];
                 }
             }
         }
@@ -136,13 +285,13 @@ UltraDate = (function () {
                 locale === "def" ||
                 locale === "" ||
                 Object.prototype.toString.call(options) !== "[object Object]") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else if (!("get" in options)) {
-            throw new Error("必須関数の「get()」が存在しません");
+            throw new Error("get() does not exist");
         } else if (Object.prototype.toString.call(options.get) !== "[object Function]") {
-            throw new Error("「get」が関数ではありません");
+            throw new Error("get is not Function");
         } else {
-            _holidays[locale] = options;
+            this.prototype._holidays[locale] = options;
         }
         return this;
     };
@@ -158,13 +307,12 @@ UltraDate = (function () {
      */
     UltraDate.setDefaultLocale = function (locale) {
         if (typeof locale !== "string" || locale === "") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else {
-            _defaultLocale = locale;
+            this.prototype.defaultLocale = locale;
         }
         return this;
     };
-
 
     /**-------------------------------------------------------------------------
      *
@@ -174,6 +322,15 @@ UltraDate = (function () {
     UltraDate.prototype = {
         // minify時にオブジェクトの種類の確認が出来なくなる事への対策
         instanceName: "UltraDate",
+        // デフォルトのロケール
+        defaultLocale: "def",
+        // デフォルトのフォーマット
+        defaultFormat: {
+            _value: "yyyy/MM/dd",
+            get value() {
+                return this._value;
+            }
+        },
         // コンストラクタ
         constructor: UltraDate,
         /**-------------------------------------------------------------------------
@@ -241,12 +398,12 @@ UltraDate = (function () {
                 return format;
             }
             if (typeof locale !== "string") {
-                locale = _defaultLocale;
+                locale = this.defaultLocale;
             }
-            if (!(locale in _formats)) {
-                _formats[locale] = _formats.def;
+            if (!(locale in this._formats)) {
+                this._formats[locale] = this._formats.def;
             }
-            var options = _formats[locale];
+            var options = this._formats[locale];
 
             var era = options.era(this);
             if (eraStrict === true) {
@@ -419,7 +576,7 @@ UltraDate = (function () {
             count = parseInt(count, 10);
             day = parseInt(day, 10);
             if (isNaN(count) || isNaN(day) || (day < 0 && 6 < day)) {
-                throw new Error("引数のデータがおかしいです");
+                throw new Error("Data type of the argument is incorrect");
             } else {
                 this.setDate(1);
                 var date = day - this.getDay() + 1;
@@ -610,11 +767,11 @@ UltraDate = (function () {
          */
         getHolidays: function (year, locale) {
             year = (!year) ? this.getFullYear() : _getInt(year);
-            locale = (!locale) ? _defaultLocale : locale;
-            if (!(locale in _holidays)) {
-                _holidays[locale] = _holidays.def;
+            locale = (!locale) ? this.defaultLocale : locale;
+            if (!(locale in this._holidays)) {
+                this._holidays[locale] = this._holidays.def;
             }
-            return _holidays[locale].get(year);
+            return this._holidays[locale].get(year);
         },
         /**
          * 現在の日付の祝祭日名を返信（祝祭日で無い場合は空文字）
@@ -627,7 +784,7 @@ UltraDate = (function () {
          */
         getHoliday: function (locale) {
             var holidays = this.getHolidays(this.getFullYear(), locale);
-            var strDate = this.format(_defaultFormat);
+            var strDate = this.format(this.defaultFormat.value);
             return (strDate in holidays) ? holidays[strDate] : "";
         },
         /**-------------------------------------------------------------------------
@@ -885,7 +1042,51 @@ UltraDate = (function () {
          */
         isHoliday: function (locale) {
             return this.getHoliday(locale) !== "";
+        },
+        /**-------------------------------------------------------------------------
+         * キャッシュ系
+         *------------------------------------------------------------------------*/
+        /**
+         * 祝祭日のオプション群
+         */
+        _holidays: {
+            def: {
+                get: function (year) {
+                    return {};
+                }
+            }
+        },
+        /**
+         * 日付フォーマットのオプション群
+         */
+        _formats: {
+            /**
+             * デフォルトのオブジェクト
+             */
+            def: {
+                longDay: ["Sunday", "Monday", "Tuesday", "Wednesday",
+                    "Thursday", "Friday", "Saturday"],
+                shortDay: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                longMonth: ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"],
+                shortMonth: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                smallNoon: ["am", "pm"],
+                largeNoon: ["AM", "PM"],
+                era: function (date) {
+                    return {
+                        longName: "A.D.",
+                        shortName: "AD",
+                        alphaNamet: "A",
+                        year: date.getFullYear()
+                    };
+                },
+                eraStrict: function (date) {
+                    return this.era(date);
+                }
+            }
         }
+
     };
     // インスタンス名の書き込み禁止
     Object.defineProperty(UltraDate.prototype, "instanceName", {
@@ -906,200 +1107,4 @@ UltraDate = (function () {
             }
         })(keys[i]);
     }
-
-    /**-------------------------------------------------------------------------
-     * クロージャ
-     *------------------------------------------------------------------------*/
-    /**
-     * デフォルトの日付フォーマット
-     */
-    var _defaultFormat = "yyyy/MM/dd";
-
-    /**
-     * デフォルトのロケール
-     */
-    var _defaultLocale = "def";
-
-    /**
-     * 整数変換（文字列で指定してきた時等の対策）
-     *
-     * @param {Number} num 変換する数字
-     *
-     * @return {Number} 数字に変換した値
-     *                   変換できなかったときは「0」
-     */
-    var _getInt = function (num) {
-        num = parseInt(num, 10);
-        return isNaN(num) ? 0 : num;
-    };
-
-    /**
-     * 左側0埋め
-     *
-     * @param {Number} val ０埋めする値
-     * @param {Number} num 桁数
-     *
-     * @return {String} 左側を０埋めした文字列
-     */
-    var _padZero = function (val, num) {
-        num = parseInt(num, 10);
-        if (isNaN(num)) {
-            num = 2;
-        }
-        // 桁数が1以下の場合は何もしない
-        if (num < 2) {
-            return val;
-        }
-        return (new Array(num).join("0") + val).slice(num * -1);
-    };
-
-    /**
-     * Dateオブジェクトの取得
-     *
-     * @param {UltraDate|Date|String|Number} date {Date} 何もしないでそのまま返す
-     *                                   {String} 引数を元にDateオブジェクトの作成
-     *                                   {Number} 引数を元にDateオブジェクトの作成
-     *                                   undefinedの時は今日のDateオブジェクトの作成
-     *
-     * @return {UltraDate} 日付オブジェクト
-     */
-    var _getDate = function (date) {
-        if (date === undefined) {
-            date = new UltraDate();
-        } else {
-            date = new UltraDate(date);
-        }
-        if (_notDate(date)) {
-            throw new Error("UltraDateオブジェクトに変換できませんでした");
-        }
-        return date;
-    };
-
-    /**
-     * Dateオブジェクトの判定
-     *
-     * @param {Date} date {Date} 確認するDateオブジェクト
-     *
-     * @return {Boolean} Dateオブジェクトかどうか
-     */
-    var _notDate = function (date) {
-        return isNaN(date.getTime());
-    };
-
-    /**
-     * 週番号を取得
-     *
-     * @param {Number} days 起点となる曜日番号
-     * 0〜6までの数字で曜日の日〜土を指定する
-     * 引数が0の時は曜日番号に1を足す
-     * 引数が1～6の場合は(曜日番号 - (引数 - 1))を適用して0以下になったものに7を足す
-     *
-     * @param {Number} offset 第1週の計算方法（第1週必要日数）
-     * 引数が0の時は1月1日のある週を第1週として割り算は切り上げ
-     * 引数が1～6の場合はオフセット初期値に(7 - 引数)を適用して割り算は切り捨て
-     *
-     * 日付の差分は1月1日から該当日を引くことになるが、そうすると年初めからの日数
-     * とはならない為、引いた値を日数に変換後1を足す（Dateオブジェクトはミリ秒）
-     *
-     * 週の起点の曜日を1として1～7の曜日番号を使用する
-     * 日曜起点ならJavaScriptの曜日番号と同じ並びなので1を足すのみ
-     * そうでない場合は起点曜日が1になるように引き算を行い、0以下に7を足す
-     *
-     * 該当日の週が7で割り切れるように7から週番号を引いた値で満たす
-     *
-     * 1月1日のある週を第1週とする場合は先頭の週に1日でも存在すれば第1週となる為、
-     * 7で割った値を切り上げた値が週番号となる
-     *
-     * 1月1日のある週がn日以上必要な場合は7からn日を引いた値を先頭週の日数に足す。
-     * 足した週が7より小さい場合は要件を満たしていない（日数 < n）という事になるので、
-     * 切り捨てた値が週番号となる。
-     * 週番号が0となった場合（日数 < n）は前年の最終週の週番号が週番号となる
-     *
-     * http://en.wikipedia.org/wiki/ISO_week_date
-     *
-     * @param {UltraDate} that UltraDateオブジェクト
-     *
-     * @return {Number} 週番号
-     */
-    var _getWeek = function (days, offset, that) {
-        days = parseInt(days, 10);
-        offset = parseInt(offset, 10);
-        if (isNaN(days) || (days < 0 && 6 < days)) {
-            days = 1;
-        }
-        if (isNaN(offset) || (offset < 0 && 6 < offset)) {
-            offset = 4;
-        }
-        var FirstDate = new UltraDate(that.getFullYear(), 0, 1).clearTime();
-        var nowDate = new UltraDate(that).clearTime();
-        var weekNumber = 0;
-        var weekDay = nowDate.getDay();
-        if (days === 0) {
-            weekDay++;
-        } else if (0 < days && days < 7) {
-            weekDay = weekDay - (days - 1);
-            if (weekDay < 1) {
-                weekDay += 7;
-            }
-        }
-        weekDay = 7 - weekDay;
-        offset = 7 - offset;
-        var getLapsedDays = function (nowDate, FirstDate, weekDay, offset) {
-            return ((nowDate - FirstDate) / (24 * 60 * 60 * 1000)) + 1 + weekDay + offset;
-        };
-        var lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
-        if (lapsedDays < 7 && offset !== 0) {
-            FirstDate.addYear(-1);
-            lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
-        }
-        if (offset === 0) {
-            weekNumber = Math.ceil(lapsedDays / 7);
-        } else if (0 < offset && offset <= 7) {
-            weekNumber = Math.floor(lapsedDays / 7);
-        }
-        return weekNumber;
-    };
-
-    /**
-     * 日付フォーマットのオプション群
-     */
-    var _formats = {
-        /**
-         * デフォルトのオブジェクト
-         */
-        def: {
-            longDay: ["Sunday", "Monday", "Tuesday", "Wednesday",
-                "Thursday", "Friday", "Saturday"],
-            shortDay: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-            longMonth: ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"],
-            shortMonth: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            smallNoon: ["am", "pm"],
-            largeNoon: ["AM", "PM"],
-            era: function (date) {
-                return {
-                    longName: "A.D.",
-                    shortName: "AD",
-                    alphaNamet: "A",
-                    year: date.getFullYear()
-                };
-            },
-            eraStrict: function (date) {
-                return this.era(date);
-            }
-        }
-    };
-
-    /**
-     * 祝祭日のオプション群
-     */
-    var _holidays = {
-        def: {
-            get: function (year) {
-                return {};
-            }
-        }
-    };
-    return UltraDate;
-})();
+}());
