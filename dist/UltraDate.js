@@ -63,6 +63,52 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     /**-------------------------------------------------------------------------
      * クロージャ
      *------------------------------------------------------------------------*/
+    // デフォルトのフォーマット文字列
+    var _defaultFormat = "yyyy/MM/dd";
+
+    // デフォルトのロケール
+    var _defaultLocale = "def";
+
+    /**
+     * 祝祭日のオプション群
+     */
+    var _holidays = {
+        def: {
+            get: function (year) {
+                return {};
+            }
+        }
+    };
+    /**
+     * 日付フォーマットのオプション群
+     */
+    var _formats = {
+        /**
+         * デフォルトのオブジェクト
+         */
+        def: {
+            longDay: ["Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday"],
+            shortDay: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            longMonth: ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"],
+            shortMonth: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            smallNoon: ["am", "pm"],
+            largeNoon: ["AM", "PM"],
+            era: function (date) {
+                return {
+                    longName: "A.D.",
+                    shortName: "AD",
+                    alphaNamet: "A",
+                    year: date.getFullYear()
+                };
+            },
+            eraStrict: function (date) {
+                return this.era(date);
+            }
+        }
+    };
 
     /**
      * 整数変換（文字列で指定してきた時等の対策）
@@ -239,7 +285,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      * @return {String} デフォルトのフォーマット日付
      */
     UltraDate.getDefaultFormat = function () {
-        return this.prototype.defaultFormat.value;
+        return _defaultFormat;
     };
 
     /**
@@ -259,17 +305,17 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 Object.prototype.toString.call(options) !== "[object Object]") {
             throw new Error("Data type of the argument is incorrect");
         } else {
-            if (!(locale in this.prototype._formats)) {
-                this.prototype._formats[locale] = {};
+            if (!(locale in _formats)) {
+                _formats[locale] = {};
             }
             if ("era" in options && !("eraStrict" in options)) {
                 options.eraStrict = options.era;
             }
-            for (var key in this.prototype._formats.def) {
+            for (var key in _formats.def) {
                 if (key in options) {
-                    this.prototype._formats[locale][key] = options[key];
+                    _formats[locale][key] = options[key];
                 } else {
-                    this.prototype._formats[locale][key] = this.prototype._formats.def[key];
+                    _formats[locale][key] = _formats.def[key];
                 }
             }
         }
@@ -297,7 +343,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         } else if (Object.prototype.toString.call(options.get) !== "[object Function]") {
             throw new Error("get is not Function");
         } else {
-            this.prototype._holidays[locale] = options;
+            _holidays[locale] = options;
         }
         return this;
     };
@@ -315,7 +361,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         if (typeof locale !== "string" || locale === "") {
             throw new Error("Data type of the argument is incorrect");
         } else {
-            this.prototype.defaultLocale = locale;
+            _defaultLocale = locale;
         }
         return this;
     };
@@ -326,17 +372,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      *
      *------------------------------------------------------------------------*/
     UltraDate.prototype = {
-        // minify時にオブジェクトの種類の確認が出来なくなる事への対策
-        instanceName: "UltraDate",
-        // デフォルトのロケール
-        defaultLocale: "def",
-        // デフォルトのフォーマット
-        defaultFormat: {
-            _value: "yyyy/MM/dd",
-            get value() {
-                return this._value;
-            }
-        },
         // コンストラクタ
         constructor: UltraDate,
         /**-------------------------------------------------------------------------
@@ -404,12 +439,12 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 return format;
             }
             if (typeof locale !== "string") {
-                locale = this.defaultLocale;
+                locale = _defaultLocale;
             }
-            if (!(locale in this._formats)) {
-                this._formats[locale] = this._formats.def;
+            if (!(locale in _formats)) {
+                _formats[locale] = _formats.def;
             }
-            var options = this._formats[locale];
+            var options = _formats[locale];
 
             var era = options.era(this);
             if (eraStrict === true) {
@@ -699,6 +734,14 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return _getWeek(0, 0, this);
         },
         /**
+         * ISO形式の曜日番号の取得
+         *
+         * @return {Number} 月曜日が 1、日曜日は 7
+         */
+        getISODay: function () {
+            return (this.getDay() === 0) ? 7 : this.getDay();
+        },
+        /**
          * 月の最終日を取得
          *
          * @param {Number} num Nヶ月後
@@ -721,11 +764,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          */
         getHolidays: function (year, locale) {
             year = (!year) ? this.getFullYear() : _getInt(year);
-            locale = (!locale) ? this.defaultLocale : locale;
-            if (!(locale in this._holidays)) {
-                this._holidays[locale] = this._holidays.def;
+            locale = (!locale) ? _defaultLocale : locale;
+            if (!(locale in _holidays)) {
+                _holidays[locale] = _holidays.def;
             }
-            return this._holidays[locale].get(year);
+            return _holidays[locale].get(year);
         },
         /**
          * 現在の日付の祝祭日名を返信（祝祭日で無い場合は空文字）
@@ -738,7 +781,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          */
         getHoliday: function (locale) {
             var holidays = this.getHolidays(this.getFullYear(), locale);
-            var strDate = this.format(this.defaultFormat.value);
+            var strDate = this.format(_defaultFormat);
             return (strDate in holidays) ? holidays[strDate] : "";
         },
         /**-------------------------------------------------------------------------
@@ -1022,55 +1065,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          */
         isHoliday: function (locale) {
             return this.getHoliday(locale) !== "";
-        },
-        /**-------------------------------------------------------------------------
-         * キャッシュ系
-         *------------------------------------------------------------------------*/
-        /**
-         * 祝祭日のオプション群
-         */
-        _holidays: {
-            def: {
-                get: function (year) {
-                    return {};
-                }
-            }
-        },
-        /**
-         * 日付フォーマットのオプション群
-         */
-        _formats: {
-            /**
-             * デフォルトのオブジェクト
-             */
-            def: {
-                longDay: ["Sunday", "Monday", "Tuesday", "Wednesday",
-                    "Thursday", "Friday", "Saturday"],
-                shortDay: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                longMonth: ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November", "December"],
-                shortMonth: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                smallNoon: ["am", "pm"],
-                largeNoon: ["AM", "PM"],
-                era: function (date) {
-                    return {
-                        longName: "A.D.",
-                        shortName: "AD",
-                        alphaNamet: "A",
-                        year: date.getFullYear()
-                    };
-                },
-                eraStrict: function (date) {
-                    return this.era(date);
-                }
-            }
         }
-
     };
-    // インスタンス名の書き込み禁止
-    Object.defineProperty(UltraDate.prototype, "instanceName", {
-        writable: false});
     /**
      * 現在Date.prototypeに設定されているプロパティをUltraDate.prototypeに設定
      * constructor以外
@@ -1080,7 +1076,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     var keys = Object.getOwnPropertyNames(Date.prototype);
     for (var i in keys) {
         (function (key) {
-            if (key !== "constructor" && key !== "instanceName") {
+            if (key !== "constructor") {
                 UltraDate.prototype[key] = function () {
                     return  Date.prototype[key].apply(this.date.value, Array.prototype.slice.call(arguments));
                 };
