@@ -3,7 +3,7 @@
 [![GitHub licence](https://img.shields.io/badge/licence-MIT-blue.svg?style=flat)](https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
 
 UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジェクトです。
-「Date.prototype」をマージしているので「Date」としているところを「UltraDate」と置き換えるだけ！
+  「Date.prototype」をマージしているので「Date」としているところを「UltraDate」と置き換えるだけ！
 
 ## 特徴
 
@@ -21,21 +21,24 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 
 ## 注意事項
 
-```
-(Object.prototype.toString.call(オブジェクト) === "[object Date]")等で Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
-　「UltraDate.js」を使用の場合：(オブジェクト.instanceName === "UltraDate") もしくは(オブジェクト instanceof UltraDate)
-　「UltraDate.min.js」を使用の場合：(オブジェクト.instanceName === "UltraDate")
-```
+(Object.prototype.toString.call(オブジェクト) === "[object Date]")等で
 
-```
-「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は 「Date.prototype」のものが使用されますのでご注意ください
+Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
+
+ - (オブジェクト instanceof UltraDate)
+ - (オブジェクト.instanceName === "UltraDate")
+
+
+「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は
+
+「Date.prototype」のものが使用されますのでご注意ください
+
 ※「UltraDate.prototype.constructor」「UltraDate.prototype.instanceName」は上書きされません
-```
-
-```
-「UltraDate()」といったnewを付けない実行はできません。必ずnewでインスタンスを作成してください。
-```
 
 ## 使用方法
 
 [ドキュメント](http://hrdaya.github.io/UltraDate.js/)をご参照ください
+
+## ライセンス
+
+[MIT License](https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)

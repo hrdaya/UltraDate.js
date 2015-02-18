@@ -257,7 +257,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 locale === "def" ||
                 locale === "" ||
                 Object.prototype.toString.call(options) !== "[object Object]") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else {
             if (!(locale in this.prototype._formats)) {
                 this.prototype._formats[locale] = {};
@@ -291,11 +291,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 locale === "def" ||
                 locale === "" ||
                 Object.prototype.toString.call(options) !== "[object Object]") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else if (!("get" in options)) {
-            throw new Error("必須関数の「get()」が存在しません");
+            throw new Error("get() does not exist");
         } else if (Object.prototype.toString.call(options.get) !== "[object Function]") {
-            throw new Error("「get」が関数ではありません");
+            throw new Error("get is not Function");
         } else {
             this.prototype._holidays[locale] = options;
         }
@@ -313,7 +313,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      */
     UltraDate.setDefaultLocale = function (locale) {
         if (typeof locale !== "string" || locale === "") {
-            throw new Error("引数のデータ型がおかしいです");
+            throw new Error("Data type of the argument is incorrect");
         } else {
             this.prototype.defaultLocale = locale;
         }
@@ -582,7 +582,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             count = parseInt(count, 10);
             day = parseInt(day, 10);
             if (isNaN(count) || isNaN(day) || (day < 0 && 6 < day)) {
-                throw new Error("引数のデータがおかしいです");
+                throw new Error("Data type of the argument is incorrect");
             } else {
                 this.setDate(1);
                 var date = day - this.getDay() + 1;
