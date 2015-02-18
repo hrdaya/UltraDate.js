@@ -25,6 +25,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 > Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
 >  - (オブジェクト instanceof UltraDate)
 
+　
 
 > 「UltraDate.prototype」と「Date.prototype」に同じ名前のメソッドがある場合は
 > 「Date.prototype」のものが使用されますのでご注意ください
