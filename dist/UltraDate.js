@@ -742,6 +742,16 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return (this.getDay() === 0) ? 7 : this.getDay();
         },
         /**
+         * 年間通算日を取得
+         *
+         * @return {Number} 年間通算日
+         */
+        getOrdinalDate: function () {
+            var date = new UltraDate(this.getFullYear(), 0, 1).addDate(-1);
+            var thisDate = this.copy().clearTime();
+            return (thisDate - date) / (24 * 60 * 60 * 1000);
+        },
+        /**
          * 月の最終日を取得
          *
          * @param {Number} num Nヶ月後
