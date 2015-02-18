@@ -689,6 +689,18 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return this;
         },
         /**
+         * 現在の年の年間通算日の日付にセット
+         *
+         * @param {Number} num 年間通算日
+         *
+         * @return {this} 自身に返す（チェーンメソッド用）
+         */
+        setOrdinalDate: function (num) {
+            this.setFullYear(this.getFullYear(), 0, 1);
+            this.addDate(_getInt(num) - 1);
+            return this;
+        },
+        /**
          * 時間を0時0分0秒000にする
          *
          * @return {this} 自身に返す（チェーンメソッド用）
