@@ -148,7 +148,15 @@ console.log(date.getDayCountsInMonth());
                             </tr>
                             <tr>
                                 <td>Number</td>
-                                <td>ISO8601形式の週番号の数字</td>
+                                <td>
+                                    ISO8601形式の週番号の数字
+                                    <div class="alert alert-warning margin-top-md margin-bottom-none">
+                                        <ul>
+                                            <li>週番号が前年の週番号となる場合は「0」が返る（1月1日が金曜日、土曜日、日曜日の場合）</li>
+                                            <li>週番号が翌年の週番号となる場合は最終週に「1」を足した値が返る（12月31日が月曜日、火曜日、水曜日）</li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                         </table>
                     </div>
