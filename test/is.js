@@ -158,6 +158,24 @@ describe("isUSWeek:", function () {
         expect(date20281231.isUSWeek(54)).toBe(true);
     });
 });
+describe("isWeekday:", function () {
+    var date1 = new UltraDate("2014/05/03");
+    it("2015年5月3日は土日祝祭日以外の戻り値は「false」", function () {
+        expect(date1.isWeekday()).toBe(false);
+    });
+    it("2015年5月3日は土日以外の戻り値は「false」", function () {
+        expect(date1.isWeekday(1)).toBe(false);
+    });
+    it("2015年5月3日は日祝以外の戻り値は「false」", function () {
+        expect(date1.isWeekday(2)).toBe(false);
+    });
+    it("2015年5月3日は日曜日以外の戻り値は「true」", function () {
+        expect(date1.isWeekday(3)).toBe(true);
+    });
+    it("2015年5月3日は祝日以外の戻り値は「false」", function () {
+        expect(date1.isWeekday(4)).toBe(false);
+    });
+});
 describe("isSameDate:", function () {
     var date1 = new UltraDate("2015/01/01 00:00:00");
     var dateUltra = new UltraDate("2015/01/01 23:00:00");
