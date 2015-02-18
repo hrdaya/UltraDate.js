@@ -189,11 +189,11 @@
                                 Dateオブジェクトかどうかの確認を行っている場合は下記の置き換えを行ってください
                                 <ul>
                                     <li>
-                                        「<strong>UltraDate.js</strong>」を使用の場合：(オブジェクト.instanceName === "UltraDate")
-                                        もしくは(オブジェクト instanceof UltraDate)
+                                        (オブジェクト instanceof UltraDate)
                                     </li>
                                     <li>
-                                        「<strong>UltraDate.min.js</strong>」を使用の場合：(オブジェクト.instanceName === "UltraDate")
+                                        (オブジェクト.instanceName === "UltraDate")
+                                        もしくは
                                     </li>
                                 </ul>
                             </div>
@@ -202,9 +202,6 @@
                                 「Date.prototype」のものが使用されますのでご注意ください
                                 <br>
                                 ※「UltraDate.prototype.constructor」「UltraDate.prototype.instanceName」は上書きされません
-                            </div>
-                            <div class="alert alert-danger margin-bottom-none">
-                                「UltraDate()」といったnewを付けない実行はできません。必ずnewでインスタンスを作成してください。
                             </div>
                         </div>
                     </div>
