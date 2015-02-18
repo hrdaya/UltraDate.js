@@ -221,10 +221,10 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return ((nowDate - FirstDate) / (24 * 60 * 60 * 1000)) + 1 + weekDay + offset;
         };
         var lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
-        if (lapsedDays < 7 && offset !== 0) {
-            FirstDate.addYear(-1);
-            lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
-        }
+//        if (lapsedDays < 7 && offset !== 0) {
+//            FirstDate.addYear(-1);
+//            lapsedDays = getLapsedDays(nowDate, FirstDate, weekDay, offset);
+//        }
         if (offset === 0) {
             weekNumber = Math.ceil(lapsedDays / 7);
         } else if (0 < offset && offset <= 7) {
