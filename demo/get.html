@@ -281,6 +281,66 @@ console.log("2015/01/04（日曜日）のISO形式の曜日番号は「" + date.
                     </div>
                 </div>
             </section>
+            <section id="getOrdinalDate">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getOrdinalDate()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.getOrdinalDate()
+                        </p>
+                        <ul>
+                            <li>
+                                年間通算日を取得します
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：なし</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>年間通算日</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>年間通算日を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate("2015/01/01");
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 取得した数字
+console.log("2015/01/01の年間通算日は「" + date.getOrdinalDate() + "」です");
+
+// 2015年12月31日
+date.setFullYear(date.getFullYear(), 11, 31);
+console.log("2015/12/31の年間通算日は「" + date.getOrdinalDate() + "」です");
+
+// 2016年12月31日（うるう年）
+date.addYear(1);
+console.log("2016/12/31の年間通算日は「" + date.getOrdinalDate() + "」です");
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="getEndDate">
                 <div class="panel panel-default">
                     <div class="panel-heading">

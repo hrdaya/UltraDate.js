@@ -90,6 +90,20 @@ describe("getISODay:", function () {
         expect(date2.getISODay()).toEqual(1);
     });
 });
+describe("getOrdinalDate:", function () {
+    var date1 = new UltraDate("2015/01/01");
+    it("2015年1月1日の年間通算日の戻り値は「1」", function () {
+        expect(date1.getOrdinalDate()).toEqual(1);
+    });
+    var date2 = new UltraDate("2015/12/31");
+    it("2015年12月31日の年間通算日の戻り値は「365」", function () {
+        expect(date2.getOrdinalDate()).toEqual(365);
+    });
+    var date3 = new UltraDate("2016/12/31");
+    it("2016年12月31日の年間通算日の戻り値は「366」", function () {
+        expect(date3.getOrdinalDate()).toEqual(366);
+    });
+});
 describe("getEndDate:", function () {
     var date2015 = new UltraDate("2015/01/01");
     it("2015年1月末日の戻り値は「31」", function () {
