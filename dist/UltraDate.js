@@ -630,34 +630,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {this} 自身に返す（チェーンメソッド用）
          */
         setBeforeWeekday: function (option, locale) {
-            switch (_getInt(option)) {
-                case 0:
-                    while (this.getDay() === 6 || this.getDay() === 0 || this.isHoliday(locale)) {
-                        this.addDate(-1);
-                    }
-                    break;
-                case 1:
-                    while (this.getDay() === 6 || this.getDay() === 0) {
-                        this.addDate(-1);
-                    }
-                    break;
-                case 2:
-                    while (this.getDay() === 0 || this.isHoliday(locale)) {
-                        this.addDate(-1);
-                    }
-                    break;
-                case 3:
-                    while (this.getDay() === 0) {
-                        this.addDate(-1);
-                    }
-                    break;
-                case 4:
-                    while (this.isHoliday(locale)) {
-                        this.addDate(-1);
-                    }
-                    break;
-                default:
-                    break;
+            while (!this.isWeekday(option, locale)) {
+                this.addDate(-1);
             }
             return this;
         },
@@ -674,34 +648,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {this} 自身に返す（チェーンメソッド用）
          */
         setAfterWeekday: function (option, locale) {
-            switch (_getInt(option)) {
-                case 0:
-                    while (this.getDay() === 6 || this.getDay() === 0 || this.isHoliday(locale)) {
-                        this.addDate(1);
-                    }
-                    break;
-                case 1:
-                    while (this.getDay() === 6 || this.getDay() === 0) {
-                        this.addDate(1);
-                    }
-                    break;
-                case 2:
-                    while (this.getDay() === 0 || this.isHoliday(locale)) {
-                        this.addDate(1);
-                    }
-                    break;
-                case 3:
-                    while (this.getDay() === 0) {
-                        this.addDate(1);
-                    }
-                    break;
-                case 4:
-                    while (this.isHoliday(locale)) {
-                        this.addDate(1);
-                    }
-                    break;
-                default:
-                    break;
+            while (!this.isWeekday(option, locale)) {
+                this.addDate(1);
             }
             return this;
         },
@@ -948,6 +896,32 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          */
         isUSWeek: function (week) {
             return this.getUSWeek() === _getInt(week);
+        },
+        /**
+         * 平日かどうかの判定
+         *
+         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧
+         *                         1：土曜日、日曜日のみ
+         *                         2：日曜日、引数「locale」で取得される祝祭日一覧のみ
+         *                         3：日曜日のみ
+         *                         4：引数「locale」で取得される祝祭日一覧のみ
+         * @param {String} locale 取得する祝祭日
+         *
+         * @return {Boolean}
+         */
+        isWeekday: function (option, locale) {
+            switch (_getInt(option)) {
+                case 0:
+                    return (this.getDay() !== 6 && this.getDay() !== 0 && !this.isHoliday(locale));
+                case 1:
+                    return (this.getDay() !== 6 && this.getDay() !== 0);
+                case 2:
+                    return (this.getDay() !== 0 && !this.isHoliday(locale));
+                case 3:
+                    return (this.getDay() !== 0);
+                case 4:
+                    return (!this.isHoliday(locale));
+            }
         },
         /**
          * 指定日と同じ日かどうかの判定
