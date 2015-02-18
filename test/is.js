@@ -159,21 +159,72 @@ describe("isUSWeek:", function () {
     });
 });
 describe("isWeekday:", function () {
-    var date1 = new UltraDate("2014/05/03");
-    it("2015年5月3日は土日祝祭日以外の戻り値は「false」", function () {
-        expect(date1.isWeekday()).toBe(false);
+    var date20150101 = new UltraDate("2015/01/01");
+    it("2015年1月1日「土日祝日チェック」は木曜の元日なので「false」", function () {
+        expect(date20150101.isWeekday(0)).toBe(false);
     });
-    it("2015年5月3日は土日以外の戻り値は「false」", function () {
-        expect(date1.isWeekday(1)).toBe(false);
+    it("2015年1月1日「土日チェック」は木曜の元日なので「true」", function () {
+        expect(date20150101.isWeekday(1)).toBe(true);
     });
-    it("2015年5月3日は日祝以外の戻り値は「false」", function () {
-        expect(date1.isWeekday(2)).toBe(false);
+    it("2015年1月1日「日祝チェック」は木曜の元日なので「false」", function () {
+        expect(date20150101.isWeekday(2)).toBe(false);
     });
-    it("2015年5月3日は日曜日以外の戻り値は「true」", function () {
-        expect(date1.isWeekday(3)).toBe(true);
+    it("2015年1月1日「日曜チェック」は木曜の元日なので「true」", function () {
+        expect(date20150101.isWeekday(3)).toBe(true);
     });
-    it("2015年5月3日は祝日以外の戻り値は「false」", function () {
-        expect(date1.isWeekday(4)).toBe(false);
+    it("2015年1月1日「祝日チェック」は木曜の元日なので「false」", function () {
+        expect(date20150101.isWeekday(4)).toBe(false);
+    });
+
+    var date20150102 = new UltraDate("2015/01/02");
+    it("2015年1月2日「土日祝日チェック」は金曜の平日なので「true」", function () {
+        expect(date20150102.isWeekday(0)).toBe(true);
+    });
+    it("2015年1月2日「土日チェック」は金曜の平日なので「true」", function () {
+        expect(date20150102.isWeekday(1)).toBe(true);
+    });
+    it("2015年1月2日「日祝チェック」は金曜の平日なので「true」", function () {
+        expect(date20150102.isWeekday(2)).toBe(true);
+    });
+    it("2015年1月2日「日曜チェック」は金曜の平日なので「true」", function () {
+        expect(date20150102.isWeekday(3)).toBe(true);
+    });
+    it("2015年1月2日「祝日チェック」は金曜の平日なので「true」", function () {
+        expect(date20150102.isWeekday(4)).toBe(true);
+    });
+
+    var date20150103 = new UltraDate("2015/01/03");
+    it("2015年1月3日「土日祝日チェック」は土曜日なので「false」", function () {
+        expect(date20150103.isWeekday(0)).toBe(false);
+    });
+    it("2015年1月3日「土日チェック」は土曜日なので「false」", function () {
+        expect(date20150103.isWeekday(1)).toBe(false);
+    });
+    it("2015年1月3日「日祝チェック」は土曜日なので「true」", function () {
+        expect(date20150103.isWeekday(2)).toBe(true);
+    });
+    it("2015年1月3日「日曜チェック」は土曜日なので「true」", function () {
+        expect(date20150103.isWeekday(3)).toBe(true);
+    });
+    it("2015年1月3日「祝日チェック」は土曜日なので「true」", function () {
+        expect(date20150103.isWeekday(4)).toBe(true);
+    });
+
+    var date20150104 = new UltraDate("2015/01/04");
+    it("2015年1月4日「土日祝日チェック」は日曜日なので「false」", function () {
+        expect(date20150104.isWeekday(0)).toBe(false);
+    });
+    it("2015年1月4日「土日チェック」は日曜日なので「false」", function () {
+        expect(date20150104.isWeekday(1)).toBe(false);
+    });
+    it("2015年1月4日「日祝チェック」は日曜日なので「false」", function () {
+        expect(date20150104.isWeekday(2)).toBe(false);
+    });
+    it("2015年1月4日「日曜チェック」は日曜日なので「false」", function () {
+        expect(date20150104.isWeekday(3)).toBe(false);
+    });
+    it("2015年1月4日「祝日チェック」は日曜日なので「true」", function () {
+        expect(date20150104.isWeekday(4)).toBe(true);
     });
 });
 describe("isSameDate:", function () {
@@ -307,111 +358,23 @@ describe("isYesterday:", function () {
         expect(yesterday.isYesterday()).toBe(true);
     });
 });
-describe("isNDate:", function () {
+describe("isNDateToThat:", function () {
     var today = new UltraDate();
     var tomorrow = new UltraDate().addDate(1);
     var yesterday = new UltraDate().addDate(-1);
     it(today.format("yyyy/MM/dd ") + "は" +
             tomorrow.format("yyyy/MM/dd ") + "の日付まで1日なので「true」", function () {
-        expect(today.isNDate(tomorrow, 1)).toBe(true);
+        expect(today.isNDateToThat(1, tomorrow)).toBe(true);
     });
     it(today.format("yyyy/MM/dd ") + "は" +
             yesterday.format("yyyy/MM/dd ") + "の日付まで-1日なので「true」", function () {
-        expect(today.isNDate(yesterday, -1)).toBe(true);
+        expect(today.isNDateToThat(-1, yesterday)).toBe(true);
     });
     it(today.format("yyyy/MM/dd ") + "は" +
             today.format("yyyy/MM/dd ") + "の日付まで0日なので「true」", function () {
-        expect(today.isNDate(today, 0)).toBe(true);
+        expect(today.isNDateToThat(0, today)).toBe(true);
     });
 });
-// @mytodo　isNDateThisToThat(num, date)「オブジェクトと引数dateの日付の間は引数num日間」isNDate()と引数逆
-//describe("isNDateThisToThat:", function () {
-//    var today = new UltraDate();
-//    var tomorrow = new UltraDate().addDate(1);
-//    var yesterday = new UltraDate().addDate(-1);
-//    it(today.format("yyyy/MM/dd ") + "は" +
-//            tomorrow.format("yyyy/MM/dd ") + "の日付まで1日なので「true」", function () {
-//        expect(today.isAfterNDate(tomorrow, 1)).toBe(true);
-//    });
-//    it(today.format("yyyy/MM/dd ") + "は" +
-//            yesterday.format("yyyy/MM/dd ") + "の日付まで-1日なので「true」", function () {
-//        expect(today.isAfterNDate(yesterday, -1)).toBe(true);
-//    });
-//    it(today.format("yyyy/MM/dd ") + "は" +
-//            today.format("yyyy/MM/dd ") + "の日付まで0日なので「true」", function () {
-//        expect(today.isAfterNDate(today, 0)).toBe(true);
-//    });
-//});
-// @mytodo　isWeekday(option, locale)平日かどうかの判定
-//describe("isWeekday:", function () {
-//    var date20150101 = new UltraDate("2015/01/01");
-//    it("2015年1月1日「土日祝日チェック」は木曜の元日なので「false」", function () {
-//        expect(date20150101.isWeekday(0)).toBe(false);
-//    });
-//    it("2015年1月1日「土日チェック」は木曜の元日なので「true」", function () {
-//        expect(date20150101.isWeekday(1)).toBe(true);
-//    });
-//    it("2015年1月1日「日祝チェック」は木曜の元日なので「false」", function () {
-//        expect(date20150101.isWeekday(2)).toBe(false);
-//    });
-//    it("2015年1月1日「日曜チェック」は木曜の元日なので「true」", function () {
-//        expect(date20150101.isWeekday(3)).toBe(true);
-//    });
-//    it("2015年1月1日「祝日チェック」は木曜の元日なので「false」", function () {
-//        expect(date20150101.isWeekday(4)).toBe(false);
-//    });
-//
-//    var date20150102 = new UltraDate("2015/01/02");
-//    it("2015年1月2日「土日祝日チェック」は金曜の平日なので「true」", function () {
-//        expect(date20150102.isWeekday(0)).toBe(true);
-//    });
-//    it("2015年1月2日「土日チェック」は金曜の平日なので「true」", function () {
-//        expect(date20150102.isWeekday(1)).toBe(true);
-//    });
-//    it("2015年1月2日「日祝チェック」は金曜の平日なので「true」", function () {
-//        expect(date20150102.isWeekday(2)).toBe(true);
-//    });
-//    it("2015年1月2日「日曜チェック」は金曜の平日なので「true」", function () {
-//        expect(date20150102.isWeekday(3)).toBe(true);
-//    });
-//    it("2015年1月2日「祝日チェック」は金曜の平日なので「true」", function () {
-//        expect(date20150102.isWeekday(4)).toBe(true);
-//    });
-//
-//    var date20150103 = new UltraDate("2015/01/03");
-//    it("2015年1月3日「土日祝日チェック」は土曜日なので「false」", function () {
-//        expect(date20150103.isWeekday(0)).toBe(false);
-//    });
-//    it("2015年1月3日「土日チェック」は土曜日なので「false」", function () {
-//        expect(date20150103.isWeekday(1)).toBe(false);
-//    });
-//    it("2015年1月3日「日祝チェック」は土曜日なので「true」", function () {
-//        expect(date20150103.isWeekday(2)).toBe(true);
-//    });
-//    it("2015年1月3日「日曜チェック」は土曜日なので「true」", function () {
-//        expect(date20150103.isWeekday(3)).toBe(true);
-//    });
-//    it("2015年1月3日「祝日チェック」は土曜日なので「true」", function () {
-//        expect(date20150103.isWeekday(4)).toBe(true);
-//    });
-//
-//    var date20150104 = new UltraDate("2015/01/04");
-//    it("2015年1月4日「土日祝日チェック」は日曜日なので「false」", function () {
-//        expect(date20150104.isWeekday(0)).toBe(false);
-//    });
-//    it("2015年1月4日「土日チェック」は日曜日なので「false」", function () {
-//        expect(date20150104.isWeekday(1)).toBe(false);
-//    });
-//    it("2015年1月4日「日祝チェック」は日曜日なので「false」", function () {
-//        expect(date20150104.isWeekday(2)).toBe(false);
-//    });
-//    it("2015年1月4日「日曜チェック」は日曜日なので「false」", function () {
-//        expect(date20150104.isWeekday(3)).toBe(false);
-//    });
-//    it("2015年1月4日「祝日チェック」は日曜日なので「true」", function () {
-//        expect(date20150104.isWeekday(4)).toBe(true);
-//    });
-//});
 describe("isHoliday:", function () {
     var date20150101 = new UltraDate("2015/01/01");
     it("2015年1月1日は元日なので「true」", function () {

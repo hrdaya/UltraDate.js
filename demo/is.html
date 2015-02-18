@@ -1186,21 +1186,21 @@ console.log(checkDate(date));
                     </div>
                 </div>
             </section>
-            <section id="isNDate">
+            <section id="isNDateToThat">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>isNDate()</h1>
+                        <h1>isNDateToThat()</h1>
                     </div>
                     <div class="panel-body">
                         <h2>関数概要</h2>
                         <p class="lead">
-                            UltraDate.prototype.isNDate(date, num)
+                            UltraDate.prototype.isNDateToThat(num, date)
                         </p>
                         <ul>
                             <li>現在のUltraDateオブジェクトの日付が引数「date」まで引数「num」日かどうかの判定</li>
                         </ul>
                         <ul>
-                            <li>引数：(<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date,&nbsp;<em>Number</em>&nbsp;num)</li>
+                            <li>引数：(<em>Number</em>&nbsp;num,&nbsp;<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date)</li>
                             <li>戻り値：Boolean</li>
                         </ul>
                     </div>
@@ -1215,6 +1215,17 @@ console.log(checkDate(date));
                                 <th>説明</th>
                             </tr>
                             <tr>
+                                <td>num</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>現在のUltraDateオブジェクトが引数「date」まで何日かを指定</li>
+                                        <li>正数の場合は引数「date」がN日後</li>
+                                        <li>負数の場合は引数「date」がN日前</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>date</td>
                                 <td>UltraDate<br>Date<br>String<br>Number</td>
                                 <td>
@@ -1223,17 +1234,6 @@ console.log(checkDate(date));
                                         <li>Stringの場合Dateオブジェクトを作成できる文字列</li>
                                         <li>Numberの場合Dateオブジェクトを作成できる数字</li>
                                         <li>undefinedの場合は現在の日付</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>num</td>
-                                <td>Number</td>
-                                <td>
-                                    <ul>
-                                        <li>現在のUltraDateオブジェクトが引数「date」まで何日かを指定</li>
-                                        <li>正数の場合は引数「date」がN日後</li>
-                                        <li>負数の場合は引数「date」がN日前</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -1266,7 +1266,7 @@ console.log(checkDate(date));
                             <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
 function checkDate(date1, date2, num) {
     var str = date1.format("yyyy年MM月dd日") + "は" + date2.format("yyyy年MM月dd日") + "まで" + num + "日";
-    if (date1.isNDate(date2, num)) {
+    if (date1.isNDate(num, date2)) {
         str += "です";
     } else {
         str += "ではありません";
