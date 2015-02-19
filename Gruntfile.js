@@ -18,6 +18,12 @@ module.exports = function (grunt) {
                         dot: true,
                         src: ['<%= meta.dist %>/*.js']
                     }]
+            },
+            coverage: {
+                files: [{
+                        dot: true,
+                        src: ['coverage']
+                    }]
             }
         },
         replace: {
@@ -95,7 +101,7 @@ module.exports = function (grunt) {
         },
         karma: {
             unit: {
-                configFile: 'test/karma.conf.js'
+                configFile: 'karma_src.conf.js'
             }
         },
         watch: {
