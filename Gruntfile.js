@@ -8,9 +8,7 @@ module.exports = function (grunt) {
             dist: "dist",
             txt: "txt",
             demo: "demo",
-            test: "test",
-            banner: grunt.file.read('txt/banner.txt'),
-            bannerJa: grunt.file.read('txt/bannerJa.txt')
+            test: "test"
         },
         clean: {
             dist: {
@@ -38,18 +36,66 @@ module.exports = function (grunt) {
             main: {
                 src: '<%= meta.src %>/<%= pkg.name %>.js',
                 dest: '<%= meta.dist %>/<%= pkg.name %>.js',
-                replacements: [{
-                        from: /^var\sUltraDateBanner;\n/,
-                        to: '<%= meta.banner %>'
-                    }]
+                replacements: [
+                    {
+                        from: /<pkg\.version>/g,
+                        to: '<%= pkg.version %>'
+                    },
+                    {
+                        from: /<pkg\.name>/g,
+                        to: '<%= pkg.name %>'
+                    },
+                    {
+                        from: /<pkg\.homepage>/g,
+                        to: '<%= pkg.homepage %>'
+                    },
+                    {
+                        from: /<pkg\.author\.name>/g,
+                        to: '<%= pkg.author.name %>'
+                    },
+                    {
+                        from: /<pkg\.author\.url>/g,
+                        to: '<%= pkg.author.url %>'
+                    },
+                    {
+                        from: /<pkg\.license\.type>/g,
+                        to: '<%= pkg.license.type %>'
+                    },
+                    {
+                        from: /<pkg\.license\.url>/g,
+                        to: '<%= pkg.license.url %>'
+                    }
+                ]
             },
             ja: {
                 src: '<%= meta.src %>/<%= pkg.name %>.ja.js',
                 dest: '<%= meta.dist %>/<%= pkg.name %>.ja.js',
-                replacements: [{
-                        from: /^var\sUltraDateBanner;\n/,
-                        to: '<%= meta.bannerJa %>'
-                    }]
+                replacements: [
+                    {
+                        from: /<pkg\.name>/g,
+                        to: '<%= pkg.name %>'
+                    },
+                    {
+                        from: /<pkg\.homepage>/g,
+                        to: '<%= pkg.homepage %>'
+                    },
+                    {
+                        from: /<pkg\.author\.name>/g,
+                        to: '<%= pkg.author.name %>'
+                    },
+                    {
+                        from: /<pkg\.author\.url>/g,
+                        to: '<%= pkg.author.url %>'
+                    },
+                    {
+                        from: /<pkg\.license\.type>/g,
+                        to: '<%= pkg.license.type %>'
+                    },
+                    {
+                        from: /<pkg\.license\.url>/g,
+                        to: '<%= pkg.license.url %>'
+                    }
+                ]
             }
         },
         uglify: {

@@ -1,4 +1,10 @@
-var UltraDateBanner;
+/*!
+ * <pkg.name>.jsの日本用設定 (<pkg.homepage>)
+ *
+ * Copyright 2015 <pkg.author.name> (<pkg.author.url>)
+ * Licensed under <pkg.license.type> (<pkg.license.url>)
+ */
+
 (function () {
     /**
      * 日付フォーマット、祝祭日のオプション追加のサンプル
