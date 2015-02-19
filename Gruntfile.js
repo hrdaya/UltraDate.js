@@ -101,7 +101,7 @@ module.exports = function (grunt) {
         },
         karma: {
             unit: {
-                configFile: 'karma_src.conf.js'
+                configFile: 'karma_dist_min.conf.js'
             }
         },
         watch: {
