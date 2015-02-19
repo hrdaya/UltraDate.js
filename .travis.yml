@@ -4,5 +4,6 @@ node_js:
 before_script:
     - npm install bower
     - ./node_modules/bower/bin/bower install
+    - npm install
 script:
     - "npm test"
