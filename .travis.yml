@@ -1,0 +1,8 @@
+## YAML Tlanguage: node_js
+node_js:
+  - "0.10"
+before_script:
+    - npm install bower
+    - ./node_modules/bower/bin/bower install
+script:
+    - "npm test"
