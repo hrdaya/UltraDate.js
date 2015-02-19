@@ -20,13 +20,13 @@
                     <div class="panel-body">
                         <h2>関数概要</h2>
                         <p class="lead">
-                            UltraDate.format(format, useWrap, eraStrict, locale)
+                            UltraDate.format(format, eraStrict, locale)
                         </p>
                         <ul>
                             <li>引数「format」で指定されたフォーマットで文字列を返します</li>
                         </ul>
                         <ul>
-                            <li>引数：(<em>String</em>&nbsp;format,&nbsp;<em>Boolean</em>&nbsp;useWrap,&nbsp;<em>Boolean</em>&nbsp;eraStrict,&nbsp;<em>String</em>&nbsp;locale)</li>
+                            <li>引数：(<em>String</em>&nbsp;format,&nbsp;<em>Boolean</em>&nbsp;eraStrict,&nbsp;<em>String</em>&nbsp;locale)</li>
                             <li>戻り値：String</li>
                         </ul>
                     </div>
@@ -46,18 +46,9 @@
                                 <td>
                                     <ul>
                                         <li>変換する文字列を指定します</li>
+                                        <li>「&quot;」ダブルクォーテーションで囲まれた範囲は変換されません</li>
+                                        <li>「&quot;」ダブルクォーテーションを文字列として表示するには「&quot;&quot;」(連続した「&quot;」)をご使用ください</li>
                                         <li>フォーマット文字列については下記を参照してください</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>useWrap</td>
-                                <td>Boolean</td>
-                                <td>
-                                    <ul>
-                                        <li>引数「format」の中にフォーマット用文字列が含まれる場合に使用します</li>
-                                        <li>フォーマット用文字列は前後に「_」を付与した文字列になります（例：「yyyy」→「_yyyy_」）</li>
-                                        <li>「true」が指定された時のみ適用されます</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -160,6 +151,14 @@
                                 <td>月（1～12）</td>
                             </tr>
                             <tr>
+                                <td>dddd</td>
+                                <td>年間通算日（1～366）</td>
+                            </tr>
+                            <tr>
+                                <td>ddd</td>
+                                <td>3桁で0埋めされた年間通算日（001～366）</td>
+                            </tr>
+                            <tr>
                                 <td>dd</td>
                                 <td>2桁で0埋めされた日（01～31）</td>
                             </tr>
@@ -221,27 +220,47 @@
                             </tr>
                             <tr>
                                 <td>ww</td>
-                                <td>2桁で0埋めされたISO形式の週番号（01～53）</td>
+                                <td>
+                                    2桁で0埋めされたISO形式の週番号（00～54）
+                                    <div class="alert alert-warning margin-top-md margin-bottom-none">
+                                        <ul>
+                                            <li>週番号が前年の週番号となる場合は「00」が返る（1月1日が金曜日、土曜日、日曜日の場合）</li>
+                                            <li>週番号が翌年の週番号となる場合は最終週に「1」を足した値が返る（12月31日が月曜日、火曜日、水曜日）</li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>w</td>
-                                <td>ISO形式の週番号（1～53）</td>
+                                <td>
+                                    ISO形式の週番号（0～54）
+                                    <div class="alert alert-warning margin-top-md margin-bottom-none">
+                                        <ul>
+                                            <li>週番号が前年の週番号となる場合は「0」が返る（1月1日が金曜日、土曜日、日曜日の場合）</li>
+                                            <li>週番号が翌年の週番号となる場合は最終週に「1」を足した値が返る（12月31日が月曜日、火曜日、水曜日）</li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>WW</td>
-                                <td>2桁で0埋めされたUS形式の週番号（01～53）</td>
+                                <td>2桁で0埋めされたUS形式の週番号（01～54）</td>
                             </tr>
                             <tr>
                                 <td>W</td>
-                                <td>US形式の週番号（1～53）</td>
+                                <td>US形式の週番号（1～54）</td>
                             </tr>
                             <tr>
-                                <td>DD</td>
+                                <td>DDD</td>
                                 <td>長い形式の曜日表記文字列（フォーマットの設定の「longDay」）</td>
                             </tr>
                             <tr>
-                                <td>D</td>
+                                <td>DD</td>
                                 <td>短い形式の曜日表記文字列（フォーマットの設定の「shortDay」）</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>ISO形式の曜日番号（月曜日：1 ～ 日曜日：7）</td>
                             </tr>
                         </table>
                     </div>
@@ -256,14 +275,14 @@
 var date = new UltraDate();
 
 // 通常のフォーマット（日付）
-console.log(date.format("gggee年MM月dd日（DD）はフォーマットするとgggee年MM月dd日（DD）になります"));
-// 「useWrap」を「true」にしたときのフォーマット（日付）
-console.log(date.format("gggee年MM月dd日（DD）はフォーマットすると_ggg__ee_年_MM_月_dd_日（_DD_）になります", true));
+console.log(date.format("gggee年MM月dd日（DDD）はフォーマットするとgggee年MM月dd日（DDD）になります"));
+// エスケープしたときのフォーマット（日付）
+console.log(date.format('"gggee年MM月dd日（DD）"はフォーマットするとgggee年MM月dd日（DD）になります'));
 
 // 通常のフォーマット（時間）
 console.log(date.format("tthh時mm分ss秒fffミリ秒はフォーマットするとtthh時mm分ss秒fffミリ秒になります"));
-// 「useWrap」を「true」にしたときのフォーマット（時間）
-console.log(date.format("tthh時mm分ss秒fffミリ秒はフォーマットすると_tt__hh_時_mm_分_ss_秒_fff_ミリ秒になります", true));
+// エスケープにしたときのフォーマット（時間）
+console.log(date.format('"tthh時mm分ss秒fffミリ秒"はフォーマットするとtthh時mm分ss秒fffミリ秒になります', true));
                             </textarea>
                         </div>
                         <h3>「UltraDate.ja.js」での「era」「eraStrict」の比較</h3>
@@ -277,14 +296,14 @@ var date = new UltraDate("1989/01/01");
 // 通常の元号計算
 console.log(date.format("gggee年MM月dd日"));
 // 厳格な元号計算
-console.log(date.format("gggee年MM月dd日", false, true));
+console.log(date.format("gggee年MM月dd日", true));
 
 date.addDate(7);
 
 // 通常の元号計算
 console.log(date.format("gggee年MM月dd日"));
 // 厳格な元号計算
-console.log(date.format("gggee年MM月dd日", false, true));
+console.log(date.format("gggee年MM月dd日", true));
                             </textarea>
                         </div>
                     </div>

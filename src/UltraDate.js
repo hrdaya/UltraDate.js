@@ -94,7 +94,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 return {
                     longName: "A.D.",
                     shortName: "AD",
-                    alphaNamet: "A",
+                    alphaName: "A",
                     year: date.getFullYear()
                 };
             },
@@ -386,7 +386,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * 日付フォーマット
          *
          * @param {String} format 日付のフォーマット
-         * @param {Boolean} useWrap フォーマット文字列をアンダースコアでラップするかどうか
          * @param {Boolean} eraStrict 厳格な元号計算を利用するかどうか
          * @param {String} locale フォーマット用のロケール
          *
@@ -406,6 +405,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * MMM:  短い形式の月表記文字列（Jan）
          * MM:   2桁で0埋めされた月（01）
          * M:    月（1）
+         * dddd: 年間通算日（1）
+         * ddd:  3桁で0埋めされた年間通算日（001）
          * dd:   2桁で0埋めされた日（01）
          * d:    日（1）
          * HH:   2桁で0埋めされた24時間表記（01）（24）
@@ -425,10 +426,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * w:    ISO形式の週番号（1）
          * WW:   2桁で0埋めされたUS形式の週番号（01）
          * W:    US形式の週番号（1）
-         * DD:   長い形式の曜日表記文字列（Sunday）
-         * D:    短い形式の曜日表記文字列（Sun）
+         * DDD:  長い形式の曜日表記文字列（Sunday）
+         * DD:   短い形式の曜日表記文字列（Sun）
+         * D:    ISO形式の曜日番号（1～7）
          */
-        format: function (format, useWrap, eraStrict, locale) {
+        format: function (format, eraStrict, locale) {
             if (typeof format !== "string") {
                 return format;
             }
@@ -462,6 +464,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 MMM: options.shortMonth[this.getMonth()],
                 MM: _padZero(this.getRealMonth()),
                 M: this.getRealMonth(),
+                dddd: this.getOrdinalDate(),
+                ddd: _padZero(this.getOrdinalDate(), 3),
                 dd: _padZero(this.getDate()),
                 d: this.getDate(),
                 HH: _padZero(this.getHours()),
@@ -481,27 +485,31 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 w: this.getISOWeek(),
                 WW: _padZero(this.getUSWeek()),
                 W: this.getUSWeek(),
-                DD: options.longDay[this.getDay()],
-                D: options.shortDay[this.getDay()]
+                DDD: options.longDay[this.getDay()],
+                DD: options.shortDay[this.getDay()],
+                D: this.getISODay()
             };
 
-            var reg = [];
+            var esc = "_____-----_____-----_____-----_____-----_____-----_____";
+            var strEsc = format.replace(/("")/g, esc);
+            var split = strEsc.split('"');
+
+            var regs = [];
             for (var key in formats) {
-                reg.push(key);
+                regs.push(key);
             }
-            if (useWrap === true) {
-                reg = "(_" + reg.join("_|_") + "_)";
-                return format.replace(new RegExp(reg, "g"), function (
-                        match) {
-                    return formats[match.replace(/_/g, "")];
-                });
-            } else {
-                reg = "(" + reg.join("|") + ")";
-                return format.replace(new RegExp(reg, "g"), function (
-                        match) {
+            regs = "(" + regs.join("|") + ")";
+            var reg = new RegExp(regs, "g");
+
+            for (var i = 0, len = split.length; i < len; i += 2) {
+                split[i] = split[i].replace(reg, function (match) {
                     return formats[match];
                 });
             }
+
+            format = split.join("");
+
+            return format.replace(new RegExp("(" + esc + ")", "g"), '"');
         },
         /**-------------------------------------------------------------------------
          * add系（値の増減）
