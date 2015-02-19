@@ -1,4 +1,10 @@
-var UltraDateBanner;
+/*!
+ * <pkg.name>.js v<pkg.version> (<pkg.homepage>)
+ *
+ * Copyright 2015 <pkg.author.name> (<pkg.author.url>)
+ * Licensed under <pkg.license.type> (<pkg.license.url>)
+ */
+
 function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     "use strict";
     var _getInt = function (num) {
