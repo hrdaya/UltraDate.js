@@ -589,6 +589,166 @@ console.log(date.getHoliday());
                     </div>
                 </div>
             </section>
+            <section id="getISOLastWeekNum">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getISOLastWeekNum()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.getISOLastWeekNum(year)
+                        </p>
+                        <ul>
+                            <li>
+                                引数「year」で指定された年のISO形式の最終週番号を取得します
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;year)</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>取得する年の西暦を入力します</li>
+                                        <li>指定の無い場合は今年になります</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>引数「year」で指定した年の最終週の番号を取得します</li>
+                                        <li>12月31日が月曜日、火曜日、水曜日の場合は翌年の週番号になる為、12月31日の必ずしも12月31日の週番号ではありません</li>
+                                        <li>「getISOWeek関数」とは取得の仕方が異なりますのでご注意ください</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>ISO形式の最終週を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+// 2015年の最終週は「53」
+console.log(UltraDate.getISOLastWeekNum(2015));
+
+// 2016年の最終週は「52」
+console.log(UltraDate.getISOLastWeekNum(2016));
+
+// 2018年の最終週は「52」（12月31日は2019年の第1週なので12月30日の週番号が最終）
+console.log(UltraDate.getISOLastWeekNum(2018));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="getUSLastWeekNum">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getUSLastWeekNum()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.getUSLastWeekNum(year)
+                        </p>
+                        <ul>
+                            <li>
+                                引数「year」で指定された年のUS形式の最終週番号を取得します
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;year)</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>取得する年の西暦を入力します</li>
+                                        <li>指定の無い場合は今年になります</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>引数「year」で指定した年の最終週の番号を取得します</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>US形式の最終週を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+// 2015年の最終週は「53」
+console.log(UltraDate.getUSLastWeekNum(2015));
+
+// 2016年の最終週は「53」
+console.log(UltraDate.getUSLastWeekNum(2016));
+
+// 2028年の最終週は「54」
+console.log(UltraDate.getUSLastWeekNum(2018));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </body>
 </html>
