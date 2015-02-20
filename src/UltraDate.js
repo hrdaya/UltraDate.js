@@ -664,6 +664,34 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return this;
         },
         /**
+         * US形式の週番号とJsの曜日番号で日付をセット
+         *
+         * @param {Number} week US形式の週番号
+         * @param {Number} day 0：日曜日
+         *                     1：月曜日
+         *                     2：火曜日
+         *                     3：水曜日
+         *                     4：木曜日
+         *                     5：金曜日
+         *                     6：土曜日
+         * @param {Number} year 年（undefinedの場合はオブジェクトの年）
+         *
+         * @return {this} 自身に返す（チェーンメソッド用）
+         */
+        setUSWeekDay: function (week, day, year) {
+            day = parseInt(day, 10);
+            if (isNaN(day) || (day < 0 && 6 < day)) {
+                throw new Error("Data type of the argument is incorrect");
+            } else {
+                year = (year === undefined) ? this.getFullYear() : _getInt(year);
+                this.setFullYear(year, 0, 1);
+                var days = (_getInt(week) * 7) + day;
+                days = (this.getDay() === 0) ? days : days - 7;
+                this.setDayCountsInMonth(0, 0).addDate(days);
+            }
+            return this;
+        },
+        /**
          * 日付を月初に変更
          * 日付比較用に時間を0時に合わせる
          *
