@@ -367,6 +367,20 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     };
 
     /**
+     * ISO形式の最終週の週番号を取得
+     *
+     * @param {Number} year yearがundefindの時は現在の年
+     *
+     * @return {Number} 最終週番号
+     */
+    UltraDate.getISOLastWeekNum = function (year) {
+        year = (year === undefined) ? new UltraDate().getFullYear() : _getInt(year);
+        var date = new UltraDate(year, 11, 31);
+        return (date.getISODay() < 4) ?
+                date.addDate(date.getISODay() * -1).getISOWeek() : date.getISOWeek();
+    };
+
+    /**
      * US形式の最終週の週番号を取得
      *
      * @param {Number} year yearがundefindの時は現在の年
