@@ -373,7 +373,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      *
      * @return {Number} 最終週番号
      */
-    UltraDate.getUSEndWeekNum = function (year) {
+    UltraDate.getUSLastWeekNum = function (year) {
         year = (year === undefined) ? new UltraDate().getFullYear() : _getInt(year);
         return new UltraDate(year, 11, 31).getUSWeek();
     };
