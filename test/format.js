@@ -125,11 +125,11 @@ describe("format:", function () {
         it("wの戻り値は「0」", function () {
             expect(date.format("w")).toEqual("0");
         });
-        it("WWの戻り値は「02」", function () {
-            expect(date.format("WW")).toEqual("02");
+        it("WWの戻り値は「01」", function () {
+            expect(date.format("WW")).toEqual("01");
         });
-        it("Wの戻り値は「2」", function () {
-            expect(date.format("W")).toEqual("2");
+        it("Wの戻り値は「1」", function () {
+            expect(date.format("W")).toEqual("1");
         });
         it("DDDの戻り値は「日曜日」", function () {
             expect(date.format("DDD")).toEqual("日曜日");
@@ -265,11 +265,11 @@ describe("format:", function () {
         it("wの戻り値は「0」", function () {
             expect(date.format("w", false, "def")).toEqual("0");
         });
-        it("WWの戻り値は「02」", function () {
-            expect(date.format("WW", false, "def")).toEqual("02");
+        it("WWの戻り値は「01」", function () {
+            expect(date.format("WW", false, "def")).toEqual("01");
         });
-        it("Wの戻り値は「2」", function () {
-            expect(date.format("W", false, "def")).toEqual("2");
+        it("Wの戻り値は「1」", function () {
+            expect(date.format("W", false, "def")).toEqual("1");
         });
         it("DDDの戻り値は「Sunday」", function () {
             expect(date.format("DDD", false, "def")).toEqual("Sunday");
