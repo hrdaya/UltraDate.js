@@ -222,7 +222,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             }
         }
         weekDay = 7 - weekDay;
-        offset = 7 - offset;
+        offset = (offset === 0) ? 0 : 7 - offset;
         var getLapsedDays = function (nowDate, FirstDate, weekDay, offset) {
             return ((nowDate - FirstDate) / (24 * 60 * 60 * 1000)) + 1 + weekDay + offset;
         };
@@ -364,6 +364,18 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             _defaultLocale = locale;
         }
         return this;
+    };
+
+    /**
+     * US形式の最終週の週番号を取得
+     *
+     * @param {Number} year yearがundefindの時は現在の年
+     *
+     * @return {Number} 最終週番号
+     */
+    UltraDate.getUSEndWeekNum = function (year) {
+        year = (year === undefined) ? new UltraDate().getFullYear() : _getInt(year);
+        return new UltraDate(year, 11, 31).getUSWeek();
     };
 
     /**-------------------------------------------------------------------------

@@ -187,3 +187,54 @@ describe("getHoliday:", function () {
         expect(date20150102.getHoliday()).toEqual("");
     });
 });
+
+describe("getUSEndWeekNum:", function () {
+    it("2015年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2015)).toEqual(53);
+    });
+    it("2016年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2016)).toEqual(53);
+    });
+    it("2017年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2017)).toEqual(53);
+    });
+    it("2018年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2018)).toEqual(53);
+    });
+    it("2019年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2019)).toEqual(53);
+    });
+    it("2020年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2020)).toEqual(53);
+    });
+    it("2021年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2021)).toEqual(53);
+    });
+    it("2022年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2022)).toEqual(53);
+    });
+    it("2023年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2023)).toEqual(53);
+    });
+    it("2024年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2024)).toEqual(53);
+    });
+    it("2025年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2025)).toEqual(53);
+    });
+    it("2026年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2026)).toEqual(53);
+    });
+    it("2027年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2027)).toEqual(53);
+    });
+    it("2028年最終週の戻り値は「54」", function () {
+        expect(UltraDate.getUSEndWeekNum(2028)).toEqual(54);
+    });
+    it("2029年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2029)).toEqual(53);
+    });
+    it("2030年最終週の戻り値は「53」", function () {
+        expect(UltraDate.getUSEndWeekNum(2030)).toEqual(53);
+    });
+});
