@@ -369,7 +369,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     /**
      * ISO形式の最終週の週番号を取得
      *
-     * @param {Number} yearがundefindの時は現在の年
+     * @param {Number} year yearがundefindの時は現在の年
      *
      * @return {Number} 最終週番号
      */
