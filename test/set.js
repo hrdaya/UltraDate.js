@@ -29,6 +29,708 @@ describe("setDayCountsInMonth:", function () {
         expect(date60.getDate()).toEqual(8);
     });
 });
+describe("setUSWeekDay:", function () {
+    // 2003第1週 ---------------------------------------------------------------
+    it("2003年第1週日曜日は12月29日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2002);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(29);
+    });
+    it("2003年第1週月曜日は12月30日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2002);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(30);
+    });
+    it("2003年第1週火曜日は12月31日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2002);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2003年第1週水曜日は1月1日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2003年第1週木曜日は1月2日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2003年第1週金曜日は1月3日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2003年第1週土曜日は1月4日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    // 2003第2週 ---------------------------------------------------------------
+    it("2003年第2週日曜日は1月5日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2003年第2週月曜日は1月6日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2003年第2週火曜日は1月7日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2003年第2週水曜日は1月8日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2003年第2週木曜日は1月9日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    it("2003年第2週金曜日は1月10日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(10);
+    });
+    it("2003年第2週土曜日は1月11日", function () {
+        var date = new UltraDate("2003/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2003);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(11);
+    });
+    // 2006第1週 ---------------------------------------------------------------
+    it("2006年第1週日曜日は1月1日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2006年第1週月曜日は1月2日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2006年第1週火曜日は1月3日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2006年第1週水曜日は1月4日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2006年第1週木曜日は1月5日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2006年第1週金曜日は1月6日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2006年第1週土曜日は1月7日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    // 2006第2週 ---------------------------------------------------------------
+    it("2006年第2週日曜日は1月8日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2006年第2週月曜日は1月9日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    it("2006年第2週火曜日は1月10日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(10);
+    });
+    it("2006年第2週水曜日は1月11日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(11);
+    });
+    it("2006年第2週木曜日は1月12日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(12);
+    });
+    it("2006年第2週金曜日は1月13日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(13);
+    });
+    it("2006年第2週土曜日は1月14日", function () {
+        var date = new UltraDate("2006/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(14);
+    });
+    // 2007第1週 ---------------------------------------------------------------
+    it("2007年第1週日曜日は12月31日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2006);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2007年第1週月曜日は1月1日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2007年第1週火曜日は1月2日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2007年第1週水曜日は1月3日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2007年第1週木曜日は1月4日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2007年第1週金曜日は1月5日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2007年第1週土曜日は1月6日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    // 2007第2週 ---------------------------------------------------------------
+    it("2007年第2週日曜日は1月7日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2007年第2週月曜日は1月8日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2007年第2週火曜日は1月9日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    it("2007年第2週水曜日は1月10日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(10);
+    });
+    it("2007年第2週木曜日は1月11日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(11);
+    });
+    it("2007年第2週金曜日は1月12日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(12);
+    });
+    it("2007年第2週土曜日は1月13日", function () {
+        var date = new UltraDate("2007/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(13);
+    });
+    // 2008第1週 ---------------------------------------------------------------
+    it("2008年第1週日曜日は12月30日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(30);
+    });
+    it("2008年第1週月曜日は12月31日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2007);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2008年第1週火曜日は1月1日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2008年第1週水曜日は1月2日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2008年第1週木曜日は1月3日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2008年第1週金曜日は1月4日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2008年第1週土曜日は1月5日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    // 2008第2週 ---------------------------------------------------------------
+    it("2008年第2週日曜日は1月6日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2008年第2週月曜日は1月7日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2008年第2週火曜日は1月8日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2008年第2週水曜日は1月9日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    it("2008年第2週木曜日は1月10日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(10);
+    });
+    it("2008年第2週金曜日は1月11日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(11);
+    });
+    it("2008年第2週土曜日は1月12日", function () {
+        var date = new UltraDate("2008/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(12);
+    });
+    // 2009第1週 ---------------------------------------------------------------
+    it("2009年第1週日曜日は12月28日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(28);
+    });
+    it("2009年第1週月曜日は12月29日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(29);
+    });
+    it("2009年第1週火曜日は12月30日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(30);
+    });
+    it("2009年第1週水曜日は12月31日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2008);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2009年第1週木曜日は1月1日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2009年第1週金曜日は1月2日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2009年第1週土曜日は1月3日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    // 2009第2週 ---------------------------------------------------------------
+    it("2009年第2週日曜日は1月4日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2009年第2週月曜日は1月5日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2009年第2週火曜日は1月6日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2009年第2週水曜日は1月7日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2009年第2週木曜日は1月8日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2009年第2週金曜日は1月9日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    it("2009年第2週土曜日は1月10日", function () {
+        var date = new UltraDate("2009/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(10);
+    });
+    // 2010第1週 ---------------------------------------------------------------
+    it("2010年第1週日曜日は12月27日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(27);
+    });
+    it("2010年第1週月曜日は12月28日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(28);
+    });
+    it("2010年第1週火曜日は12月29日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(29);
+    });
+    it("2010年第1週水曜日は12月30日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(30);
+    });
+    it("2010年第1週木曜日は12月31日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2009);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2010年第1週金曜日は1月1日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    it("2010年第1週土曜日は1月2日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    // 2010第2週 ---------------------------------------------------------------
+    it("2010年第2週日曜日は1月3日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2010年第2週月曜日は1月4日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2010年第2週火曜日は1月5日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2010年第2週水曜日は1月6日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2010年第2週木曜日は1月7日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2010年第2週金曜日は1月8日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+    it("2010年第2週土曜日は1月9日", function () {
+        var date = new UltraDate("2010/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(9);
+    });
+    // 2011第1週 ---------------------------------------------------------------
+    it("2011年第1週日曜日は12月26日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 0);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(26);
+    });
+    it("2011年第1週月曜日は12月27日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 1);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(27);
+    });
+    it("2011年第1週火曜日は12月28日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 2);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(28);
+    });
+    it("2011年第1週水曜日は12月29日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 3);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(29);
+    });
+    it("2011年第1週木曜日は12月30日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 4);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(30);
+    });
+    it("2011年第1週金曜日は12月31日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 5);
+        expect(date.getFullYear()).toEqual(2010);
+        expect(date.getRealMonth()).toEqual(12);
+        expect(date.getDate()).toEqual(31);
+    });
+    it("2011年第1週土曜日は1月1日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(1, 6);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(1);
+    });
+    // 2011第2週 ---------------------------------------------------------------
+    it("2011年第2週日曜日は1月2日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 0);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(2);
+    });
+    it("2011年第2週月曜日は1月3日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 1);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(3);
+    });
+    it("2011年第2週火曜日は1月4日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 2);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(4);
+    });
+    it("2011年第2週水曜日は1月5日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 3);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(5);
+    });
+    it("2011年第2週木曜日は1月6日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 4);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(6);
+    });
+    it("2011年第2週金曜日は1月7日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 5);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(7);
+    });
+    it("2011年第2週土曜日は1月8日", function () {
+        var date = new UltraDate("2011/06/01");
+        date.setUSWeekDay(2, 6);
+        expect(date.getFullYear()).toEqual(2011);
+        expect(date.getRealMonth()).toEqual(1);
+        expect(date.getDate()).toEqual(8);
+    });
+});
 describe("setFirstDate:", function () {
     var date1 = new UltraDate("2015/01/31 12:00:00").setFirstDate();
     var setDate1 = new UltraDate("2015/01/01");
