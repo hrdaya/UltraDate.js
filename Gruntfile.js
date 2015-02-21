@@ -33,6 +33,14 @@ module.exports = function (grunt) {
                         to: '<%= pkg.version %>'
                     }]
             },
+            bower: {
+                src: '<%= meta.txt %>/bower.txt',
+                dest: 'bower.json',
+                replacements: [{
+                        from: /<version>/g,
+                        to: '<%= pkg.version %>'
+                    }]
+            },
             main: {
                 src: '<%= meta.src %>/<%= pkg.name %>.js',
                 dest: '<%= meta.dist %>/<%= pkg.name %>.js',
