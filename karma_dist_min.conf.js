@@ -21,6 +21,12 @@ module.exports = function (config) {
         coverageReporter: {
             type: 'lcov',
             dir: 'coverage/'
-        }
+        },
+        plugins: [
+            'karma-cli',
+            'karma-coverage',
+            'karma-jasmine',
+            'karma-phantomjs-launcher'
+        ]
     });
 };
