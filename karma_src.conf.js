@@ -15,10 +15,11 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         singleRun: true,
         preprocessors: {
-            'src/*.js': ['coverage']
+            'src/UltraDate.js': ['coverage'],
+            'src/UltraDate.ja.js': ['coverage']
         },
         coverageReporter: {
-            type: 'html',
+            type: 'lcov',
             dir: 'coverage/'
         }
     });
