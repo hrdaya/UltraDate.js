@@ -23,7 +23,10 @@ module.exports = function (config) {
             dir: 'coverage/'
         },
         plugins: [
-            'karma-coverage'
+            'karma-cli',
+            'karma-coverage',
+            'karma-jasmine',
+            'karma-phantomjs-launcher'
         ]
     });
 };
