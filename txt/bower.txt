@@ -1,0 +1,41 @@
+{
+    "name": "UltraDate",
+    "description": "UltraDate.js: Replace a Javascript Date object",
+    "version": "<version>",
+    "main": [
+        "dist/UltraDate.js",
+        "dist/UltraDate.ja.js"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "nbproject",
+        "test",
+        "demo",
+        "src",
+        "Gruntfile.js",
+        "karma.config.js",
+        "package.json",
+        "index.html"
+    ],
+    "keywords": [
+        "javascript",
+        "js",
+        "date",
+        "format",
+        "holiday"
+    ],
+    "authors": [
+        "yu-ki higa (https://github.com/hrdaya)"
+    ],
+    "homepage": "http://hrdaya.github.io/UltraDate.js/",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hrdaya/UltraDate.js.git"
+    },
+    "dependencies": {
+        "jquery.ex-code-prettify": "cyokodog/jquery.ex-code-prettify#gh-pages"
+    }
+}

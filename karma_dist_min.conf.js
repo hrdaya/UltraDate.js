@@ -15,11 +15,18 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         singleRun: true,
         preprocessors: {
-            'dist/*.js': ['coverage']
+            'dist/UltraDate.min.js': ['coverage'],
+            'dist/UltraDate.ja.min.js': ['coverage']
         },
         coverageReporter: {
-            type: 'html',
+            type: 'lcov',
             dir: 'coverage/'
-        }
+        },
+        plugins: [
+            'karma-cli',
+            'karma-coverage',
+            'karma-jasmine',
+            'karma-phantomjs-launcher'
+        ]
     });
 };

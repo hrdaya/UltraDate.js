@@ -33,6 +33,14 @@ module.exports = function (grunt) {
                         to: '<%= pkg.version %>'
                     }]
             },
+            bower: {
+                src: '<%= meta.txt %>/bower.txt',
+                dest: 'bower.json',
+                replacements: [{
+                        from: /<version>/g,
+                        to: '<%= pkg.version %>'
+                    }]
+            },
             main: {
                 src: '<%= meta.src %>/<%= pkg.name %>.js',
                 dest: '<%= meta.dist %>/<%= pkg.name %>.js',
@@ -148,6 +156,21 @@ module.exports = function (grunt) {
         karma: {
             unit: {
                 configFile: 'karma_dist_min.conf.js'
+            },
+            dist: {
+                configFile: 'karma_dist.conf.js'
+            },
+            src: {
+                configFile: 'karma_src.conf.js'
+            }
+        },
+        coveralls: {
+            options: {
+                debug: true,
+                coverageDir: 'coverage/',
+                dryRun: true,
+                force: true,
+                recursive: true
             }
         },
         watch: {
@@ -177,6 +200,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-karma-coveralls');
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('build', ['clean', 'copy', 'replace', 'uglify']);
