@@ -163,7 +163,8 @@ module.exports = function (grunt) {
             src: {
                 configFile: 'karma_src.conf.js'
             }
-        }, coveralls: {
+        },
+        coveralls: {
             options: {
                 debug: true,
                 coverageDir: 'coverage/',
