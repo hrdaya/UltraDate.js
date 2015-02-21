@@ -164,6 +164,15 @@ module.exports = function (grunt) {
                 configFile: 'karma_src.conf.js'
             }
         },
+        coveralls: {
+            options: {
+                debug: true,
+                coverageDir: 'coverage/',
+                dryRun: true,
+                force: true,
+                recursive: true
+            }
+        },
         watch: {
             js: {
                 spawn: false,
@@ -191,6 +200,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-karma-coveralls');
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('build', ['clean', 'copy', 'replace', 'uglify']);
