@@ -37,7 +37,8 @@
         "path": "hrdaya/UltraDate.js"
     },
     "scripts": {
-        "test": "node_modules/grunt-cli/bin/grunt test jshint"
+        "test": "node_modules/grunt-cli/bin/grunt test:unit:run jshint",
+        "test-src": "node_modules/grunt-cli/bin/grunt test:src:run jshint"
     },
     "private": true,
     "devDependencies": {
