@@ -852,6 +852,29 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return Math.ceil(this.getDate() / 7);
         },
         /**
+         * ISO形式の週番号を年と一緒に取得
+         *
+         * @return {Object} yearとweekを含むオブジェクト
+         */
+        getISOWeekWithYear: function () {
+            var ret = {
+                year: this.getFullYear(),
+                week: this.getISOWeek()
+            };
+            if (ret.week === 0) {
+                // 前の年の週番号のときの処理
+                ret.year -= 1;
+                ret.week = UltraDate.getISOLastWeekNum(ret.year);
+            } else if (ret.week > UltraDate.getISOLastWeekNum(ret.year)) {
+                // 翌年の週番号のときの処理
+                ret.year += 1;
+                ret.week = 1;
+            } else {
+                // 今年の週番号のときの処理
+            }
+            return ret;
+        },
+        /**
          * ISO8601形式の週番号を取得（月曜日起点、第1週は4日以上）
          *
          * @return {Number} 週番号
