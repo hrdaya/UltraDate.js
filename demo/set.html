@@ -171,6 +171,91 @@ console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
                     </div>
                 </div>
             </section>
+            <section id="setISOWeekDay">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setISOWeekDay()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setISOWeekDay(week, day, year)
+                        </p>
+                        <ul>
+                            <li>ISO形式の週番号と曜日番号で日付をセットします</li>
+                            <li>チェーンメソッドに対応しています</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;week,&nbsp;<em>Number</em>&nbsp;day,&nbsp;<em>Number</em>&nbsp;year)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>week</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>何週目かを指定します</li>
+                                        <li>数字にパースできない場合は0になります</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>day</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>曜日を表す 0 (日曜日) ～ 6 (土曜日) の整数を指定します</li>
+                                        <li>必須項目です</li>
+                                        <li>0～6以外の時や数字にパースできない場合はErrorをスローします</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>year</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>年を指定します</li>
+                                        <li>数字にパースできない場合は0になります</li>
+                                        <li>未入力の場合は現在のオブジェクトの年が適用されます</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>ISO形式の週番号、曜日番号で日付をセット</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 第1週の土曜日に設定後
+date.setISOWeekDay(1, 6);
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 第3週の土曜日に設定後
+date.setISOWeekDay(3, 6);
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="setUSWeekDay">
                 <div class="panel panel-default">
                     <div class="panel-heading">
