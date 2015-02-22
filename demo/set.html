@@ -182,7 +182,7 @@ console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
                             UltraDate.prototype.setISOWeekDay(week, day, year)
                         </p>
                         <ul>
-                            <li>ISO形式の週番号と曜日番号で日付をセットします</li>
+                            <li>ISO形式の週番号とJs形式の曜日番号で日付をセットします</li>
                             <li>チェーンメソッドに対応しています</li>
                         </ul>
                         <ul>
@@ -267,7 +267,7 @@ console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
                             UltraDate.prototype.setUSWeekDay(week, day, year)
                         </p>
                         <ul>
-                            <li>US形式の週番号と曜日番号で日付をセットします</li>
+                            <li>US形式の週番号とJs形式の曜日番号で日付をセットします</li>
                             <li>チェーンメソッドに対応しています</li>
                         </ul>
                         <ul>
@@ -490,7 +490,7 @@ console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
                             UltraDate.prototype.setBeforeWeekday(option, locale)
                         </p>
                         <ul>
-                            <li>日付を引数「option」でしたものの前の平日に変更</li>
+                            <li>日付を引数「option」でしたものの前の平日にセットします</li>
                             <li>チェーンメソッドに対応しています</li>
                         </ul>
                         <ul>
@@ -568,7 +568,7 @@ console.log(date.setBeforeWeekday(4).format("yyyy年MM月dd日"));
                             UltraDate.prototype.setAfterWeekday(option, locale)
                         </p>
                         <ul>
-                            <li>日付を引数「option」でしたものの後の平日に変更</li>
+                            <li>日付を引数「option」でしたものの後の平日にセットします</li>
                             <li>チェーンメソッドに対応しています</li>
                         </ul>
                         <ul>
@@ -646,7 +646,7 @@ console.log(date.setAfterWeekday(4).format("yyyy年MM月dd日"));
                             UltraDate.prototype.setOrdinalDate(num)
                         </p>
                         <ul>
-                            <li>年間通算日で日付をセット</li>
+                            <li>年間通算日で日付をセットします</li>
                         </ul>
                         <ul>
                             <li>引数：(<em>Number</em>&nbsp;num)</li>
@@ -704,7 +704,7 @@ console.log(date.addYear(1).setOrdinalDate(365).format("yyyy年MM月dd日"));
                             UltraDate.prototype.setRoundingTime(time, method)
                         </p>
                         <ul>
-                            <li>分単位で丸めた時間にセットする（秒以下は切り捨てて計算）</li>
+                            <li>分単位で丸めた時間にセットします（秒以下は切り捨てて計算）</li>
                         </ul>
                         <ul>
                             <li>引数：(<em>time</em>&nbsp;num,&nbsp;<em>method</em>&nbsp;num)</li>
