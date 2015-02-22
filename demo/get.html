@@ -117,6 +117,66 @@ console.log(date.getDayCountsInMonth());
                     </div>
                 </div>
             </section>
+            <section id="getISOWeekWithYear">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getISOWeekWithYear()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.getISOWeekWithYear()
+                        </p>
+                        <ul>
+                            <li>
+                                ISO8601形式の週番号（月曜日起点、第1週は4日以上）と年を取得します
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>引数：なし</li>
+                            <li>戻り値：Object</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Object</td>
+                                <td>
+                                    ISO8601形式の週番号と年の入ったオブジェクト
+                                    <pre>
+{
+    year: 週番号の所属する年(Number)
+    week: 週番号(Number)
+}
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>ISO8601形式の週番号と年を取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 元の時間
+console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
+
+// 取得した数字
+console.log(date.getISOWeekWithYear());
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="getISOWeek">
                 <div class="panel panel-default">
                     <div class="panel-heading">

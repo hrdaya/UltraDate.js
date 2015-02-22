@@ -28,6 +28,1615 @@ describe("getDayCountsInMonth:", function () {
         expect(date20150131.getDayCountsInMonth()).toEqual(5);
     });
 });
+describe("getISOWeekWithYear:", function () {
+    // 2004 --------------------------------------------------------------------
+    it("2004年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/01");
+        var ret = {
+            year: 2004,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/02");
+        var ret = {
+            year: 2004,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/03");
+        var ret = {
+            year: 2004,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/04");
+        var ret = {
+            year: 2004,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/05");
+        var ret = {
+            year: 2004,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/06");
+        var ret = {
+            year: 2004,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/07");
+        var ret = {
+            year: 2004,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/08");
+        var ret = {
+            year: 2004,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2004/01/09");
+        var ret = {
+            year: 2004,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2004 年末----------------------------------------------------------------
+    it("2004年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/23");
+        var ret = {
+            year: 2004,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/24");
+        var ret = {
+            year: 2004,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/25");
+        var ret = {
+            year: 2004,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/26");
+        var ret = {
+            year: 2004,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/27");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/28");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/29");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/30");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2004年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2004/12/31");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2005 --------------------------------------------------------------------
+    it("2005年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/01");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/02");
+        var ret = {
+            year: 2004,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/03");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/04");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/05");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/06");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/07");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/08");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2005/01/09");
+        var ret = {
+            year: 2005,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2005 年末----------------------------------------------------------------
+    it("2005年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/23");
+        var ret = {
+            year: 2005,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/24");
+        var ret = {
+            year: 2005,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/25");
+        var ret = {
+            year: 2005,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/26");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/27");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/28");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/29");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/30");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2005年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2005/12/31");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2006 --------------------------------------------------------------------
+    it("2006年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/01");
+        var ret = {
+            year: 2005,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/02");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/03");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/04");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/05");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/06");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/07");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/08");
+        var ret = {
+            year: 2006,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2006/01/09");
+        var ret = {
+            year: 2006,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2006 年末----------------------------------------------------------------
+    it("2006年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/23");
+        var ret = {
+            year: 2006,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/24");
+        var ret = {
+            year: 2006,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/25");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/26");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/27");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/28");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/29");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/30");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2006年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2006/12/31");
+        var ret = {
+            year: 2006,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2007 --------------------------------------------------------------------
+    it("2007年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/01");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/02");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/03");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/04");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/05");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/06");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/07");
+        var ret = {
+            year: 2007,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/08");
+        var ret = {
+            year: 2007,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2007/01/09");
+        var ret = {
+            year: 2007,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2007 年末----------------------------------------------------------------
+    it("2007年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/23");
+        var ret = {
+            year: 2007,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/24");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/25");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/26");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/27");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/28");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/29");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/30");
+        var ret = {
+            year: 2007,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2007年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2007/12/31");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2008 --------------------------------------------------------------------
+    it("2008年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/01");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/02");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/03");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/04");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/05");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/06");
+        var ret = {
+            year: 2008,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/07");
+        var ret = {
+            year: 2008,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/08");
+        var ret = {
+            year: 2008,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2008/01/09");
+        var ret = {
+            year: 2008,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2008 年末----------------------------------------------------------------
+    it("2008年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/23");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/24");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/25");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/26");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/27");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/28");
+        var ret = {
+            year: 2008,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/29");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/30");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2008年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2008/12/31");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2009 --------------------------------------------------------------------
+    it("2009年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/01");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/02");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/03");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/04");
+        var ret = {
+            year: 2009,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/05");
+        var ret = {
+            year: 2009,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/06");
+        var ret = {
+            year: 2009,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/07");
+        var ret = {
+            year: 2009,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/08");
+        var ret = {
+            year: 2009,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2009/01/09");
+        var ret = {
+            year: 2009,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2009 年末----------------------------------------------------------------
+    it("2009年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/23");
+        var ret = {
+            year: 2009,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/24");
+        var ret = {
+            year: 2009,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/25");
+        var ret = {
+            year: 2009,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/26");
+        var ret = {
+            year: 2009,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/27");
+        var ret = {
+            year: 2009,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/28");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/29");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/30");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2009年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2009/12/31");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2010 --------------------------------------------------------------------
+    it("2010年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/01");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/02");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/03");
+        var ret = {
+            year: 2009,
+            week: 53
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/04");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/05");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/06");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/07");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/08");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2010/01/09");
+        var ret = {
+            year: 2010,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2010 年末----------------------------------------------------------------
+    it("2010年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/23");
+        var ret = {
+            year: 2010,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/24");
+        var ret = {
+            year: 2010,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/25");
+        var ret = {
+            year: 2010,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/26");
+        var ret = {
+            year: 2010,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/27");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/28");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/29");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/30");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2010年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2010/12/31");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2011 --------------------------------------------------------------------
+    it("2011年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/01");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/02");
+        var ret = {
+            year: 2010,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/03");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/04");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/05");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/06");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/07");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/08");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2011/01/09");
+        var ret = {
+            year: 2011,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2011 年末----------------------------------------------------------------
+    it("2011年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/23");
+        var ret = {
+            year: 2011,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/24");
+        var ret = {
+            year: 2011,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/25");
+        var ret = {
+            year: 2011,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/26");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/27");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/28");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/29");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/30");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2011年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2011/12/31");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2012 --------------------------------------------------------------------
+    it("2012年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/01");
+        var ret = {
+            year: 2011,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/02");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/03");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/04");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/05");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/06");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/07");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/08");
+        var ret = {
+            year: 2012,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2012/01/09");
+        var ret = {
+            year: 2012,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2012 年末----------------------------------------------------------------
+    it("2012年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/23");
+        var ret = {
+            year: 2012,
+            week: 51
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/24");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/25");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/26");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/27");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/28");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/29");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/30");
+        var ret = {
+            year: 2012,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2012年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2012/12/31");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2013 --------------------------------------------------------------------
+    it("2013年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/01");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/02");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/03");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/04");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/05");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/06");
+        var ret = {
+            year: 2013,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/07");
+        var ret = {
+            year: 2013,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/08");
+        var ret = {
+            year: 2013,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2013/01/09");
+        var ret = {
+            year: 2013,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2013 年末----------------------------------------------------------------
+    it("2013年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/23");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/24");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/25");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/26");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/27");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/28");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/29");
+        var ret = {
+            year: 2013,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/30");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2013年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2013/12/31");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2014 --------------------------------------------------------------------
+    it("2014年1月1日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/01");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月2日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/02");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月3日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/03");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月4日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/04");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月5日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/05");
+        var ret = {
+            year: 2014,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月6日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/06");
+        var ret = {
+            year: 2014,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月7日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/07");
+        var ret = {
+            year: 2014,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月8日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/08");
+        var ret = {
+            year: 2014,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年1月9日のISO週番号、年", function () {
+        var date = new UltraDate("2014/01/09");
+        var ret = {
+            year: 2014,
+            week: 2
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    // 2014 年末----------------------------------------------------------------
+    it("2014年12月23日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/23");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月24日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/24");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月25日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/25");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月26日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/26");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月27日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/27");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月28日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/28");
+        var ret = {
+            year: 2014,
+            week: 52
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月29日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/29");
+        var ret = {
+            year: 2015,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月30日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/30");
+        var ret = {
+            year: 2015,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+    it("2014年12月31日のISO週番号、年", function () {
+        var date = new UltraDate("2014/12/31");
+        var ret = {
+            year: 2015,
+            week: 1
+        };
+        expect(date.getISOWeekWithYear()).toEqual(ret);
+    });
+});
+
 describe("getISOWeek:", function () {
     // 2000 --------------------------------------------------------------------
     it("2000年1月1日のISO週番号の戻り値は「0」", function () {
