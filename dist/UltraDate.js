@@ -1,5 +1,5 @@
 /*!
- * UltraDate.js v1.5.0 (http://hrdaya.github.io/UltraDate.js/)
+ * UltraDate.js v1.7.0 (http://hrdaya.github.io/UltraDate.js/)
  *
  * Copyright 2015 yu-ki higa (https://github.com/hrdaya)
  * Licensed under MIT (https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
@@ -68,6 +68,9 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
 
     // デフォルトのロケール
     var _defaultLocale = "def";
+
+    // 上書きされたprototype
+    var _duplicate = [];
 
     /**
      * 祝祭日のオプション群
@@ -390,6 +393,16 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     UltraDate.getUSLastWeekNum = function (year) {
         year = (year === undefined) ? new UltraDate().getFullYear() : _getInt(year);
         return new UltraDate(year, 11, 31).getUSWeek();
+    };
+
+    /**
+     * Date.prototypeでUltraDate.prototypeを上書きしているものを取得
+     * DateからUltraDateへの乗り換え用
+     *
+     * @return {Array} プロパティ名を保存した配列
+     */
+    UltraDate.getDuplicate = function () {
+        return _duplicate;
     };
 
     /**-------------------------------------------------------------------------
@@ -1244,6 +1257,9 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     for (var i in keys) {
         (function (key) {
             if (key !== "constructor") {
+                if (UltraDate.hasOwnProperty(key)) {
+                    _duplicate.push(key);
+                }
                 UltraDate.prototype[key] = function () {
                     return  Date.prototype[key].apply(this.date.value, Array.prototype.slice.call(arguments));
                 };

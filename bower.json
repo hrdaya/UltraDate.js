@@ -1,7 +1,7 @@
 {
     "name": "UltraDate",
     "description": "UltraDate.js: Replace a Javascript Date object",
-    "version": "1.5.0",
+    "version": "1.7.0",
     "main": [
         "dist/UltraDate.js",
         "dist/UltraDate.ja.js"
