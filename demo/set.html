@@ -693,6 +693,117 @@ console.log(date.addYear(1).setOrdinalDate(365).format("yyyy年MM月dd日"));
                     </div>
                 </div>
             </section>
+            <section id="setRoundingTime">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>setRoundingTime()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.setRoundingTime(time, method)
+                        </p>
+                        <ul>
+                            <li>分単位で丸めた時間にセットする（秒以下は切り捨てて計算）</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>time</em>&nbsp;num,&nbsp;<em>method</em>&nbsp;num)</li>
+                            <li>戻り値：なし(<code>return this;</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>time</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>丸める単位（分）</li>
+                                        <li>5,10,15,30,60分の中から選択</li>
+                                        <li>上記以外の数字を入力した場合には例外をスローする</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>method</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>丸め方</li>
+                                        <li>0：切り捨て、1：切り上げ、2：近いほうに丸める</li>
+                                        <li>数字にパースできない場合や上記数字以外の時は切り捨て</li>
+                                        <li>
+                                            2：近いほうに丸めるときの丸め方
+                                            <ul>
+                                                <li>5分のとき：0から2は0、3から4は5、5から7は5、8から9は0</li>
+                                                <li>10分のとき：0から4は0、5から9は10</li>
+                                                <li>15分のとき：0から7は0、8から14は15</li>
+                                                <li>30分のとき：0から14は0、15から29は30</li>
+                                                <li>60分のとき：0から29は0、30から59は60</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>丸めた時間でセット</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate();
+
+// 12時18分30.123秒に時間をセット
+date.setHours(12, 18, 30, 123);
+
+// 5分切り捨て
+console.log(date.copy().setRoundingTime(5, 0).format("HH:mm:ss"));
+// 5分切り上げ
+console.log(date.copy().setRoundingTime(5, 1).format("HH:mm:ss"));
+// 5分近いほうに丸める
+console.log(date.copy().setRoundingTime(5, 2).format("HH:mm:ss"));
+
+// 10分切り捨て
+console.log(date.copy().setRoundingTime(10, 0).format("HH:mm:ss"));
+// 10分切り上げ
+console.log(date.copy().setRoundingTime(10, 1).format("HH:mm:ss"));
+// 10分近いほうに丸める
+console.log(date.copy().setRoundingTime(10, 2).format("HH:mm:ss"));
+
+// 15分切り捨て
+console.log(date.copy().setRoundingTime(15, 0).format("HH:mm:ss"));
+// 15分切り上げ
+console.log(date.copy().setRoundingTime(15, 1).format("HH:mm:ss"));
+// 15分近いほうに丸める
+console.log(date.copy().setRoundingTime(15, 2).format("HH:mm:ss"));
+
+// 30分切り捨て
+console.log(date.copy().setRoundingTime(30, 0).format("HH:mm:ss"));
+// 30分切り上げ
+console.log(date.copy().setRoundingTime(30, 1).format("HH:mm:ss"));
+// 30分近いほうに丸める
+console.log(date.copy().setRoundingTime(30, 2).format("HH:mm:ss"));
+
+// 60分切り捨て
+console.log(date.copy().setRoundingTime(60, 0).format("HH:mm:ss"));
+// 60分切り上げ
+console.log(date.copy().setRoundingTime(60, 1).format("HH:mm:ss"));
+// 60分近いほうに丸める
+console.log(date.copy().setRoundingTime(60, 2).format("HH:mm:ss"));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="clearTime">
                 <div class="panel panel-default">
                     <div class="panel-heading">

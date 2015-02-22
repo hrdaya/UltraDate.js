@@ -791,6 +791,38 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return this;
         },
         /**
+         * 分を丸めた時間にセットする
+         *
+         * @param {Number} time 丸める時間（5, 10, 15, 30, 60）
+         * @param {Number} method 丸め方（0：切捨て, 1：切上げ, 2：近いほうに寄せる）
+         *
+         * @return {this}
+         */
+        setRoundingTime: function (time, method) {
+            time = _getInt(time);
+            var arr = [5, 10, 15, 30, 60];
+            if (arr.indexOf(time) < 0) {
+                throw new Error("Data type of the argument is incorrect");
+            } else {
+                this.addMilliseconds((this.getTime() % (60 * 1000)) * -1);
+                var sup = this.getTime() % (time * 60 * 1000);
+                this.setMilliseconds(sup * -1);
+                switch (_getInt(method)) {
+                    case 1:
+                        if (sup !== 0) {
+                            this.addMinutes(time);
+                        }
+                        break;
+                    case 2:
+                        if (time * 60 * 1000 <= sup * 2) {
+                            this.addMinutes(time);
+                        }
+                        break;
+                }
+            }
+            return this;
+        },
+        /**
          * 時間を0時0分0秒000にする
          *
          * @return {this} 自身に返す（チェーンメソッド用）
