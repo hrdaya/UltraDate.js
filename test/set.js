@@ -2499,6 +2499,5424 @@ describe("setOrdinalDate:", function () {
         expect(date3.getDate()).toEqual(30);
     });
 });
+describe("setRoundingTime:", function () {
+    // 5分単位切捨て--------------------------------------------------------------
+    it("12時00分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時06分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時07分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時08分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時09分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時10分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時12分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時13分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時14分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時15分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時17分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時18分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時19分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時20分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時22分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時23分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時24分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時25分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時26分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時27分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時28分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時29分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時30分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時36分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時37分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時38分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時39分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時40分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時42分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時43分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時44分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時45分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時47分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時48分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時49分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時50分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時52分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時53分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時54分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時55分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時56分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時57分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時58分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時59分5分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    // 5分単位切上げ--------------------------------------------------------------
+    it("12時00分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時02分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時03分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時04分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時05分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時06分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時07分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時08分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時09分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時10分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時12分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時13分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時14分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時15分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時17分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時18分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時19分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時20分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時22分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時23分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時24分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時25分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時26分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時32分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時33分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時34分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時35分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時36分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時37分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時38分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時39分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時40分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時42分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時43分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時44分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時45分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時47分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時48分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時49分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時50分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時52分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時53分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時54分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時55分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時56分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分5分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 5分単位近いほうに丸める--------------------------------------------------
+    it("12時00分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時04分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時05分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時06分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時07分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(5);
+    });
+    it("12時08分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時09分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時10分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時12分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時13分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時14分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時15分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時17分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時18分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時19分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時20分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時22分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時23分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時24分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時25分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時26分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時27分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(25);
+    });
+    it("12時28分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時34分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時35分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時36分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時37分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(35);
+    });
+    it("12時38分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時39分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時40分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時42分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時43分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時44分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時45分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時47分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時48分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時49分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時50分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時52分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時53分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時54分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時55分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時56分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時57分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(55);
+    });
+    it("12時58分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分5分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(5, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 10分単位切捨て--------------------------------------------------------------
+    it("12時00分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時12分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時13分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時14分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時15分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時16分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時17分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時18分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時19分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時20分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時22分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時23分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時24分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時25分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時26分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時27分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時28分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時29分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時30分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時36分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時37分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時38分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時39分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時40分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時42分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時43分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時44分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時45分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時46分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時47分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時48分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時49分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時50分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時52分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時53分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時54分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時55分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時56分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時57分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時58分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時59分10分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    // 10分単位切上げ--------------------------------------------------------------
+    it("12時00分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時02分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時03分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時04分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時05分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時06分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時07分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時08分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時09分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時10分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時12分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時13分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時14分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時15分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時16分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時17分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時18分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時19分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時20分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時22分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時23分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時24分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時25分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時32分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時33分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時34分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時35分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時36分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時37分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時38分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時39分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時40分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時42分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時43分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時44分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時45分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時46分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時47分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時48分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時49分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時50分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分10分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 10分単位近いほうに丸める--------------------------------------------------
+    it("12時00分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時06分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時07分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時08分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時09分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時10分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時11分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時12分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時13分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時14分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(10);
+    });
+    it("12時15分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時16分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時17分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時18分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時19分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時20分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時21分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時22分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時23分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時24分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(20);
+    });
+    it("12時25分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時36分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時37分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時38分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時39分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時40分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時41分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時42分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時43分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時44分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(40);
+    });
+    it("12時45分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時46分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時47分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時48分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時49分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時50分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時51分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時52分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時53分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時54分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(50);
+    });
+    it("12時55分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分10分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(10, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 15分単位切捨て--------------------------------------------------------------
+    it("12時00分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時17分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時18分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時19分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時20分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時21分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時22分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時23分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時24分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時25分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時26分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時27分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時28分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時29分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時30分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時36分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時37分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時38分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時39分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時40分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時41分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時42分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時43分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時44分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時45分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時47分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時48分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時49分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時50分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時51分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時52分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時53分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時54分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時55分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時56分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時57分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時58分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時59分15分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    // 15分単位切上げ--------------------------------------------------------------
+    it("12時00分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時02分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時03分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時04分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時05分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時06分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時07分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時08分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時09分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時10分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時11分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時12分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時13分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時14分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時15分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時17分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時18分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時19分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時20分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時21分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時22分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時23分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時24分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時25分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時32分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時33分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時34分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時35分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時36分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時37分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時38分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時39分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時40分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時41分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時42分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時43分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時44分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時45分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分15分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 15分単位近いほうに丸める--------------------------------------------------
+    it("12時00分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時09分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時10分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時11分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時12分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時13分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時14分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時15分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時16分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時17分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時18分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時19分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時20分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時21分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時22分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(15);
+    });
+    it("12時23分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時24分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時25分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時36分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時37分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時38分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時39分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時40分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時41分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時42分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時43分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時44分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時45分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時46分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時47分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時48分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時49分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時50分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時51分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時52分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(45);
+    });
+    it("12時53分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分15分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(15, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 30分単位切捨て--------------------------------------------------------------
+    it("12時00分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時16分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時17分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時18分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時19分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時20分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時21分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時22分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時23分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時24分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時25分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時26分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時27分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時28分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時29分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時30分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時36分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時37分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時38分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時39分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時40分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時41分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時42分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時43分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時44分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時45分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時46分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時47分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時48分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時49分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時50分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時51分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時52分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時53分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時54分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時55分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時56分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時57分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時58分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時59分30分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    // 30分単位切上げ--------------------------------------------------------------
+    it("12時00分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時02分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時03分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時04分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時05分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時06分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時07分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時08分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時09分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時10分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時11分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時12分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時13分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時14分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時15分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時16分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時17分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時18分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時19分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時20分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時21分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時22分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時23分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時24分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時25分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時32分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時33分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時34分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時35分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時36分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時37分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時38分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時39分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時40分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時41分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時42分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時43分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時44分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時45分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時46分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分30分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 30分単位近いほうに丸める--------------------------------------------------
+    it("12時00分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時16分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時17分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時18分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時19分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時20分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時21分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時22分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時23分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時24分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時25分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時26分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時27分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時28分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時29分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時30分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時31分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時32分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時33分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時34分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時35分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時36分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時37分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時38分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時39分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時40分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時41分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時42分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時43分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時44分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(30);
+    });
+    it("12時45分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時46分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分30分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(30, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 60分単位切捨て--------------------------------------------------------------
+    it("12時00分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時16分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時17分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時18分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時19分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時20分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時21分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時22分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時23分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時24分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時25分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時26分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時27分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時28分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時29分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時30分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時31分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時32分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時33分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時34分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時35分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時36分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時37分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時38分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時39分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時40分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時41分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時42分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時43分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時44分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時45分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時46分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分60分単位で切り捨て", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 0);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 60分単位切上げ--------------------------------------------------------------
+    it("12時00分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時16分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時17分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時18分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時19分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時20分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時21分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時22分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時23分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時24分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時25分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時26分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時27分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時28分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時29分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時30分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時31分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時32分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時33分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時34分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時35分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時36分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時37分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時38分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時39分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時40分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時41分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時42分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時43分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時44分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時45分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時46分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分60分単位で切上げ", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 1);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    // 60分単位近いほうに丸める--------------------------------------------------
+    it("12時00分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:00:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時01分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:01:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時02分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:02:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時03分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:03:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時04分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:04:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時05分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:05:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時06分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:06:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時07分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:07:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時08分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:08:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時09分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:09:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時10分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:10:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時11分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:11:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時12分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:12:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時13分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:13:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時14分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:14:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時15分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:15:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時16分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:16:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時17分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:17:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時18分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:18:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時19分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:19:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時20分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:20:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時21分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:21:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時22分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:22:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時23分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:23:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時24分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:24:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時25分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:25:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時26分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:26:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時27分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:27:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時28分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:28:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時29分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:29:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(12);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時30分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:30:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時31分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:31:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時32分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:32:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時33分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:33:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時34分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:34:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時35分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:35:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時36分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:36:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時37分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:37:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時38分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:38:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時39分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:39:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時40分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:40:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時41分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:41:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時42分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:42:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時43分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:43:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時44分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:44:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時45分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:45:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時46分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:46:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時47分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:47:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時48分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:48:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時49分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:49:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時50分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:50:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時51分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:51:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時52分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:52:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時53分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:53:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時54分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:54:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時55分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:55:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時56分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:56:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時57分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:57:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時58分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:58:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+    it("12時59分60分単位で近いほうに丸める", function () {
+        var date = new UltraDate("2015-01-31T12:59:59.123Z");
+        date.addMinutes(date.getTimezoneOffset()).setRoundingTime(60, 2);
+        expect(date.getHours()).toEqual(13);
+        expect(date.getMinutes()).toEqual(0);
+    });
+});
+
 describe("clearTime:", function () {
     var date = new UltraDate("2015-01-31T12:59:59.123Z").clearTime();
     var setDate = new UltraDate("2015/01/31");

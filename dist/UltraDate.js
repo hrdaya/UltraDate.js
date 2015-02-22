@@ -1,5 +1,5 @@
 /*!
- * UltraDate.js v1.3.0 (http://hrdaya.github.io/UltraDate.js/)
+ * UltraDate.js v1.5.0 (http://hrdaya.github.io/UltraDate.js/)
  *
  * Copyright 2015 yu-ki higa (https://github.com/hrdaya)
  * Licensed under MIT (https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
@@ -788,6 +788,38 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         setOrdinalDate: function (num) {
             this.setFullYear(this.getFullYear(), 0, 1);
             this.addDate(_getInt(num) - 1);
+            return this;
+        },
+        /**
+         * 分を丸めた時間にセットする
+         *
+         * @param {Number} time 丸める時間（5, 10, 15, 30, 60）
+         * @param {Number} method 丸め方（0：切捨て, 1：切上げ, 2：近いほうに寄せる）
+         *
+         * @return {this}
+         */
+        setRoundingTime: function (time, method) {
+            time = _getInt(time);
+            var arr = [5, 10, 15, 30, 60];
+            if (arr.indexOf(time) < 0) {
+                throw new Error("Data type of the argument is incorrect");
+            } else {
+                this.addMilliseconds((this.getTime() % (60 * 1000)) * -1);
+                var sup = this.getTime() % (time * 60 * 1000);
+                this.setMilliseconds(sup * -1);
+                switch (_getInt(method)) {
+                    case 1:
+                        if (sup !== 0) {
+                            this.addMinutes(time);
+                        }
+                        break;
+                    case 2:
+                        if (time * 60 * 1000 <= sup * 2) {
+                            this.addMinutes(time);
+                        }
+                        break;
+                }
+            }
             return this;
         },
         /**
