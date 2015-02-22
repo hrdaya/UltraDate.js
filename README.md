@@ -38,10 +38,10 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | メソッド | 簡単な説明 |
 |:-----------|:------------|
 | UltraDate.getDefaultFormat() | 祝祭日一覧のキーで使用する日付フォーマットを返します |
+| UltraDate.getDuplicate() | Date.prototypeで上書きされたメソッドの配列を取得します |
 | UltraDate.setFormatOption() | 「format()」で使用する元号や月名、曜日名等をセットします |
 | UltraDate.setHolidayOption() | 祝祭日一覧を取得する関数をセットします |
 | UltraDate.setDefaultLocale() | デフォルトで使用されるロケールをセットします |
-| UltraDate.getDuplicate() | Date.prototypeで上書きされたメソッドの配列を取得します |
 | copy() | UltraDateオブジェクトのコピーを返します |
 | format() | 引数「format」で指定されたフォーマットで文字列を返します |
 | addYear() | 年の増減を行います |
@@ -83,7 +83,6 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | isUSWeekDay() | US形式で「week」週の「day」曜日かどうかの判定 |
 | isISOWeek() | ISO形式で「week」週の日かどうかの判定 |
 | isUSWeek() | US形式で「week」週の日かどうかの判定 |
-| isWeekday() | 平日かどうかの判定 |
 | isSameDate() | 引数「date」と同じ日かどうかの判定 |
 | isBeforeDate() | 日付が引数「date」より前かどうかの判定 |
 | isAfterDate() | 日付が引数「date」より後かどうかの判定 |
@@ -92,6 +91,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | isTomorrow() | 明日の日付かどうかの判定 |
 | isYesterday() | 昨日の日付かどうかの判定 |
 | isNDateToThat() | 日付が引数「date」まで引数「num」日かどうかの判定 |
+| isWeekday() | 平日かどうかの判定 |
 | isHoliday() | 土日祝日かどうかの判定 |
 
 ## ライセンス

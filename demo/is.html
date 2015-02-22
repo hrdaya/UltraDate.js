@@ -507,106 +507,6 @@ console.log(str);
                     </div>
                 </div>
             </section>
-            <section id="isWeekday">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h1>isWeekday()</h1>
-                    </div>
-                    <div class="panel-body">
-                        <h2>関数概要</h2>
-                        <p class="lead">
-                            UltraDate.prototype.isWeekday(option, locale)
-                        </p>
-                        <ul>
-                            <li>平日かどうかの判定</li>
-                        </ul>
-                        <ul>
-                            <li>引数：(<em>Number</em>&nbsp;option,&nbsp;<em>String</em>&nbsp;locale)</li>
-                            <li>戻り値：Boolean</li>
-                        </ul>
-                    </div>
-                    <div class="panel panel-default doc-args">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">引数</h2>
-                        </div>
-                        <table class="table table-bordered table-responsive">
-                            <tr>
-                                <th>名前</th>
-                                <th>型</th>
-                                <th>説明</th>
-                            </tr>
-                            <tr>
-                                <td>option</td>
-                                <td>Number</td>
-                                <td>
-                                    <ul>
-                                        <li>0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧</li>
-                                        <li>1：土曜日、日曜日のみ</li>
-                                        <li>2：日曜日、引数「locale」で取得される祝祭日一覧のみ</li>
-                                        <li>3：日曜日のみ</li>
-                                        <li>4：引数「locale」で取得される祝祭日一覧のみ</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>locale</td>
-                                <td>String</td>
-                                <td>
-                                    <ul>
-                                        <li>取得するロケールの文字列を指定します</li>
-                                        <li>指定の無い場合はデフォルトのロケールが使用されます</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="panel-body">
-                        <h2>サンプル</h2>
-                        <h3>平日かどうかの判定</h3>
-                        <div class="ex-code-prettify">
-                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
-var date = new UltraDate("2014/05/03");
-var str = date.format("yyyy年MM月dd日") + "は";
-
-if (date.isWeekday()) {
-    str += "土日祝日以外です";
-} else {
-    str += "土日祝日です";
-}
-console.log(str);
-
-if (date.isWeekday(1)) {
-    str += "土日以外です";
-} else {
-    str += "土日です";
-}
-console.log(str);
-
-if (date.isWeekday(2)) {
-    str += "日曜祝日以外です";
-} else {
-    str += "日曜祝日です";
-}
-console.log(str);
-
-if (date.isWeekday(3)) {
-    str += "日曜日以外です";
-} else {
-    str += "日曜日です";
-}
-console.log(str);
-
-if (date.isWeekday(4)) {
-    str += "祝日以外です";
-} else {
-    str += "祝日です";
-}
-console.log(str);
-                            </textarea>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section id="isSameDate">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -1298,6 +1198,106 @@ console.log(checkDate(date1, date2, 3));
 
 date2.addDate(-4);
 console.log(checkDate(date1, date2, 3));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="isWeekday">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>isWeekday()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.isWeekday(option, locale)
+                        </p>
+                        <ul>
+                            <li>平日かどうかの判定</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>Number</em>&nbsp;option,&nbsp;<em>String</em>&nbsp;locale)</li>
+                            <li>戻り値：Boolean</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>option</td>
+                                <td>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧</li>
+                                        <li>1：土曜日、日曜日のみ</li>
+                                        <li>2：日曜日、引数「locale」で取得される祝祭日一覧のみ</li>
+                                        <li>3：日曜日のみ</li>
+                                        <li>4：引数「locale」で取得される祝祭日一覧のみ</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>locale</td>
+                                <td>String</td>
+                                <td>
+                                    <ul>
+                                        <li>取得するロケールの文字列を指定します</li>
+                                        <li>指定の無い場合はデフォルトのロケールが使用されます</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>平日かどうかの判定</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+var date = new UltraDate("2014/05/03");
+var str = date.format("yyyy年MM月dd日") + "は";
+
+if (date.isWeekday()) {
+    str += "土日祝日以外です";
+} else {
+    str += "土日祝日です";
+}
+console.log(str);
+
+if (date.isWeekday(1)) {
+    str += "土日以外です";
+} else {
+    str += "土日です";
+}
+console.log(str);
+
+if (date.isWeekday(2)) {
+    str += "日曜祝日以外です";
+} else {
+    str += "日曜祝日です";
+}
+console.log(str);
+
+if (date.isWeekday(3)) {
+    str += "日曜日以外です";
+} else {
+    str += "日曜日です";
+}
+console.log(str);
+
+if (date.isWeekday(4)) {
+    str += "祝日以外です";
+} else {
+    str += "祝日です";
+}
+console.log(str);
                             </textarea>
                         </div>
                     </div>
