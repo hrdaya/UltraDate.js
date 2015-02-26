@@ -22,14 +22,18 @@
     var consts = {
         defaultFormat: UltraDate.getDefaultFormat(), // デフォルトのフォーマット
         strLocale: "ja", // デフォルトに設定するロケール
-        strHurikae: "振替休日", // 振替休日用の文字列
-        startHurikae: new Date(1973, 3, 12), // 振替休日の施行日
+        strFurikae: "振替休日", // 振替休日用の文字列
+        dateFurikae: new Date(1973, 3, 12), // 振替休日の施行日
         strKokumin: "国民の休日", // 国民の休日用の文字列
         dateKokumin: new Date(1985, 11, 27), // 国民の休日の施行日
         dateHeisei: new Date(1989, 0, 8), // 平成の始まり
         dateShowa: new Date(1926, 11, 25), // 昭和の始まり
         dateTaisho: new Date(1912, 6, 30), // 大正の始まり
-        dateMeiji: new Date(1868, 0, 1)     // 明治の始まり
+        dateMeiji: new Date(1868, 0, 25), // 明治の始まり
+        yearHeisei: 1988, // 平成の始まり年の前の年
+        yearShowa: 1925, // 昭和の始まり年の前の年
+        yearTaisho: 1911, // 大正の始まり年の前の年
+        yearMeiji: 1867 // 明治の始まり年の前の年
     };
 
     // 日付フォーマットのオプション追加
@@ -52,33 +56,33 @@
                         alphaName: "AD",
                         year: year
                     };
-                    if (year >= 1989) {
+                    if (year > consts.yearHeisei) {
                         ret = {
                             longName: "平成",
                             shortName: "平",
                             alphaName: "H",
-                            year: year - 1988
+                            year: year - consts.yearHeisei
                         };
-                    } else if (year >= 1926) {
+                    } else if (year > consts.yearShowa) {
                         ret = {
                             longName: "昭和",
                             shortName: "昭",
                             alphaName: "S",
-                            year: year - 1925
+                            year: year - consts.yearShowa
                         };
-                    } else if (year >= 1912) {
+                    } else if (year > consts.yearTaisho) {
                         ret = {
                             longName: "大正",
                             shortName: "大",
                             alphaName: "T",
-                            year: year - 1911
+                            year: year - consts.yearTaisho
                         };
-                    } else if (year >= 1867) {
+                    } else if (year > consts.yearMeiji) {
                         ret = {
                             longName: "明治",
                             shortName: "明",
                             alphaName: "M",
-                            year: year - 1867
+                            year: year - consts.yearMeiji
                         };
                     }
                     return ret;
@@ -89,28 +93,28 @@
                             longName: "平成",
                             shortName: "平",
                             alphaName: "H",
-                            year: date.getFullYear() - 1988
+                            year: date.getFullYear() - consts.yearHeisei
                         };
                     } else if (date >= consts.dateShowa) {
                         return {
                             longName: "昭和",
                             shortName: "昭",
                             alphaName: "S",
-                            year: date.getFullYear() - 1925
+                            year: date.getFullYear() - consts.yearShowa
                         };
                     } else if (date >= consts.dateTaisho) {
                         return {
                             longName: "大正",
                             shortName: "大",
                             alphaName: "T",
-                            year: date.getFullYear() - 1911
+                            year: date.getFullYear() - consts.yearTaisho
                         };
                     } else if (date >= consts.dateMeiji) {
                         return {
                             longName: "明治",
                             shortName: "明",
                             alphaName: "M",
-                            year: date.getFullYear() - 1867
+                            year: date.getFullYear() - consts.yearMeiji
                         };
                     } else {
                         return {
@@ -154,16 +158,15 @@
                  * @return {Void} 特になし
                  */
                 create: function (year) {
-                    var thisDate = new UltraDate(year, 0, 1);
+                    var date = new UltraDate(year, 0, 1);
 
                     // 祝日設定の配列を元に祝日のオブジェクトを作成する
-                    for (var i = 0,
-                            len = this.holidays.length; i < len; i++) {
+                    for (var i = 0, len = this.holidays.length; i < len; i++) {
                         if (this.holidays[i][0] <= year && year <= this.holidays[i][1]) {
                             this.setHoliday(
+                                    date,
                                     year,
-                                    thisDate,
-                                    this.holidays[i][2],
+                                    this.holidays[i][2] - 1,
                                     this.holidays[i][3],
                                     this.holidays[i][4]
                                     );
@@ -173,35 +176,30 @@
                 /**
                  * 祝祭日の設定
                  *
+                 * @param {UltraDate} date 祝祭日の設定に使用するUltraDateオブジェクト
                  * @param {Number} year 祝祭日を設定する年
-                 * @param {UltraDate} thisDate 祝祭日の設定に使用するUltraDateオブジェクト
                  * @param {Number} month 月
-                 * @param {Number|String|Array} dateVal 数字：固定日付
-                 *                                       文字列：日付を取得する関数
-                 *                                       配列：[week,day]形式の配列
-                 *                                             setWeekDayMonth()を使用
+                 * @param {Number|Array|String} dateVal 数字：固定日付
+                 *                                      配列：[week,day]形式の配列
+                 *                                      文字列：日付を取得する関数
                  * @param {String} name 祝祭日名
                  *
                  * @return {Void} 特になし
                  */
-                setHoliday: function (year, thisDate, month, dateVal,
-                        name) {
+                setHoliday: function (date, year, month, dateVal, name) {
                     var toClassString = Object.prototype.toString;
-                    var objectClass = toClassString.call(dateVal);
-                    // UltraDateオブジェクトに月と日を設定
-                    switch (objectClass) {
-                        case "[object Array]":
-                            thisDate.setRealMonth(month)
-                                    .setDayCountsInMonth(dateVal[0], dateVal[1]);
-                            break;
+                    // とりあえずその月の1日にセット
+                    date.setFullYear(year, month, 1);
+                    switch (toClassString.call(dateVal)) {
                         case "[object Number]":
-                            thisDate.setRealMonth(month)
-                                    .setDate(dateVal);
+                            date.setDate(dateVal);
+                            break;
+                        case "[object Array]":
+                            date.setDayCountsInMonth(dateVal[0], dateVal[1]);
                             break;
                         case "[object String]":
                             if (toClassString.call(this[dateVal]) === "[object Function]") {
-                                thisDate.setRealMonth(month)
-                                        .setDate(this[dateVal](year));
+                                date.setDate(this[dateVal](year));
                             } else {
                                 throw new Error("指定の関数が存在しません");
                             }
@@ -209,22 +207,12 @@
                         default:
                             throw new Error("引数のデータ型がおかしいです");
                     }
-                    var formatDate = thisDate.format(consts.defaultFormat);
-                    // 配列に値があり、その祝日名が振替休日だった場合は
-                    // 翌日に振替休日を設定
-                    if ((formatDate in this.cache[year]) &&
-                            this.cache[year][formatDate] === consts.strHurikae) {
-                        this.setHurikae(thisDate);
-                    }
-                    // 祝日が1973年4月12日以降で、日曜日に当たる場合は
-                    // 翌日に振替休日を設定
-                    if (thisDate.getDay() === 0 && thisDate >= consts.startHurikae) {
-                        this.setHurikae(thisDate);
-                    }
+                    // 振替休日
+                    this.setFurikae(date, year);
                     // 国民の休日
-                    this.setKokumin(thisDate);
+                    this.setKokumin(date, year);
                     // キャッシュにデータを挿入する
-                    this.cache[year][formatDate] = name;
+                    this.cache[year][date.format(consts.defaultFormat)] = name;
                 },
                 /**
                  * 振替休日の設定
@@ -232,13 +220,24 @@
                  * http://www.wikiwand.com/ja/%E6%8C%AF%E6%9B%BF%E4%BC%91%E6%97%A5
                  *
                  * @param {UltraDate} date 設定に使用するUltraDateオブジェクト
+                 * @param {Number} year 祝祭日を設定する年
                  *
                  * @return {Void} 特になし
                  */
-                setHurikae: function (date) {
-                    var hurikae = date.copy().addDate(1);
-                    var year = date.getFullYear();
-                    this.cache[year][hurikae.format(consts.defaultFormat)] = consts.strHurikae;
+                setFurikae: function (date, year) {
+                    // 配列に値がある場合は翌日に振替休日を設定（連続した祝日用）
+                    if (date.format(consts.defaultFormat) in this.cache[year]) {
+                        var hurikae = date.copy().addDate(1);
+                        var format = hurikae.format(consts.defaultFormat);
+                        this.cache[year][format] = consts.strFurikae;
+                    }
+                    // 祝日が1973年4月12日以降で、日曜日に当たる場合は
+                    // 翌日に振替休日を設定
+                    if (date.getDay() === 0 && date >= consts.dateFurikae) {
+                        var hurikae = date.copy().addDate(1);
+                        var format = hurikae.format(consts.defaultFormat);
+                        this.cache[year][format] = consts.strFurikae;
+                    }
                 },
                 /**
                  * 国民の休日の設定
@@ -248,20 +247,20 @@
                  * http://www.wikiwand.com/ja/%E5%9B%BD%E6%B0%91%E3%81%AE%E4%BC%91%E6%97%A5
                  *
                  * @param {UltraDate} date 設定に使用するUltraDateオブジェクト
+                 * @param {Number} year 祝祭日を設定する年
                  *
                  * @return {Void} 特になし
                  */
-                setKokumin: function (date) {
+                setKokumin: function (date, year) {
                     var checkDate = date.copy().addDate(-2);
-                    var year = date.getFullYear();
                     if ((checkDate.format(consts.defaultFormat) in this.cache[year]) &&
                             date >= consts.dateKokumin) {
                         var day = checkDate.addDate(1).getDay();
-                        var formatDate = checkDate.format(consts.defaultFormat);
+                        var format = checkDate.format(consts.defaultFormat);
                         // 挟まれた平日が休日なので該当日が火曜日以降
                         // 該当日が月曜日の場合は振替休日となっている
-                        if (day > 1 && !(formatDate in this.cache[year])) {
-                            this.cache[year][formatDate] = consts.strKokumin;
+                        if (day > 1 && !(format in this.cache[year])) {
+                            this.cache[year][format] = consts.strKokumin;
                         }
                     }
                 },
