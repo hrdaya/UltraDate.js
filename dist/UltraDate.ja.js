@@ -245,10 +245,11 @@
                     // 祝日が1973年4月12日以降で、日曜日に当たる場合は
                     // 翌日に振替休日を設定
                     if (date.getDay() === 0 && date >= consts.dateFurikae) {
-                        var format = date.format(consts.defaultFormat);
-                        while (format in this.cache[year] || date.getDay() === 0) {
+                        while (date.format(consts.defaultFormat) in this.cache[year] ||
+                                date.getDay() === 0) {
                             date.addDate(1);
                         }
+                        var format = date.format(consts.defaultFormat);
                         this.cache[year][format] = consts.strFurikae;
                     }
                 },
@@ -354,7 +355,7 @@
                 getSyunbun: function (year) {
                     var surplus = year % 4;
                     if (1800 <= year && year <= 1827) {
-                        return  21;
+                        return 21;
                     } else if (1828 <= year && year <= 1859) {
                         return surplus < 1 ? 20 : 21;
                     } else if (1860 <= year && year <= 1891) {
