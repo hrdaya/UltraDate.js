@@ -179,9 +179,9 @@
                     keys.sort();
 
                     // キーの順番に振替休日と国民の休日を確認していく
-                    for (var l = 0, len = keys.length; l < len; l++) {
+                    for (i = 0, len = keys.length; i < len; i++) {
                         // 該当する日付をパースして、ミリ秒の時間を取得
-                        var parse = UltraDate.parse(keys[l] + " 00:00:00");
+                        var parse = UltraDate.parse(keys[i] + " 00:00:00");
 
                         // 日付をセット
                         date.setTime(parse);
