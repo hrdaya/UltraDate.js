@@ -172,6 +172,27 @@
                                     );
                         }
                     }
+                    // キャッシュのオブジェクトのキー一覧を取得する
+                    var keys = Object.keys(this.cache[year]);
+
+                    // キーを並べ替え
+                    keys.sort();
+
+                    // キーの順番に振替休日と国民の休日を確認していく
+                    for (var i = 0, len = keys.length; i < len; i++) {
+                        // 該当する日付をパースして、ミリ秒の時間を取得
+                        var parse = UltraDate.parse(keys[i] + " 00:00:00");
+
+                        // 日付をセット
+                        date.setTime(parse);
+                        // 振替休日の関数実行
+                        this.setFurikae(date, year);
+
+                        // 日付を再セット
+                        date.setTime(parse);
+                        // 国民の休日の関数実行
+                        this.setKokumin(date, year);
+                    }
                 },
                 /**
                  * 祝祭日の設定
@@ -207,10 +228,6 @@
                         default:
                             throw new Error("引数のデータ型がおかしいです");
                     }
-                    // 振替休日
-                    this.setFurikae(date, year);
-                    // 国民の休日
-                    this.setKokumin(date, year);
                     // キャッシュにデータを挿入する
                     this.cache[year][date.format(consts.defaultFormat)] = name;
                 },
@@ -225,17 +242,13 @@
                  * @return {Void} 特になし
                  */
                 setFurikae: function (date, year) {
-                    // 配列に値がある場合は翌日に振替休日を設定（連続した祝日用）
-                    if (date.format(consts.defaultFormat) in this.cache[year]) {
-                        var hurikae = date.copy().addDate(1);
-                        var format = hurikae.format(consts.defaultFormat);
-                        this.cache[year][format] = consts.strFurikae;
-                    }
                     // 祝日が1973年4月12日以降で、日曜日に当たる場合は
                     // 翌日に振替休日を設定
                     if (date.getDay() === 0 && date >= consts.dateFurikae) {
-                        var hurikae = date.copy().addDate(1);
-                        var format = hurikae.format(consts.defaultFormat);
+                        var format = date.format(consts.defaultFormat);
+                        while (format in this.cache[year] || date.getDay() === 0) {
+                            date.addDate(1);
+                        }
                         this.cache[year][format] = consts.strFurikae;
                     }
                 },
@@ -252,11 +265,12 @@
                  * @return {Void} 特になし
                  */
                 setKokumin: function (date, year) {
-                    var checkDate = date.copy().addDate(-2);
-                    if ((checkDate.format(consts.defaultFormat) in this.cache[year]) &&
+                    // 日付を二日前にセット
+                    date.setDate(date.getDate() - 2);
+                    if (date.format(consts.defaultFormat) in this.cache[year] &&
                             date >= consts.dateKokumin) {
-                        var day = checkDate.addDate(1).getDay();
-                        var format = checkDate.format(consts.defaultFormat);
+                        var day = date.addDate(1).getDay();
+                        var format = date.format(consts.defaultFormat);
                         // 挟まれた平日が休日なので該当日が火曜日以降
                         // 該当日が月曜日の場合は振替休日となっている
                         if (day > 1 && !(format in this.cache[year])) {
@@ -331,6 +345,7 @@
                  * 春分の日の日付を取得
                  *
                  * http://www.wikiwand.com/ja/%E6%98%A5%E5%88%86%E3%81%AE%E6%97%A5
+                 * http://www.wikiwand.com/ja/%E6%98%A5%E5%88%86
                  *
                  * @param {Number} year 取得する年
                  *
@@ -338,61 +353,45 @@
                  */
                 getSyunbun: function (year) {
                     var surplus = year % 4;
-                    var day = 20;
-                    switch (surplus) {
-                        case 0:
-                            if ((1800 <= year && year <= 1827) ||
-                                    (1900 <= year && year <= 1959)) {
-                                day = 21;
-                            } else if ((1828 <= year && year <= 1899) ||
-                                    (1960 <= year && year <= 2091) ||
-                                    (2100 <= year && year <= 2199)) {
-                                day = 20;
-                            } else if (2092 <= year && year <= 2099) {
-                                day = 19;
-                            }
-                            break;
-                        case 1:
-                            if ((1800 <= year && year <= 1859) ||
-                                    (1900 <= year && year <= 1991) ||
-                                    (2100 <= year && year <= 2123)) {
-                                day = 21;
-                            } else if ((1860 <= year && year <= 1899) ||
-                                    (1992 <= year && year <= 2099) ||
-                                    (2124 <= year && year <= 2199)) {
-                                day = 20;
-                            }
-                            break;
-                        case 2:
-                            if ((1800 <= year && year <= 1891) ||
-                                    (1900 <= year && year <= 2023) ||
-                                    (2100 <= year && year <= 2155)) {
-                                day = 21;
-                            } else if ((1892 <= year && year <= 1899) ||
-                                    (2024 <= year && year <= 2099) ||
-                                    (2156 <= year && year <= 2199)) {
-                                day = 20;
-                            }
-                            break;
-                        case 3:
-                            if (1900 <= year && year <= 1923) {
-                                day = 22;
-                            } else if ((1800 <= year && year <= 1899) ||
-                                    (1924 <= year && year <= 2055) ||
-                                    (2100 <= year && year <= 2187)) {
-                                day = 21;
-                            } else if ((2056 <= year && year <= 2099) ||
-                                    (2188 <= year && year <= 2199)) {
-                                day = 20;
-                            }
-                            break;
+                    if (1800 <= year && year <= 1827) {
+                        return  21;
+                    } else if (1828 <= year && year <= 1859) {
+                        return surplus < 1 ? 20 : 21;
+                    } else if (1860 <= year && year <= 1891) {
+                        return surplus < 2 ? 20 : 21;
+                    } else if (1892 <= year && year <= 1899) {
+                        return surplus < 3 ? 20 : 21;
+                    } else if (1900 <= year && year <= 1923) {
+                        return surplus < 3 ? 21 : 22;
+                    } else if (1924 <= year && year <= 1959) {
+                        return 21;
+                    } else if (1960 <= year && year <= 1991) {
+                        return surplus < 1 ? 20 : 21;
+                    } else if (1992 <= year && year <= 2023) {
+                        return surplus < 2 ? 20 : 21;
+                    } else if (2024 <= year && year <= 2055) {
+                        return surplus < 3 ? 20 : 21;
+                    } else if (2056 <= year && year <= 2091) {
+                        return 20;
+                    } else if (2092 <= year && year <= 2099) {
+                        return surplus < 1 ? 19 : 20;
+                    } else if (2100 <= year && year <= 2123) {
+                        return surplus < 1 ? 20 : 21;
+                    } else if (2124 <= year && year <= 2155) {
+                        return surplus < 2 ? 20 : 21;
+                    } else if (2156 <= year && year <= 2187) {
+                        return surplus < 3 ? 20 : 21;
+                    } else if (2188 <= year && year <= 2199) {
+                        return 20;
+                    } else {
+                        return 20;
                     }
-                    return day;
                 },
                 /**
                  * 秋分の日の日付を取得
                  *
                  * http://www.wikiwand.com/ja/%E7%A7%8B%E5%88%86%E3%81%AE%E6%97%A5
+                 * http://www.wikiwand.com/ja/%E7%A7%8B%E5%88%86
                  *
                  * @param {Number} year 取得する年
                  *
@@ -400,56 +399,39 @@
                  */
                 getSyuubun: function (year) {
                     var surplus = year % 4;
-                    var day = 23;
-                    switch (surplus) {
-                        case 0:
-                            if ((1800 <= year && year <= 1887) ||
-                                    (1900 <= year && year <= 2011) ||
-                                    (2100 <= year && year <= 2139)) {
-                                day = 23;
-                            } else if ((1888 <= year && year <= 1899) ||
-                                    (2012 <= year && year <= 2099) ||
-                                    (2140 <= year && year <= 2199)) {
-                                day = 22;
-                            }
-                            break;
-                        case 1:
-                            if (1900 <= year && year <= 1919) {
-                                day = 24;
-                            } else if ((1800 <= year && year <= 1899) ||
-                                    (1920 <= year && year <= 2043) ||
-                                    (2100 <= year && year <= 2167)) {
-                                day = 23;
-                            } else if ((2044 <= year && year <= 2099) ||
-                                    (2168 <= year && year <= 2199)) {
-                                day = 22;
-                            }
-                            break;
-                        case 2:
-                            if ((1800 <= year && year <= 1823) ||
-                                    (1900 <= year && year <= 1947)) {
-                                day = 24;
-                            } else if ((1824 <= year && year <= 1899) ||
-                                    (1948 <= year && year <= 2075) ||
-                                    (2100 <= year && year <= 2199)) {
-                                day = 23;
-                            } else if (2076 <= year && year <= 2099) {
-                                day = 22;
-                            }
-                            break;
-                        case 3:
-                            if ((1800 <= year && year <= 1851) ||
-                                    (1900 <= year && year <= 1979) ||
-                                    (2100 <= year && year <= 2103)) {
-                                day = 24;
-                            } else if ((1852 <= year && year <= 1899) ||
-                                    (1980 <= year && year <= 2099) ||
-                                    (2104 <= year && year <= 2199)) {
-                                day = 23;
-                            }
-                            break;
+                    if (1800 <= year && year <= 1823) {
+                        return surplus < 2 ? 23 : 24;
+                    } else if (1824 <= year && year <= 1851) {
+                        return surplus < 3 ? 23 : 24;
+                    } else if (1852 <= year && year <= 1887) {
+                        return 23;
+                    } else if (1888 <= year && year <= 1899) {
+                        return surplus < 1 ? 22 : 23;
+                    } else if (1900 <= year && year <= 1919) {
+                        return surplus < 1 ? 23 : 24;
+                    } else if (1920 <= year && year <= 1947) {
+                        return surplus < 2 ? 23 : 24;
+                    } else if (1948 <= year && year <= 1979) {
+                        return surplus < 3 ? 23 : 24;
+                    } else if (1980 <= year && year <= 2011) {
+                        return 23;
+                    } else if (2012 <= year && year <= 2043) {
+                        return surplus < 1 ? 22 : 23;
+                    } else if (2044 <= year && year <= 2075) {
+                        return surplus < 2 ? 22 : 23;
+                    } else if (2076 <= year && year <= 2099) {
+                        return surplus < 3 ? 22 : 23;
+                    } else if (2100 <= year && year <= 2103) {
+                        return surplus < 3 ? 23 : 24;
+                    } else if (2104 <= year && year <= 2139) {
+                        return 23;
+                    } else if (2140 <= year && year <= 2167) {
+                        return surplus < 1 ? 22 : 23;
+                    } else if (2168 <= year && year <= 2199) {
+                        return surplus < 2 ? 22 : 23;
+                    } else {
+                        return 23;
                     }
-                    return day;
                 }
             }
     );
