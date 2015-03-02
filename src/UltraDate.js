@@ -1058,12 +1058,10 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         /**
          * うるう年かどうか
          *
-         * @param {Number} year 確認する年
-         *
          * @return {Boolean}
          */
-        isLeapYear: function (year) {
-            year = year ? _getInt(year) : this.getFullYear();
+        isLeapYear: function () {
+            var year = this.getFullYear();
             return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
         },
         /**

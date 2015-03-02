@@ -8,9 +8,6 @@ describe("isLeapYear:", function () {
     it("2016年はうるう年なので「true」", function () {
         expect(date2016.isLeapYear()).toBe(true);
     });
-    it("2016年はうるう年なので「true」（引数あり）", function () {
-        expect(date2015.isLeapYear(2016)).toBe(true);
-    });
 });
 describe("isDayCountsInMonth:", function () {
     var date = new UltraDate("2015/01/15");
