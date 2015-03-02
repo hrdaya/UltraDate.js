@@ -4773,26 +4773,26 @@ describe("getOrdinalDate:", function () {
         expect(date3.getOrdinalDate()).toEqual(366);
     });
 });
-describe("getEndDate:", function () {
+describe("getLastDate:", function () {
     var date2015 = new UltraDate("2015/01/01");
     it("2015年1月末日の戻り値は「31」", function () {
-        expect(date2015.getEndDate()).toEqual(31);
+        expect(date2015.getLastDate()).toEqual(31);
     });
     it("2015年1月の翌月の末日の戻り値は「28」", function () {
-        expect(date2015.getEndDate(1)).toEqual(28);
+        expect(date2015.getLastDate(1)).toEqual(28);
     });
     it("2015年1月の翌々月の末日の戻り値は「31」", function () {
-        expect(date2015.getEndDate(2)).toEqual(31);
+        expect(date2015.getLastDate(2)).toEqual(31);
     });
     it("2015年1月の前月の末日の戻り値は「31」", function () {
-        expect(date2015.getEndDate(-1)).toEqual(31);
+        expect(date2015.getLastDate(-1)).toEqual(31);
     });
     it("2015年1月の前々月の末日の戻り値は「30」", function () {
-        expect(date2015.getEndDate(-2)).toEqual(30);
+        expect(date2015.getLastDate(-2)).toEqual(30);
     });
     var date2016 = new UltraDate("2016/02/01");
     it("2016年2月の末日の戻り値は「29」", function () {
-        expect(date2016.getEndDate()).toEqual(29);
+        expect(date2016.getLastDate()).toEqual(29);
     });
 });
 describe("getHolidays:", function () {

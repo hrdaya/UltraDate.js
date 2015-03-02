@@ -2411,28 +2411,28 @@ describe("setFirstDate:", function () {
         expect(date11.getTime()).toEqual(setDate11.getTime());
     });
 });
-describe("setEndDate:", function () {
-    var date1 = new UltraDate("2015/01/31 12:00:00").setEndDate();
+describe("setLastDate:", function () {
+    var date1 = new UltraDate("2015/01/31 12:00:00").setLastDate();
     var setDate1 = new UltraDate("2015/01/31");
     it("2015年1月31日12時の月末の戻り値は2015年1月31日0時", function () {
         expect(date1.getTime()).toEqual(setDate1.getTime());
     });
-    var date2 = new UltraDate("2015/01/31 12:00:00").setEndDate(1);
+    var date2 = new UltraDate("2015/01/31 12:00:00").setLastDate(1);
     var setDate2 = new UltraDate("2015/02/28");
     it("2015年1月31日12時の翌月 月末戻り値は2015年2月28日0時", function () {
         expect(date2.getTime()).toEqual(setDate2.getTime());
     });
-    var date3 = new UltraDate("2015/01/31 12:00:00").setEndDate(2);
+    var date3 = new UltraDate("2015/01/31 12:00:00").setLastDate(2);
     var setDate3 = new UltraDate("2015/03/31");
     it("2015年1月31日12時の翌々月 月末戻り値は2015年3月31日0時", function () {
         expect(date3.getTime()).toEqual(setDate3.getTime());
     });
-    var date12 = new UltraDate("2015/01/31 12:00:00").setEndDate(-1);
+    var date12 = new UltraDate("2015/01/31 12:00:00").setLastDate(-1);
     var setDate12 = new UltraDate("2014/12/31");
     it("2015年1月31日12時の前月 月末戻り値は2014年12月31日0時", function () {
         expect(date12.getTime()).toEqual(setDate12.getTime());
     });
-    var date11 = new UltraDate("2015/01/31 12:00:00").setEndDate(-2);
+    var date11 = new UltraDate("2015/01/31 12:00:00").setLastDate(-2);
     var setDate11 = new UltraDate("2014/11/30");
     it("2015年1月31日12時の前々月 月末戻り値は2014年11月30日0時", function () {
         expect(date11.getTime()).toEqual(setDate11.getTime());
