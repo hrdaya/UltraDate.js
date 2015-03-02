@@ -30,7 +30,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 > 「Date.prototype」のものが使用されますのでご注意ください
 > ※「UltraDate.prototype.constructor」は上書きされません
 
-バージョン2系のバージョン1系からの変更点
+### バージョン2系のバージョン1系からの変更点
 
 廃止関数
 
@@ -80,7 +80,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | setUSWeekDay() | US形式の週番号とJs形式の曜日番号で日付をセットします |
 | setFirstDate() | 引数「num」の値分の月をオフセットした月の1日に日付をセットします |
 | ~~setEndDate()~~ | ~~引数「num」の値分の月をオフセットした月の末日に日付をセットします~~(ｖ2.0.0で名前の変更) |
-| setEndDate() | 引数「num」の値分の月をオフセットした月の末日に日付をセットします |
+| setLastDate() | 引数「num」の値分の月をオフセットした月の末日に日付をセットします |
 | setBeforeWeekday() | 日付を引数「option」でしたものの前の平日にセットします |
 | setAfterWeekday() | 日付を引数「option」でしたものの後の平日にセットします |
 | setOrdinalDate() | 年間通算日で日付をセットします |
@@ -113,7 +113,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | ~~isToday()~~ | ~~今日の日付かどうかの判定~~(v2.0.0で廃止) |
 | ~~isTomorrow()~~ | ~~明日の日付かどうかの判定~~(v2.0.0で廃止) |
 | ~~isYesterday()~~ | ~~昨日の日付かどうかの判定~~(v2.0.0で廃止) |
-| ~~isNDateToThat()~~ | ~~日付が引数「date」まで引数「num」日かどうかの判定~~ |
+| ~~isNDateToThat()~~ | ~~日付が引数「date」まで引数「num」日かどうかの判定~~(v2.0.0で廃止) |
 | isWeekday() | 平日かどうかの判定 |
 | isHoliday() | 土日祝日かどうかの判定 |
 
