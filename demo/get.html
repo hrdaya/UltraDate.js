@@ -401,15 +401,15 @@ console.log("2016/12/31の年間通算日は「" + date.getOrdinalDate() + "」�
                     </div>
                 </div>
             </section>
-            <section id="getEndDate">
+            <section id="getLastDate">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>getEndDate()</h1>
+                        <h1>getLastDate()</h1>
                     </div>
                     <div class="panel-body">
                         <h2>関数概要</h2>
                         <p class="lead">
-                            UltraDate.prototype.getEndDate(num)
+                            UltraDate.prototype.getLastDate(num)
                         </p>
                         <ul>
                             <li>
@@ -470,10 +470,10 @@ var date = new UltraDate();
 console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
 
 // 現在の月の月末の数字
-console.log(date.getEndDate());
+console.log(date.getLastDate());
 
 // 翌月の月末の数字を取得
-console.log(date.getEndDate(1));
+console.log(date.getLastDate(1));
                             </textarea>
                         </div>
                     </div>
@@ -487,7 +487,7 @@ console.log(date.getEndDate(1));
                     <div class="panel-body">
                         <h2>関数概要</h2>
                         <p class="lead">
-                            UltraDate.prototype.getHolidays(year, locale)
+                            UltraDate.getHolidays(year, locale)
                         </p>
                         <ul>
                             <li>
@@ -515,7 +515,7 @@ console.log(date.getEndDate(1));
                                 <td>
                                     <ul>
                                         <li>取得する年を数字で指定します</li>
-                                        <li>指定の無い場合は現在のDateオブジェクトの年が使用されます</li>
+                                        <li>指定の無い場合は今年となります</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -554,10 +554,8 @@ console.log(date.getEndDate(1));
                         </ul>
                         <div class="ex-code-prettify">
                             <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
-var date = new UltraDate();
-
-// 現在のDateオブジェクトの年の祝祭日一覧の取得
-console.log(date.getHolidays());
+// 今年年の祝祭日一覧の取得
+console.log(UltraDate.getHolidays());
 
 // 2016年の祝祭日一覧の取得
 console.log(date.getHolidays(2016));
