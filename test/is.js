@@ -295,20 +295,6 @@ describe("isBetween:", function () {
         expect(date1.isBetween(date2, date3, true)).toBe(true);
     });
 });
-describe("isTomorrow:", function () {
-    var today = new UltraDate();
-    var tomorrow = new UltraDate().addDate(1);
-    var yesterday = new UltraDate().addDate(-1);
-    it(today.format("yyyy/MM/dd ") + "は今日なので「false」", function () {
-        expect(today.isTomorrow()).toBe(false);
-    });
-    it(tomorrow.format("yyyy/MM/dd ") + "は明日なので「true」", function () {
-        expect(tomorrow.isTomorrow()).toBe(true);
-    });
-    it(yesterday.format("yyyy/MM/dd ") + "は昨日なので「false」", function () {
-        expect(yesterday.isTomorrow()).toBe(false);
-    });
-});
 describe("isYesterday:", function () {
     var today = new UltraDate();
     var tomorrow = new UltraDate().addDate(1);

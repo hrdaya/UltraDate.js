@@ -1220,14 +1220,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return startDate <= this && this <= endDate;
         },
         /**
-         * 明日かどうかの判定
-         *
-         * @return {Boolean}
-         */
-        isTomorrow: function () {
-            return this.isSameDate(new UltraDate().addDate(1));
-        },
-        /**
          * 昨日かどうかの判定
          *
          * @return {Boolean}
