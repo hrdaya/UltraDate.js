@@ -410,15 +410,15 @@ console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
                     </div>
                 </div>
             </section>
-            <section id="setEndDate">
+            <section id="setLastDate">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>setEndDate()</h1>
+                        <h1>setLastDate()</h1>
                     </div>
                     <div class="panel-body">
                         <h2>関数概要</h2>
                         <p class="lead">
-                            UltraDate.prototype.setEndDate(num)
+                            UltraDate.prototype.setLastDate(num)
                         </p>
                         <ul>
                             <li>引数「num」の値分の月をオフセットした月の末日に日付をセットします</li>
@@ -464,13 +464,13 @@ var date = new UltraDate();
 console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
 
 // 翌月末日
-date.setEndDate(1);
+date.setLastDate(1);
 
 // 翌月末日にした後
 console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
 
 // 前々月の末日
-date.setEndDate(-2);
+date.setLastDate(-2);
 
 // 前々月の末日にした後
 console.log(date.format("yyyy年MM月dd日 HH:mm:ss.fff"));
