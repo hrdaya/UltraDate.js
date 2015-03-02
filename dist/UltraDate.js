@@ -929,7 +929,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          *
          * @return {Number} 最終日の日付
          */
-        getEndDate: function (num) {
+        getLastDate: function (num) {
             return this.copy().setLastDate(num).getDate();
         },
         /**
