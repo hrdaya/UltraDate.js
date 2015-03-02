@@ -295,23 +295,6 @@ describe("isBetween:", function () {
         expect(date1.isBetween(date2, date3, true)).toBe(true);
     });
 });
-describe("isNDateToThat:", function () {
-    var today = new UltraDate();
-    var tomorrow = new UltraDate().addDate(1);
-    var yesterday = new UltraDate().addDate(-1);
-    it(today.format("yyyy/MM/dd ") + "は" +
-            tomorrow.format("yyyy/MM/dd ") + "の日付まで1日なので「true」", function () {
-        expect(today.isNDateToThat(1, tomorrow)).toBe(true);
-    });
-    it(today.format("yyyy/MM/dd ") + "は" +
-            yesterday.format("yyyy/MM/dd ") + "の日付まで-1日なので「true」", function () {
-        expect(today.isNDateToThat(-1, yesterday)).toBe(true);
-    });
-    it(today.format("yyyy/MM/dd ") + "は" +
-            today.format("yyyy/MM/dd ") + "の日付まで0日なので「true」", function () {
-        expect(today.isNDateToThat(0, today)).toBe(true);
-    });
-});
 describe("isHoliday:", function () {
     var date20150101 = new UltraDate("2015/01/01");
     it("2015年1月1日は元日なので「true」", function () {

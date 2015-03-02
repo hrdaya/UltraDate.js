@@ -1220,19 +1220,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return startDate <= this && this <= endDate;
         },
         /**
-         * 現在の日付が指定日の日付までN日かを判定
-         *
-         * @param {Number} num N日
-         * @param {UltraDate|Date|String|Number} date 比較する日付
-         *                                            undefinedの場合は今日
-         *
-         * @return {Boolean}
-         */
-        isNDateToThat: function (num, date) {
-            date = _getDate(date);
-            return this.isSameDate(date.addDate(_getInt(num) * -1));
-        },
-        /**
          * 祝祭日かどうかの判定
          *
          * @param {String} locale 取得するロケール
