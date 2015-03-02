@@ -751,7 +751,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          *
          * @return {this} 自身に返す（チェーンメソッド用）
          */
-        setEndDate: function (num) {
+        setLastDate: function (num) {
             this.setFirstDate().addMonth(_getInt(num) + 1).setDate(0);
             return this;
         },
@@ -930,7 +930,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {Number} 最終日の日付
          */
         getEndDate: function (num) {
-            return this.copy().setEndDate(num).getDate();
+            return this.copy().setLastDate(num).getDate();
         },
         /**
          * 年の祝祭日を取得して日付文字列と祝日名のオブジェクトを返信
