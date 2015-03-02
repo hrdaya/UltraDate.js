@@ -30,6 +30,25 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 > 「Date.prototype」のものが使用されますのでご注意ください
 > ※「UltraDate.prototype.constructor」は上書きされません
 
+バージョン2系のバージョン1系からの変更点
+
+廃止関数
+
+ - UltraDate.prototype.isToday()
+ - UltraDate.prototype.isTomorrow()
+ - UltraDate.prototype.isYesterday()
+ - UltraDate.prototype.isNDateToThat()
+
+機能の変更
+
+ - UltraDate.prototype.isLeapYear(year)の引数yearの廃止
+ - UltraDate.prototype.getHolidays()→UltraDate.getHolidays()
+
+名前の変更
+
+ - UltraDate.prototype.setEndDate()→UltraDate.prototype.setLastDate()
+ - UltraDate.prototype.getEndDate()→UltraDate.prototype.getLastDate()
+
 ## 使用方法
 
 [ドキュメント](http://hrdaya.github.io/UltraDate.js/)をご参照ください
