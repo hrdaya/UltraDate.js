@@ -390,6 +390,23 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 new UltraDate().getFullYear() : _getInt(year);
         return new UltraDate(year, 11, 31).getUSWeek();
     };
+    /**
+     * 年の祝祭日を取得して日付文字列と祝日名のオブジェクトを返信
+     *
+     * @param {Number} year 取得する年
+     *                       undefinedの場合は今年
+     * @param {String} locale 取得するロケール
+     *                       undefinedの場合は現在のデフォルトのロケール
+     *
+     * @return {Object} key:{String} 日付（yyyy/MM/dd形式）
+     *                  value:{String} 祝祭日名
+     */
+    UltraDate.getHolidays = function (year, locale) {
+        year = !year ? new UltraDate().getFullYear() : _getInt(year);
+        locale = !locale ? _defaultLocale : locale;
+        return locale in _holidays ?
+                _holidays[locale].get(year) : _holidays.def.get(year);
+    };
 
     /**
      * Date.prototypeでUltraDate.prototypeを上書きしているものを取得
@@ -933,23 +950,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             return this.copy().setLastDate(num).getDate();
         },
         /**
-         * 年の祝祭日を取得して日付文字列と祝日名のオブジェクトを返信
-         *
-         * @param {Number} year 取得する年
-         *                       undefinedの場合は現在のDateオブジェクトの年
-         * @param {String} locale 取得するロケール
-         *                       undefinedの場合は現在のデフォルトのロケール
-         *
-         * @return {Object} key:{String} 日付（yyyy/MM/dd形式）
-         *                   value:{String} 祝祭日名
-         */
-        getHolidays: function (year, locale) {
-            year = !year ? this.getFullYear() : _getInt(year);
-            locale = !locale ? _defaultLocale : locale;
-            return locale in _holidays ?
-                    _holidays[locale].get(year) : _holidays.def.get(year);
-        },
-        /**
          * 現在の日付の祝祭日名を返信（祝祭日で無い場合は空文字）
          *
          * @param {String} locale 取得するロケール
@@ -959,7 +959,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          *                   祝祭日で無い場合は空文字
          */
         getHoliday: function (locale) {
-            var holidays = this.getHolidays(this.getFullYear(), locale);
+            var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
             var strDate = this.format(_strFormat);
             return strDate in holidays ? holidays[strDate] : "";
         },
@@ -1227,7 +1227,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {Boolean}
          */
         isHoliday: function (locale) {
-            var holidays = this.getHolidays(this.getFullYear(), locale);
+            var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
             return this.format(_strFormat) in holidays;
         }
     };

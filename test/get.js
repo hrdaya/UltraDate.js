@@ -4796,10 +4796,9 @@ describe("getLastDate:", function () {
     });
 });
 describe("getHolidays:", function () {
-    var date2015 = new UltraDate("2015/01/01");
     var obj = {};
     it("2015年デフォルトの戻り値は「空のオブジェクト」", function () {
-        expect(date2015.getHolidays(false, "def")).toEqual(obj);
+        expect(UltraDate.getHolidays(2015, "def")).toEqual(obj);
     });
     var obj2015 = {
         "2015/01/01": "元日",
@@ -4821,7 +4820,7 @@ describe("getHolidays:", function () {
         "2015/12/23": "天皇誕生日"
     };
     it("2015年日本の祝祭日の戻り値は「obj2015」", function () {
-        expect(date2015.getHolidays()).toEqual(obj2015);
+        expect(UltraDate.getHolidays(2015)).toEqual(obj2015);
     });
     var obj2016 = {
         "2016/01/01": "元日",
@@ -4843,7 +4842,7 @@ describe("getHolidays:", function () {
         "2016/12/23": "天皇誕生日"
     };
     it("2015年日本の祝祭日の戻り値は「obj2015」", function () {
-        expect(date2015.getHolidays(2016)).toEqual(obj2016);
+        expect(UltraDate.getHolidays(2016)).toEqual(obj2016);
     });
 });
 describe("getHoliday:", function () {
