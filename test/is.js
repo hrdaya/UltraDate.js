@@ -305,3 +305,18 @@ describe('isHoliday:', function () {
         expect(date20150102.isHoliday()).toBe(false);
     });
 });
+describe('isValid:', function () {
+    it('現在の時間は正当な日付なので「true」', function () {
+        var date = new UltraDate();
+        expect(date.isValid()).toBe(true);
+    });
+    it('2015年1月1日は正当な日付なので「true」', function () {
+        var date = new UltraDate('2015/01/01');
+        expect(date.isValid()).toBe(true);
+    });
+    var date20150102 = new UltraDate('2015/01/02');
+    it('あいうえおは正当な日付ではないので「false」', function () {
+        var date = new UltraDate('あいうえお');
+        expect(date.isHoliday()).toBe(false);
+    });
+});

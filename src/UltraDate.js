@@ -13,29 +13,17 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     };
 
     if (this instanceof UltraDate) {
-        this.date = {
-            _value: undefined,
-            get value() {
-                return this._value;
-            },
-            set value(val) {
-                if (isNaN(val.getTime())) {
-                    throw new Error('not Date Object');
-                } else {
-                    this._value = val;
-                }
-            }
-        };
+        this.__value = undefined;
 
         switch (arguments.length) {
             case 0:
-                this.date.value = new Date();
+                this.__value = new Date();
                 break;
             case 1:
-                this.date.value = new Date(year);
+                this.__value = new Date(year);
                 break;
             default:
-                this.date.value = new Date(
+                this.__value = new Date(
                         _getInt(year),
                         _getInt(month),
                         _getInt(day),
@@ -435,7 +423,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {UltraDate} 新規に作成したUltraDateオブジェクトを返信
          */
         copy: function () {
-            return new UltraDate(this.date.value);
+            return new UltraDate(this.__value);
         },
         /**
          * 日付フォーマット
@@ -1230,6 +1218,14 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         isHoliday: function (locale) {
             var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
             return this.format(_strFormat) in holidays;
+        },
+        /**
+         * 現在のオブジェクトが正当な日付オブジェクトかどうかの判定
+         *
+         * @return {boolean} 正当な日付の場合はtrue
+         */
+        isValid: function () {
+            return !isNaN(this.__value.getTime());
         }
     };
     /**
@@ -1247,7 +1243,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 }
                 UltraDate.prototype[key] = function () {
                     return  Date.prototype[key].apply(
-                            this.date.value,
+                            this.__value,
                             Array.prototype.slice.call(arguments)
                             );
                 };

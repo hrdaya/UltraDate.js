@@ -1014,7 +1014,8 @@ console.log(str);
                                 <td>Boolean</td>
                                 <td>
                                     <ul>
-                                        <li>現在のUltraDateオブジェクトの「getHoliday()」で取得された文字列が空でないなら「true」</li>
+                                        <li>現在のUltraDateオブジェクトが「UltraDate.getHolidays(オブジェクトの年)」
+                                            で取得したオブジェクトの中に該当する日付キーがあれば「true」</li>
                                         <li>時間は考慮しません</li>
                                     </ul>
                                 </td>
@@ -1046,6 +1047,60 @@ console.log(checkDate(date));
 // 2015年11月23日が祝祭日かどうかを確認する
 date.setFullYear(2015, 10, 23);
 console.log(checkDate(date));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="isValid">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>isValid()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.isValid()
+                        </p>
+                        <ul>
+                            <li>現在のUltraDateオブジェクトが正当な日付かどうかの判定</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Boolean</td>
+                                <td>
+                                    <ul>
+                                        <li>現在のUltraDateオブジェクトが正当な日付であれば「true」</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>正当な日付かどうかの判定</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+// 現在の時間で作成したオブジェクトは正当な日付
+var date = new UltraDate();
+console.log(date.isValid());
+
+// 2015年1月1日は正当な日付
+var date = new UltraDate("2015/01/01");
+console.log(date.isValid());
+
+// 「あいうえお」は正当でない日付
+var date = new UltraDate("あいうえお");
+console.log(date.isValid());
                             </textarea>
                         </div>
                     </div>
