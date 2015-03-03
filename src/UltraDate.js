@@ -1218,6 +1218,14 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         isHoliday: function (locale) {
             var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
             return this.format(_strFormat) in holidays;
+        },
+        /**
+         * 現在のオブジェクトが正当な日付オブジェクトかどうかの判定
+         *
+         * @return {boolean} 正当な日付の場合はtrue
+         */
+        isValid: function () {
+            return !isNaN(this.__value.getTime());
         }
     };
     /**
