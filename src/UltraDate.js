@@ -52,13 +52,19 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     /**-------------------------------------------------------------------------
      * クロージャ
      *------------------------------------------------------------------------*/
-    // デフォルトのフォーマット文字列
+    /**
+     * デフォルトのフォーマット文字列
+     */
     var _strFormat = 'yyyy/MM/dd';
 
-    // デフォルトのロケール
+    /**
+     * デフォルトのロケール
+     */
     var _defaultLocale = 'def';
 
-    // 上書きされたprototype
+    /**
+     * 上書きされたprototype
+     */
     var _duplicate = [];
 
     /**
@@ -79,13 +85,19 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * デフォルトのフォーマット
          */
         def: {
-            longDay: ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
-                'Thursday', 'Friday', 'Saturday'],
+            longDay: [
+                'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+                'Thursday', 'Friday', 'Saturday'
+            ],
             shortDay: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            longMonth: ['January', 'February', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'October', 'November', 'December'],
-            shortMonth: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            longMonth: [
+                'January', 'February', 'March', 'April', 'May', 'June', 'July',
+                'August', 'September', 'October', 'November', 'December'
+            ],
+            shortMonth: [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+                'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ],
             smallNoon: ['am', 'pm'],
             largeNoon: ['AM', 'PM'],
             era: function (date) {
@@ -108,7 +120,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      * @param {Number} num 変換する数字
      *
      * @return {Number} 数字に変換した値
-     *                   変換できなかったときは「0」
+     *                  変換できなかったときは「0」
      */
     var _getInt = function (num) {
         num = parseInt(num, 10);
@@ -201,7 +213,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         // 24 * 60 * 60 * 1000 = 86400000
         // 「((thisDate - firstDate) / 86400000) + 1」で日数を計算
         // 「reqDate + thisDay」1月1日の週、該当日の週に計算で必要な値を足す
-        var lapsedDays = ((thisDate - firstDate) / 86400000) + 1 + reqDate + thisDay;
+        var lapsedDays = ((thisDate - firstDate) / 86400000) + 1 +
+                reqDate + thisDay;
 
         /**
          * 1月1日のある週を第1週とする場合は先頭の週に1日でも存在すれば第1週となる為、
@@ -261,7 +274,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      */
     UltraDate.getISOLastWeekNum = function (year) {
         year = year === undefined ?
-                new UltraDate().getFullYear() : _getInt(year);
+                new Date().getFullYear() : _getInt(year);
         var date = new UltraDate(year, 11, 31);
         return date.getISODay() < 4 ?
                 date.addDate(date.getISODay() * -1).getISOWeek() :
@@ -279,7 +292,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      */
     UltraDate.getUSLastWeekNum = function (year) {
         year = year === undefined ?
-                new UltraDate().getFullYear() : _getInt(year);
+                new Date().getFullYear() : _getInt(year);
         return new UltraDate(year, 11, 31).getUSWeek();
     };
 
@@ -287,17 +300,18 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      * 年の祝祭日を取得して日付文字列と祝日名のオブジェクトを返信
      *
      * @param {Number} year 取得する年
-     *                       undefinedの場合は今年
+     *                      undefinedの場合は今年
      * @param {String} locale 取得するロケール
-     *                       undefinedの場合は現在のデフォルトのロケール
+     *                        undefinedの場合は現在のデフォルトのロケール
      *
      * @return {Object} key:{String} 日付（yyyy/MM/dd形式）
      *                  value:{String} 祝祭日名
      */
     UltraDate.getHolidays = function (year, locale) {
-        year = !year ? new UltraDate().getFullYear() : _getInt(year);
+        year = year === undefined ?
+                new Date().getFullYear() : _getInt(year);
         locale = !locale ? _defaultLocale : locale;
-        return locale in _holidays ?
+        return _holidays.hasOwnProperty(locale) ?
                 _holidays[locale].get(year) : _holidays.def.get(year);
     };
 
@@ -342,15 +356,17 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 Object.prototype.toString.call(options) !== '[object Object]') {
             throw new Error('Data type of the argument is incorrect');
         } else {
-            if (!(locale in _formats)) {
+            if (!_formats.hasOwnProperty(locale)) {
                 _formats[locale] = {};
             }
-            if ('era' in options && !('eraStrict' in options)) {
+            if (options.hasOwnProperty('era') &&
+                    !options.hasOwnProperty('eraStrict')) {
                 options.eraStrict = options.era;
             }
-            for (var key in _formats.def) {
-                _formats[locale][key] = key in options ?
-                        options[key] : _formats.def[key];
+            var keys = Object.keys(_formats.def);
+            for (var i = 0, len = keys.length; i < len; i++) {
+                _formats[locale][keys[i]] = options.hasOwnProperty(keys[i]) ?
+                        options[keys[i]] : _formats.def[keys[i]];
             }
         }
         return this;
@@ -376,7 +392,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 locale === '' ||
                 Object.prototype.toString.call(options) !== '[object Object]') {
             throw new Error('Data type of the argument is incorrect');
-        } else if (!('get' in options)) {
+        } else if (!options.hasOwnProperty('get')) {
             throw new Error('get() does not exist');
         } else if (Object.prototype.toString.call(
                 options.get) !== '[object Function]') {
@@ -480,7 +496,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             locale = typeof locale !== 'string' || locale === '' ?
                     _defaultLocale : locale;
 
-            var options = locale in _formats ? _formats[locale] : _formats.def;
+            var options = _formats.hasOwnProperty(locale) ?
+                    _formats[locale] : _formats.def;
             var era = eraStrict === true ?
                     options.eraStrict(this) : options.era(this);
             var noon = this.getHours() < 12 ? 0 : 1;
@@ -525,17 +542,14 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 D: this.getISODay()
             };
 
-            var regs = [];
-            for (var key in formatting) {
-                regs.push(key);
-            }
-            regs = '(' + regs.join('|') + ')';
-            var reg = new RegExp(regs, 'g');
-
             var esc = '_____-----_____-----_____-----_____-----_____-----_____';
             format = format.replace(/("")/g, esc);
 
             var split = format.split('"');
+            var reg = new RegExp(
+                    '(' + Object.keys(formatting).join('|') + ')', 'g'
+                    );
+
             for (var i = 0, len = split.length; i < len; i += 2) {
                 split[i] = split[i].replace(reg, function (match) {
                     return formatting[match];
@@ -764,11 +778,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         /**
          * 日付を引数「option」でしたものの前の平日に変更
          *
-         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧
-         *                         1：土曜日、日曜日のみ
-         *                         2：日曜日、引数「locale」で取得される祝祭日一覧のみ
-         *                         3：日曜日のみ
-         *                         4：引数「locale」で取得される祝祭日一覧のみ
+         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日
+         *                        1：土曜日、日曜日のみ
+         *                        2：日曜日、引数「locale」で取得される祝祭日のみ
+         *                        3：日曜日のみ
+         *                        4：引数「locale」で取得される祝祭日一覧のみ
          * @param {String} locale 取得する祝祭日
          *
          * @return {this} 自身に返す（チェーンメソッド用）
@@ -782,11 +796,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         /**
          * 日付を引数「option」でしたものの後の平日に変更
          *
-         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧
-         *                         1：土曜日、日曜日のみ
-         *                         2：日曜日、引数「locale」で取得される祝祭日一覧のみ
-         *                         3：日曜日のみ
-         *                         4：引数「locale」で取得される祝祭日一覧のみ
+         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日
+         *                        1：土曜日、日曜日のみ
+         *                        2：日曜日、引数「locale」で取得される祝祭日のみ
+         *                        3：日曜日のみ
+         *                        4：引数「locale」で取得される祝祭日一覧のみ
          * @param {String} locale 取得する祝祭日
          *
          * @return {this} 自身に返す（チェーンメソッド用）
@@ -923,7 +937,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * @return {Number} 年間通算日
          */
         getOrdinalDate: function () {
-            var date = new UltraDate(this.getFullYear(), 0, 0);
+            var date = new Date(this.getFullYear(), 0, 0);
             var thisDate = this.copy().clearTime();
             // 24 * 60 * 60 * 1000 = 86400000
             return (thisDate - date) / 86400000;
@@ -942,15 +956,15 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * 現在の日付の祝祭日名を返信（祝祭日で無い場合は空文字）
          *
          * @param {String} locale 取得するロケール
-         *                       undefinedの場合は現在のデフォルトのロケール
+         *                        undefinedの場合は現在のデフォルトのロケール
          *
          * @return {String} 祝祭日の名前
-         *                   祝祭日で無い場合は空文字
+         *                  祝祭日で無い場合は空文字
          */
         getHoliday: function (locale) {
             var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
             var strDate = this.format(_strFormat);
-            return strDate in holidays ? holidays[strDate] : '';
+            return holidays.hasOwnProperty(strDate) ? holidays[strDate] : '';
         },
         /**---------------------------------------------------------------------
          * diff系
@@ -960,17 +974,17 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * 現在の日時から指定日時までの差分を取得
          * 日時の差分を日、時、分、秒、ミリ秒に変換して返す
          *
-         * △△まで残り○○日○○時間○○分○○秒○○○の「○○」の部分をそれぞれ取得します
+         * △△まで残り○○日○○時間○○分○○秒○○○の「○○」の部分をそれぞれ取得
          *
          * @param {UltraDate|Date|String|Number} date 差分を取得する日付
          *                                            undefinedの場合は現在時刻
          *
          * @return {Object} after:{Boolean}現在の日付より後かどうか
-         *                   day:{Number}日の差分
-         *                   hour:{Number}時の差分
-         *                   minute:{Number}分の差分
-         *                   second:{Number}秒の差分
-         *                   millisecond:{Number}ミリ秒の差分
+         *                  day:{Number}日の差分
+         *                  hour:{Number}時の差分
+         *                  minute:{Number}分の差分
+         *                  second:{Number}秒の差分
+         *                  millisecond:{Number}ミリ秒の差分
          */
         diff: function (date) {
             date = _getDate(date);
@@ -1130,11 +1144,11 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
         /**
          * 平日かどうかの判定
          *
-         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日一覧
-         *                         1：土曜日、日曜日のみ
-         *                         2：日曜日、引数「locale」で取得される祝祭日一覧のみ
-         *                         3：日曜日のみ
-         *                         4：引数「locale」で取得される祝祭日一覧のみ
+         * @param {Number} option 0：土曜日、日曜日、引数「locale」で取得される祝祭日
+         *                        1：土曜日、日曜日のみ
+         *                        2：日曜日、引数「locale」で取得される祝祭日のみ
+         *                        3：日曜日のみ
+         *                        4：引数「locale」で取得される祝祭日一覧のみ
          * @param {String} locale 取得する祝祭日
          *
          * @return {Boolean}
@@ -1217,7 +1231,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          */
         isHoliday: function (locale) {
             var holidays = UltraDate.getHolidays(this.getFullYear(), locale);
-            return this.format(_strFormat) in holidays;
+            return holidays.hasOwnProperty(this.format(_strFormat));
         },
         /**
          * 現在のオブジェクトが正当な日付オブジェクトかどうかの判定
@@ -1235,7 +1249,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
      * 同名のプロパティがある場合は上書きされるので注意
      */
     var keys = Object.getOwnPropertyNames(Date.prototype);
-    for (var i in keys) {
+    for (var i = 0, len = keys.length; i < len; i++) {
         (function (key) {
             if (key !== 'constructor') {
                 if (UltraDate.hasOwnProperty(key)) {
@@ -1248,6 +1262,6 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                             );
                 };
             }
-        })(keys[i]);
+        }(keys[i]));
     }
 }());
