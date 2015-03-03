@@ -13,7 +13,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
     };
 
     if (this instanceof UltraDate) {
-        this.__value;
+        this.__value = undefined;
 
         switch (arguments.length) {
             case 0:
