@@ -116,6 +116,7 @@ UltraDate.jsはJavaScriptの「Dateオブジェクト」の上位互換オブジ
 | ~~isNDateToThat()~~ | ~~日付が引数「date」まで引数「num」日かどうかの判定~~(v2.0.0で廃止) |
 | isWeekday() | 平日かどうかの判定 |
 | isHoliday() | 土日祝日かどうかの判定 |
+| isValid() | オブジェクトが正当な日付かどうかの判定 |
 
 ## ライセンス
 
