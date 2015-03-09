@@ -202,6 +202,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-karma-coveralls');
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('test', ['karma']);
+    grunt.registerTask('test', ['karma', 'coveralls']);
     grunt.registerTask('build', ['clean', 'copy', 'replace', 'uglify']);
 };
