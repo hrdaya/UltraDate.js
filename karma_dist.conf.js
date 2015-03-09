@@ -15,8 +15,8 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         singleRun: true,
         preprocessors: {
-            'dist/UltraDate.js': ['coverage'],
-            'dist/UltraDate.ja.js': ['coverage']
+            'dist/UltraDate.js': 'coverage',
+            'dist/UltraDate.ja.js': 'coverage'
         },
         coverageReporter: {
             type: 'lcov',
