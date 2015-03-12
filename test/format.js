@@ -284,4 +284,297 @@ describe('format:', function () {
             expect(date.format({})).toEqual({});
         });
     });
+    describe('ロケール「ja」:', function () {
+        it('明治前の確認', function () {
+            var date = UltraDate('1867-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('西暦67');
+        });
+        it('明治前の確認', function () {
+            var date = UltraDate('1867-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('西暦67');
+        });
+        it('明治の確認', function () {
+            var date = UltraDate('1868-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('明治01');
+        });
+        it('明治の確認', function () {
+            var date = UltraDate('1868-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('西暦68');
+        });
+        it('明治の確認', function () {
+            var date = UltraDate('1868-12-30');
+            expect(date.format('gggee', true, 'ja')).toEqual('明治01');
+        });
+        it('大正の確認', function () {
+            var date = UltraDate('1912-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('大正01');
+        });
+        it('大正の確認', function () {
+            var date = UltraDate('1912-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('明治45');
+        });
+        it('大正の確認', function () {
+            var date = UltraDate('1912-12-30');
+            expect(date.format('gggee', true, 'ja')).toEqual('大正01');
+        });
+        it('昭和の確認', function () {
+            var date = UltraDate('1926-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('昭和01');
+        });
+        it('昭和の確認', function () {
+            var date = UltraDate('1926-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('大正15');
+        });
+        it('昭和の確認', function () {
+            var date = UltraDate('1926-12-30');
+            expect(date.format('gggee', true, 'ja')).toEqual('昭和01');
+        });
+        it('平成の確認', function () {
+            var date = UltraDate('1989-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('平成01');
+        });
+        it('平成の確認', function () {
+            var date = UltraDate('1989-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('昭和64');
+        });
+        it('平成の確認', function () {
+            var date = UltraDate('1989-12-30');
+            expect(date.format('gggee', true, 'ja')).toEqual('平成01');
+        });
+    });
+    describe('春分の確認:', function () {
+        it('春分の日', function () {
+            var date = UltraDate('1800-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1827-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1828-03-20');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1829-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1830-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1831-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1860-03-20');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1861-03-20');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1862-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1863-03-21');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1892-03-20');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1893-03-20');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1894-03-20');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1895-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+
+            var date = UltraDate('1900-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1901-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1902-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1903-03-22');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+
+            var date = UltraDate('1924-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1925-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1926-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1927-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+
+            var date = UltraDate('1948-03-21');
+            expect(date.getHoliday('ja')).toEqual('春季皇霊祭');
+            var date = UltraDate('1949-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            var date = UltraDate('1960-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1961-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1962-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1963-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            var date = UltraDate('1992-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1993-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1994-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('1995-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            var date = UltraDate('2024-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('2025-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('2026-03-20');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+            var date = UltraDate('2027-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            var date = UltraDate('2037-03-21');
+            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            // 2038年以降はエラーになる（Jasmineの仕様か？）
+//            var date = UltraDate('2038-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+//            var date = UltraDate('2056-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2057-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2058-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2059-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//
+//            var date = UltraDate('2092-03-19');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2093-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2094-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2095-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//
+//            var date = UltraDate('2100-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2101-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2102-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2103-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//
+//            var date = UltraDate('2124-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2125-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2126-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2127-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//
+//            var date = UltraDate('2156-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2157-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2158-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2159-03-21');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//
+//            var date = UltraDate('2188-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2189-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2190-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+//            var date = UltraDate('2191-03-20');
+//            expect(date.getHoliday('ja')).toEqual('春分の日');
+
+            var date = UltraDate('2200-03-20');
+            expect(date.getHoliday('ja')).toEqual('');
+        });
+    });
+    describe('秋分の確認:', function () {
+
+        it('春分の日', function () {
+            var date = UltraDate('1800-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1801-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1802-09-24');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1803-09-24');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1824-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1825-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1826-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1827-09-24');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1852-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1853-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1854-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+            var date = UltraDate('1855-09-23');
+            expect(date.getHoliday('ja')).toEqual('');
+
+            var date = UltraDate('1888-09-22');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1889-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1890-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1891-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+
+            var date = UltraDate('1900-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1901-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1902-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1902-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+
+            var date = UltraDate('1920-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1921-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1922-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+            var date = UltraDate('1923-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋季皇霊祭');
+
+            var date = UltraDate('1948-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1949-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1950-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1951-09-24');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+
+            var date = UltraDate('1980-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1981-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1982-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('1983-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+
+            var date = UltraDate('2012-09-22');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('2013-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('2014-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            var date = UltraDate('2015-09-23');
+            expect(date.getHoliday('ja')).toEqual('秋分の日');
+            // 2038年以降はエラーになる（Jasmineの仕様か？）
+        });
+    });
 });
