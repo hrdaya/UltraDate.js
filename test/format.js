@@ -280,5 +280,8 @@ describe('format:', function () {
         it('Dの戻り値は「7」', function () {
             expect(date.format('D', false, 'def')).toEqual('7');
         });
+        it('フォーマットの引数が文字列でないとき', function () {
+            expect(date.format({})).toEqual({});
+        });
     });
 });

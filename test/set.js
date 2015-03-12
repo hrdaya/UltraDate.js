@@ -28,8 +28,16 @@ describe('setDayCountsInMonth:', function () {
         expect(date60.getRealMonth()).toEqual(2);
         expect(date60.getDate()).toEqual(8);
     });
+    it('引数が無いときは例外をスロー', function () {
+        var date = new UltraDate('2015/01/01');
+        expect(date.setDayCountsInMonth).toThrow(new Error('Data type of the argument is incorrect'));
+    });
 });
 describe('setISOWeekDay:', function () {
+    it('引数が無いときは例外をスロー', function () {
+        var date = new UltraDate('2015/01/01');
+        expect(date.setISOWeekDay).toThrow(new Error('Data type of the argument is incorrect'));
+    });
     // 2004第0週 ---------------------------------------------------------------
     it('2004年第0週月曜日は12月22日', function () {
         var date = new UltraDate('2004/06/01');
@@ -1683,6 +1691,10 @@ describe('setISOWeekDay:', function () {
 });
 
 describe('setUSWeekDay:', function () {
+    it('引数が無いときは例外をスロー', function () {
+        var date = new UltraDate('2015/01/01');
+        expect(date.setUSWeekDay).toThrow(new Error('Data type of the argument is incorrect'));
+    });
     // 2003第1週 ---------------------------------------------------------------
     it('2003年第1週日曜日は12月29日', function () {
         var date = new UltraDate('2003/06/01');
@@ -2500,6 +2512,12 @@ describe('setOrdinalDate:', function () {
     });
 });
 describe('setRoundingTime:', function () {
+    it('丸める日付外なら例外をスロー', function () {
+        var date = new UltraDate('2015/01/01');
+        expect(function () {
+            date.setRoundingTime(3);
+        }).toThrow(new Error('Data type of the argument is incorrect'));
+    });
     // 5分単位切捨て--------------------------------------------------------------
     it('12時00分5分単位で切り捨て', function () {
         var date = new UltraDate('2015-01-31T12:00:59.123Z');

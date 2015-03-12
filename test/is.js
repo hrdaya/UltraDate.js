@@ -261,18 +261,18 @@ describe('isAfterDate:', function () {
     var yesterday = new UltraDate('2015/01/01');
     it(date1.format('yyyy/MM/dd HH:mm:ss') + 'は' +
             date2.format('yyyy/MM/dd HH:mm:ss') +
-            'の翌日ではないなので「false」', function () {
-                expect(date1.isBeforeDate(date2)).toBe(false);
+            'の後日ではないなので「false」', function () {
+                expect(date1.isAfterDate(date2)).toBe(false);
             });
     it(date1.format('yyyy/MM/dd HH:mm:ss') + 'は' +
             tomorrow.format('yyyy/MM/dd HH:mm:ss') +
-            'の翌日なので「true」', function () {
-                expect(date1.isBeforeDate(tomorrow)).toBe(true);
+            'の後日ではないので「false」', function () {
+                expect(date1.isAfterDate(tomorrow)).toBe(false);
             });
     it(date1.format('yyyy/MM/dd HH:mm:ss') + 'は' +
             yesterday.format('yyyy/MM/dd HH:mm:ss') +
-            'の翌日ではないので「false」', function () {
-                expect(date1.isBeforeDate(yesterday)).toBe(false);
+            'の後日なので「true」', function () {
+                expect(date1.isAfterDate(yesterday)).toBe(true);
             });
 });
 describe('isBetween:', function () {
