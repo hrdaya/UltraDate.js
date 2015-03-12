@@ -1,10 +1,10 @@
 module.exports = function (config) {
     config.set({
-        basePath: '',
+        basePath: '../',
         frameworks: ['jasmine'],
         files: [
-            'dist/UltraDate.min.js',
-            'dist/UltraDate.ja.min.js',
+            'src/UltraDate.js',
+            'src/UltraDate.ja.js',
             'test/*.js'
         ],
         reporters: ['progress', 'coverage'],
@@ -15,8 +15,8 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         singleRun: true,
         preprocessors: {
-            'dist/UltraDate.min.js': 'coverage',
-            'dist/UltraDate.ja.min.js': 'coverage'
+            'src/UltraDate.js': 'coverage',
+            'src/UltraDate.ja.js': 'coverage'
         },
         coverageReporter: {
             type: 'lcov',
