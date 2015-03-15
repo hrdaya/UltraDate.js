@@ -1,5 +1,39 @@
 'use strict';
 
+describe('getAge:', function () {
+    describe('2000年6月1日からの年齢', function () {
+        var date = new UltraDate('2000/06/01');
+        it('2001年1月1日の時の年齢', function () {
+            expect(date.getAge('2001/01/01')).toEqual(0);
+        });
+        it('2001年6月1日の時の年齢', function () {
+            var date1 = new UltraDate('2001/06/01');
+            expect(date.getAge(date1)).toEqual(1);
+        });
+        it('2001年7月1日の時の年齢', function () {
+            expect(date.getAge('2001/07/01')).toEqual(1);
+        });
+        it('2002年1月1日の時の年齢', function () {
+            expect(date.getAge('2002/01/01')).toEqual(1);
+        });
+    });
+    describe('2004年2月29日からの年齢', function () {
+        var date = new UltraDate('2004/02/29');
+        it('2005年1月1日の時の年齢', function () {
+            expect(date.getAge('2005/01/01')).toEqual(0);
+        });
+        it('2005年2月28日の時の年齢', function () {
+            var date1 = new UltraDate('2005/02/28');
+            expect(date.getAge(date1)).toEqual(0);
+        });
+        it('2005年3月1日の時の年齢', function () {
+            expect(date.getAge('2005/03/01')).toEqual(1);
+        });
+        it('2008年2月29日の時の年齢', function () {
+            expect(date.getAge('2008/02/29')).toEqual(4);
+        });
+    });
+});
 describe('getRealMonth:', function () {
     var date1 = new UltraDate('2015/01/01');
     it('1月の戻り値は「1」', function () {
