@@ -871,6 +871,22 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * get系（値の取得）
          *--------------------------------------------------------------------*/
         /**
+         * 満年齢を取得（現在の日付から引数dateの日付まで）
+         *
+         * @param {UltraDate|Date|String|Number} date dateがundefindの時は今日
+         *
+         * @return {Number} 満年齢
+         */
+        getAge: function (date) {
+            var today = date === undefined ?
+                    new UltraDate() : new UltraDate(date);
+            var birthday = this.copy().clearTime();
+            var years = today.clearTime().getFullYear() -
+                    birthday.clearTime().getFullYear();
+            birthday.setFullYear(today.getFullYear());
+            return today < birthday ? years -= 1 : years;
+        },
+        /**
          * 実際の月の数字を取得
          *
          * @return {Number} getMonth()に1を足した数字

@@ -12,6 +12,93 @@
     </head>
     <body>
         <div id="content">
+            <section id="getAge">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>getAge()</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h2>関数概要</h2>
+                        <p class="lead">
+                            UltraDate.prototype.getAge()
+                        </p>
+                        <ul>
+                            <li>現在のオブジェクトの日付から引数dateまでの満年齢を取得</li>
+                            <li>現在のオブジェクトの日付がうるう年の時は引数dateがうるう年以外は3月1日</li>
+                        </ul>
+                        <ul>
+                            <li>引数：(<em>UltraDate</em>|<em>Date</em>|<em>String</em>|<em>Number</em>&nbsp;date)</li>
+                            <li>戻り値：Number</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default doc-args">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">引数</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>名前</th>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>UltraDate<br>Date<br>String<br>Number</td>
+                                <td>
+                                    <ul>
+                                        <li>Dateオブジェクトを指定します</li>
+                                        <li>Stringの場合Dateオブジェクトを作成できる文字列</li>
+                                        <li>Numberの場合Dateオブジェクトを作成できる数字</li>
+                                        <li>undefinedの場合は現在の日付</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel panel-default doc-return">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">戻り値</h2>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <tr>
+                                <th>型</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>満年齢</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <h2>サンプル</h2>
+                        <h3>満年齢の取得</h3>
+                        <div class="ex-code-prettify">
+                            <textarea class="code" data-ex-code-prettify-param="{codeType:'script', autoRun:false}">
+// 2000年6月1日からの年齢
+var date = new UltraDate('2000/06/01');
+
+// 今日の満年齢
+console.log(date.getAge());
+// 2010年1月1日
+console.log(date.getAge('2010/01/01'));
+// 2010年7月1日
+console.log(date.getAge('2010/07/01'));
+
+// 2000年2月29日からの年齢
+var date = new UltraDate('2000/02/29');
+
+// 今日の満年齢
+console.log(date.getAge());
+// 2010年1月1日
+console.log(date.getAge('2010/01/01'));
+// 2010年3月1日
+console.log(date.getAge('2010/03/01'));
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="getRealMonth">
                 <div class="panel panel-default">
                     <div class="panel-heading">
