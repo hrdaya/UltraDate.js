@@ -881,8 +881,8 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
             var today = date === undefined ?
                     new UltraDate() : new UltraDate(date);
             var birthday = this.copy().clearTime();
-            var years = today.clearTime().getFullYear()
-                    - birthday.clearTime().getFullYear();
+            var years = today.clearTime().getFullYear() -
+                    birthday.clearTime().getFullYear();
             birthday.setFullYear(today.getFullYear());
             return today < birthday ? years -= 1 : years;
         },
