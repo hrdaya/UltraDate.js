@@ -1,5 +1,5 @@
 /*!
- * UltraDate.js v2.1.1 (http://hrdaya.github.io/UltraDate.js/)
+ * UltraDate.js v2.2.1 (http://hrdaya.github.io/UltraDate.js/)
  *
  * Copyright 2015 yu-ki higa (https://github.com/hrdaya)
  * Licensed under MIT (https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
