@@ -85,6 +85,7 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * デフォルトのフォーマット
          */
         def: {
+            firstYear: null,
             longDay: [
                 'Sunday', 'Monday', 'Tuesday', 'Wednesday',
                 'Thursday', 'Friday', 'Saturday'
@@ -457,6 +458,10 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
          * eee:  元号計算で出された年を3桁で0埋め（000～999）
          * ee:   元号計算で出された年を2桁で0埋め（00～99）
          * e:    元号計算で出された年
+         * EEEE: 元号計算で出された年を4桁で0埋め（0000～9999、元年表記対応）
+         * EEE:  元号計算で出された年を3桁で0埋め（000～999、元年表記対応）
+         * EE:   元号計算で出された年を2桁で0埋め（00～99、元年表記対応）
+         * E:    元号計算で出された年（元年表記対応）
          * ggg:  長い形式の元号（平成）
          * gg:   短い形式の元号（平）
          * g:    アルファベットの頭文字（H）
@@ -509,6 +514,10 @@ function UltraDate(year, month, day, hours, minutes, seconds, ms) {
                 eee: _padSlice(era.year, 3),
                 ee: _padSlice(era.year),
                 e: era.year,
+                EEEE: era.year === 1 && options.firstYear || _padSlice(era.year, 4),
+                EEE: era.year === 1 && options.firstYear || _padSlice(era.year, 3),
+                EE: era.year === 1 && options.firstYear || _padSlice(era.year),
+                E: era.year === 1 && options.firstYear || era.year,
                 ggg: era.longName,
                 gg: era.shortName,
                 g: era.alphaName,

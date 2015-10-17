@@ -342,6 +342,38 @@ describe('format:', function () {
             expect(date.format('gggee', true, 'ja')).toEqual('平成01');
         });
     });
+    describe('元年', function () {
+        describe('元年の確認', function () {
+            var date = UltraDate('1989-01-08');
+            it('EEEEの戻り値は「元」', function () {
+                expect(date.format('EEEE')).toEqual('元');
+            });
+            it('EEEの戻り値は「元」', function () {
+                expect(date.format('EEE')).toEqual('元');
+            });
+            it('EEの戻り値は「元」', function () {
+                expect(date.format('EE')).toEqual('元');
+            });
+            it('Eの戻り値は「元」', function () {
+                expect(date.format('E')).toEqual('元');
+            });
+        });
+        describe('元年以外の確認', function () {
+            var date = UltraDate('1988-01-07');
+            it('EEEEの戻り値は「0063」', function () {
+                expect(date.format('EEEE')).toEqual('0063');
+            });
+            it('EEEの戻り値は「063」', function () {
+                expect(date.format('EEE')).toEqual('063');
+            });
+            it('EEの戻り値は「63」', function () {
+                expect(date.format('EE')).toEqual('63');
+            });
+            it('Eの戻り値は「63」', function () {
+                expect(date.format('E')).toEqual('63');
+            });
+        });
+    });
     describe('春分の確認:', function () {
         it('春分の日', function () {
             var date = UltraDate('1800-03-21');
