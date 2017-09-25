@@ -1,61 +1,71 @@
 {
-    "name": "UltraDate",
-    "version": "2.2.1",
-    "description": "UltraDate.js: Replace a Javascript Date object",
-    "keywords": [
-        "javascript",
-        "js",
-        "date",
-        "format",
-        "holiday"
-    ],
-    "homepage": "http://hrdaya.github.io/UltraDate.js/",
-    "bugs": {
-        "url": "https://github.com/hrdaya/UltraDate.js/issues"
-    },
-    "license": {
-        "type": "MIT",
-        "url": "https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE"
-    },
-    "author": {
-        "name": "yu-ki higa",
-        "url": "https://github.com/hrdaya"
-    },
-    "files": [
-        "README.md",
-        "LICENSE",
-        "package.json",
-        "dist",
-        "test"
-    ],
-    "directories": {
-        "test": "test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/hrdaya/UltraDate.js.git",
-        "path": "hrdaya/UltraDate.js"
-    },
-    "scripts": {
-        "test": "node_modules/grunt-cli/bin/grunt test jshint"
-    },
-    "private": true,
-    "devDependencies": {
-        "grunt": "^0.4.5",
-        "grunt-cli": "^0.1.13",
-        "grunt-contrib-clean": "^0.6.0",
-        "grunt-contrib-copy": "^0.8.0",
-        "grunt-contrib-jshint": "^0.11.0",
-        "grunt-contrib-uglify": "^0.8.0",
-        "grunt-contrib-watch": "^0.6.1",
-        "grunt-karma": "^0.10.1",
-        "grunt-karma-coveralls": "^2.5.3",
-        "grunt-text-replace": "^0.4.0",
-        "karma": "^0.12.31",
-        "karma-chrome-launcher": "^0.1.7",
-        "karma-cli": "^0.0.4",
-        "karma-coverage": "^0.2.7",
-        "karma-jasmine": "^0.2.2",
-        "karma-phantomjs-launcher": "^0.1.4"
-    }
+  "name": "UltraDate",
+  "version": "2.3.0",
+  "description": "UltraDate.js: Replace a Javascript Date object",
+  "keywords": [
+    "javascript",
+    "js",
+    "date",
+    "format",
+    "holiday"
+  ],
+  "homepage": "http://hrdaya.github.io/UltraDate.js/",
+  "bugs": {
+    "url": "https://github.com/hrdaya/UltraDate.js/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE"
+  },
+  "author": {
+    "name": "yu-ki higa",
+    "url": "https://github.com/hrdaya"
+  },
+  "main": "UltraDate.js",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "dist",
+    "locale",
+    "test"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hrdaya/UltraDate.js.git",
+    "path": "hrdaya/UltraDate.js"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp karma"
+  },
+  "private": true,
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-beautify": "^2.0.1",
+    "gulp-cli": "^1.4.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.15",
+    "run-sequence": "^2.2.0"
+  }
 }

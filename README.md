@@ -1,5 +1,5 @@
 # UltraDate.js
-[![GitHub release](https://img.shields.io/badge/release-v2.2.1-blue.svg?style=flat)](https://github.com/hrdaya/UltraDate.js/releases)
+[![GitHub release](https://img.shields.io/badge/release-v2.3.0-blue.svg?style=flat)](https://github.com/hrdaya/UltraDate.js/releases)
 [![GitHub licence](https://img.shields.io/badge/licence-MIT-blue.svg?style=flat)](https://github.com/hrdaya/UltraDate.js/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/hrdaya/UltraDate.js.svg?branch=master&style=flat)](https://travis-ci.org/hrdaya/UltraDate.js)
 [![Coverage Status](https://coveralls.io/repos/hrdaya/UltraDate.js/badge.svg)](https://coveralls.io/r/hrdaya/UltraDate.js)
