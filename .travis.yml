@@ -1,9 +1,11 @@
-## YAML Tlanguage: node_js
+language: node_js
 node_js:
-  - "0.10"
+  - 6
+  - 7
+  - 'stable'
+  - 'lts/*'
 before_script:
-  - npm install bower
-  - ./node_modules/bower/bin/bower install
+  - npm install -g gulp-cli
   - npm install
 script:
   - "npm test"
