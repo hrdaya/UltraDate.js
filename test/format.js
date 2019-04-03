@@ -341,6 +341,18 @@ describe('format:', function () {
             var date = UltraDate('1989-12-30');
             expect(date.format('gggee', true, 'ja')).toEqual('平成01');
         });
+        it('令和の確認', function () {
+            var date = UltraDate('2019-01-01');
+            expect(date.format('gggee', false, 'ja')).toEqual('令和01');
+        });
+        it('令和の確認', function () {
+            var date = UltraDate('2019-01-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('平成31');
+        });
+        it('令和の確認', function () {
+            var date = UltraDate('2019-05-01');
+            expect(date.format('gggee', true, 'ja')).toEqual('令和01');
+        });
     });
     describe('元年', function () {
         describe('元年の確認', function () {
