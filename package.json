@@ -1,6 +1,6 @@
 {
     "name": "UltraDate",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "description": "UltraDate.js: Replace a Javascript Date object",
     "keywords": [
         "javascript",
@@ -37,7 +37,7 @@
         "path": "hrdaya/UltraDate.js"
     },
     "scripts": {
-        "test": "node_modules/grunt-cli/bin/grunt test jshint"
+        "test": "node_modules/.bin/grunt test jshint"
     },
     "private": true,
     "devDependencies": {

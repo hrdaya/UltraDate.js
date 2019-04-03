@@ -26,10 +26,12 @@
         dateFurikae: new Date(1973, 3, 12), // 振替休日の施行日
         strKokumin: '国民の休日', // 国民の休日用の文字列
         dateKokumin: new Date(1985, 11, 27), // 国民の休日の施行日
+        dateReiwa: new Date(2019, 4, 1), // 令和の始まり
         dateHeisei: new Date(1989, 0, 8), // 平成の始まり
         dateShowa: new Date(1926, 11, 25), // 昭和の始まり
         dateTaisho: new Date(1912, 6, 30), // 大正の始まり
         dateMeiji: new Date(1868, 0, 25), // 明治の始まり
+        yearReiwa: 2018, // 平成の始まり年の前の年
         yearHeisei: 1988, // 平成の始まり年の前の年
         yearShowa: 1925, // 昭和の始まり年の前の年
         yearTaisho: 1911, // 大正の始まり年の前の年
@@ -56,7 +58,14 @@
                         alphaName: 'AD',
                         year: year
                     };
-                    if (year > consts.yearHeisei) {
+                    if (year > consts.yearReiwa) {
+                        ret = {
+                            longName: '令和',
+                            shortName: '令',
+                            alphaName: 'R',
+                            year: year - consts.yearReiwa
+                        };
+                    } else if (year > consts.yearHeisei) {
                         ret = {
                             longName: '平成',
                             shortName: '平',
@@ -88,7 +97,14 @@
                     return ret;
                 },
                 eraStrict: function (date) {
-                    if (date >= consts.dateHeisei) {
+                    if (date >= consts.dateReiwa) {
+                        return {
+                            longName: '令和',
+                            shortName: '令',
+                            alphaName: 'R',
+                            year: date.getFullYear() - consts.yearReiwa
+                        };
+                    } else if (date >= consts.dateHeisei) {
                         return {
                             longName: '平成',
                             shortName: '平',
